@@ -15,7 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('test', function () {});
+Route::get('/station', 'StationController@index')->name('station.create');
+Route::post('/station', 'StationController@store')->name('station.store');
 
 Auth::routes();
 
