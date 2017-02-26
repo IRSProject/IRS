@@ -8,11 +8,36 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-		    <form action="{{ route('station.store') }}" method="post">
+		    <form action="{{ route('appointment.store') }}" method="post">
 			{{ csrf_field() }}
-			<input name="name" type="text" class="form-control" placeholder="name" />
-			<input name="address" type="text" class="form-control" placeholder="address" />
-			<input type="submit" />
+                        <div class="form-group{{ $errors->has('date') ? ' has-error' : '' }}">
+                            <label for="date" class="col-md-4 control-label">Date</label>
+
+                            <div class="col-md-6">
+                                <input id="date" type="date" class="form-control" name="date" value="{{ old('date') }}" required autofocus>
+
+                                @if ($errors->has('date'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('date) }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+			<div class="form-group{{ $errors->has('time') ? ' has-error' : '' }}">
+                            <label for="time" class="col-md-4 control-label">Time</label>
+
+                            <div class="col-md-6">
+                                <input id="time" type="time" class="form-control" name="time" value="{{ old('time') }}" required autofocus>
+
+                                @if ($errors->has('time'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('time') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
 		    </form>
                 </div>
             </div>
