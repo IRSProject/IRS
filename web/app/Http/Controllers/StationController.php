@@ -11,6 +11,10 @@ class StationController extends Controller
 	return view('stations.index', ['stations' => Station::paginate(20)]);
     }
 
+    public function lines(Station $station) {
+	return view('lines.index', ['lines' => $station->lines]);
+    }
+
     public function create() {
 	return view('stations.create');
     }
