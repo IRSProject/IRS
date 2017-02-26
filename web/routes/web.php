@@ -20,6 +20,7 @@ Route::get('/station/create', 'StationController@create')->name('station.create'
 Route::post('/station', 'StationController@store')->name('station.store');
 Route::get('/station/{station}/edit', 'StationController@edit')->name('station.edit');
 Route::patch('/station', 'StationController@update')->name('station.update');
+Route::delete('/station', 'StationController@delete')->name('station.delete');
 
 Route::get('/vehicle','VehicleController@index')->name('vehicle.index');
 Route::get('/vehicle/create','VehicleController@create')->name('vehicle.create');
