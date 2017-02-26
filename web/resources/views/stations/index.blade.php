@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+                <div class="panel-heading">Stations <a href="{{route('station.create')}}" class="btn btn-link"><i class="fa fa-plus"></i></a></div>
 
                 <div class="panel-body">
 		    <table class="table table-striped">
@@ -19,7 +19,7 @@
 			<tbody>
 			@foreach($stations as $station)
 			  <tr>
-			      <td>{{$station->name}}</td>
+			      <td><a href="{{route('station.lines', ['station' => $station->id])}}">{{$station->name}}</a></td>
 			      <td>{{$station->address}}</td>
 			      <td>
 				<a href="{{route('station.edit', ['id' => $station->id])}}" class="btn btn-success"> Edit </a>
