@@ -17,6 +17,10 @@ Route::get('/', function () {
 
 Route::get('/station', 'StationController@index')->name('station.create');
 Route::post('/station', 'StationController@store')->name('station.store');
+Route::get('/vehicle','VehicleController@index')->name
+('vehicle.create');
+Route::get('/vehicle','VehicleController@store')->name
+('vehicle.store');
 
 Auth::routes();
 
