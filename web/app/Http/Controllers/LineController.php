@@ -7,12 +7,17 @@ use App\Line;
 
 class LineController extends Controller
 {
-     public function create() {
+    public function index() {
+	return view('lines.index', ['lines' => Line::paginate(20)]);
+    }
+
+    public function create() {
 	return view('lines.create');
     }
 
     public function store(Request $request) {
 	Line::create($request->all());
+	return redirect()->route('line.index');
     }
 
     public function edit(Line $lines) {
@@ -23,6 +28,14 @@ class LineController extends Controller
 	$line = Line::find($request->id);
 	$line->fill($request->all());
 	$line->save();
-	return back();
-}
+	return redirect()->route('line.index');
+    }
+
+    public function delete(Request $request) {
+	$line = Line::find($request->id);
+	if($line) {
+	    $line->delete();
+	}
+	return redirect()->route('line.index');
+    }
 }
