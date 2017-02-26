@@ -14,4 +14,15 @@ class StationController extends Controller
     public function store(Request $request) {
 	Station::create($request->all());
     }
+
+    public function edit(Station $station) {
+	return view('stations.edit', ['station' => $station]);
+    }
+
+    public function update(Request $request) {
+	$station = Station::find($request->id);
+	$station->fill($request->all());
+	$station->save();
+	return back();
+    }
 }
