@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Vehicle;
 
-class Vehicle extends Controller
+class VehicleController extends Controller
 {
-    public function index() {
+    public function create() {
 	return view('vehicles.create');
     }
 
@@ -15,7 +16,7 @@ class Vehicle extends Controller
     }
 
     public function edit(Vehicle $vehicles) {
-	return view('vehicles.edit', ['vehicles' => $vehicles]);
+	return view('vehicles.edit', ['vehicle' => $vehicle]);
     }
 
     public function update(Request $request) {
@@ -23,4 +24,5 @@ class Vehicle extends Controller
 	$vehicle->fill($request->all());
 	$vehicle->save();
 	return back();
+}
 }

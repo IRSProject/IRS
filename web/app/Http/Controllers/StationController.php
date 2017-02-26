@@ -7,7 +7,7 @@ use App\Station;
 
 class StationController extends Controller
 {
-    public function index() {
+    public function create() {
 	return view('stations.create');
     }
 

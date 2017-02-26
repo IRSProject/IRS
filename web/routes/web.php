@@ -15,12 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/station', 'StationController@index')->name('station.create');
+Route::get('/station', 'StationController@create')->name('station.create');
 Route::post('/station', 'StationController@store')->name('station.store');
 Route::get('/station/{station}/edit', 'StationController@edit')->name('station.edit');
 Route::patch('/station', 'StationController@update')->name('station.update');
 
-Route::get('/vehicle','VehicleController@index')->name('vehicle.create');
+Route::get('/vehicle','VehicleController@create')->name('vehicle.create');
 Route::post('/vehicle','VehicleController@store')->name('vehicle.store');
 Route::get('/vehicle/{vehicle}/edit', 'VehicleController@edit')->name('vehicle.edit');
 Route::patch('/vehicle', 'VehicleController@update')->name('vehicle.update');;
