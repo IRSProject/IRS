@@ -15,9 +15,11 @@ class Lines extends Migration
     {
         Schema::create('lines', function (Blueprint $table) {
             $table->increments('id')->unique();
-	    $table->integer('line_number');
-	    $table->integer('station_id');
+	    $table->integer('number');
+	    $table->integer('station_id')->unsigned()->length(10);
             $table->timestamps();
+
+	    $table->foreign('station_id')->references('id')->on('stations')->onDelete('cascade');
         });
     }
 
