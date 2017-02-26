@@ -19,7 +19,7 @@ class Vehicles extends Migration
 	    $table->string('plate_code');
 	    $table->string('brand');
 	    $table->string('model');
-	    $table->year('production_year');
+	    $table->integer('production_year');
 	    $table->string('color');
 	    $table->string('chassis_number');
 	    $table->string('engine_number');
