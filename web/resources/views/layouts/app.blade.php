@@ -47,8 +47,12 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-left">
                         <!-- Authentication Links -->
+			
+                            <li><a href="{{ route('station.index') }}">Stations</a></li>
+                            <li><a href="{{ route('vehicle.index') }}">Vehicles</a></li>
+                            <li><a href="{{ route('appointment.index') }}">Appointments</a></li>
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
