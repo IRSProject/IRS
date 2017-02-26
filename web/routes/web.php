@@ -21,7 +21,9 @@ Route::get('/station/{station}/edit', 'StationController@edit')->name('station.e
 Route::patch('/station', 'StationController@update')->name('station.update');
 
 Route::get('/vehicle','VehicleController@index')->name('vehicle.create');
-Route::get('/vehicle','VehicleController@store')->name('vehicle.store');
+Route::post('/vehicle','VehicleController@store')->name('vehicle.store');
+Route::get('/vehicle/{vehicle}/edit', 'VehicleController@edit')->name('vehicle.edit');
+Route::patch('/vehicle', 'VehicleController@update')->name('vehicle.update');;
 
 Auth::routes();
 
