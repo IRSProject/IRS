@@ -10,20 +10,40 @@
                 <div class="panel-body">
 		    <form action="{{ route('line.store') }}" method="post">
 			{{ csrf_field() }}
-			<div class="form-group{{ $errors->has('line_number') ? ' has-error' : '' }}">
-                            <label for="line_number" class="col-md-4 control-label">Line Number</label>
+			<div class="form-group{{ $errors->has('number') ? ' has-error' : '' }}">
+                            <label for="number" class="col-md-4 control-label">Line Number</label>
 
                             <div class="col-md-6">
-                                <input id="line_number" type="integer" class="form-control" name="line_number" value="{{ old('line_number') }}" required autofocus>
+				<input id="number" type="integer" 
+				class="form-control" name="number" 
+				value="{{ old('number') }}" required autofocus>
 
-                                @if ($errors->has('line_number'))
+                                @if ($errors->has('number'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('line_number') }}</strong>
+                                        <strong>{{ $errors->first('number') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
+			<div class="form-group{{ $errors->has('station_id') ? ' has-error' : '' }}">
+                            <label for="station_id" class="col-md-4 control-label">Station</label>
+
+                            <div class="col-md-6">
+				<select name="station_id" id="station_id" class="form-control">
+				    @foreach(App\Station::all() as $station)
+				    <option value="{{$station->id}}">{{$station->name}}</option>
+				    @endforeach
+				</select>
+                                @if ($errors->has('station_id'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('station_id') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+			<div style="clear:both"></div>
+			<input type="submit" value="save" class="btn btn-success pull-right" >
 		    </form>
                 </div>
             </div>
