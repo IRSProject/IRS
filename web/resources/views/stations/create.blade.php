@@ -28,7 +28,7 @@
                             <label for="address" class="col-md-4 control-label">Address</label>
 
                             <div class="col-md-6">
-                                <input id="address" type="text" class="form-control" name="address" value="{{ old('address') }}" required autofocus>
+                                <input id="address" type="text" class="form-control" name="address" value="{{ old('address') }}" requir	ed autofocus>
 
                                 @if ($errors->has('address'))
                                     <span class="help-block">
@@ -37,8 +37,14 @@
                                 @endif
                             </div>
                         </div>
-
 		    </form>
+			<div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary">
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
                 </div>
             </div>
         </div>
