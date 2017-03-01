@@ -7,12 +7,19 @@ use App\Appointment;
 
 class AppointmentController extends Controller
 {
+    public function index(){
+	return view('appointments.index', ['appointments' => Appointment::paginate(20)]);
+    }
+
+    public function appointments(Appointment $appointment) {
+	return view('appointments.index', ['appointments' => $appointment->appointments]);
+    }
     public function create() {
 	return view('appointments.create');
     }
 
     public function store(Request $request) {
-	Line::create($request->all());
+	Appointment::create($request->all());
     }
 
     public function edit(Line $appointments) {
@@ -24,5 +31,12 @@ class AppointmentController extends Controller
 	$appointment->fill($request->all());
 	$appointment->save();
 	return back();
-}
+    }
+    public function delete(Request $request) {
+	$appointment = Appointment::find($request->id);
+	if($appointment) {
+	    $appointment->delete();
+	}
+	return redirect()->route('appointment.index');
+    } 
 }

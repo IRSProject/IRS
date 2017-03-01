@@ -41,6 +41,8 @@ Route::get('/appointment/create','AppointmentController@create')->name('appointm
 Route::post('/appointment','AppointmentController@store')->name('appointment.store');
 Route::get('/appointment/{appointment}/edit', 'AppointmentController@edit')->name('appointment.edit');
 Route::patch('/appointment', 'AppointmentController@update')->name('appointment.update');;
+Route::delete('/station', 'StationController@delete')->name('station.delete');
+Route::get('/station/{station}', 'StationController@lines')->name('station.lines');
 
 Auth::routes();
 

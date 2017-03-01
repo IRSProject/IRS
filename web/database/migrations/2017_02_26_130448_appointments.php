@@ -14,12 +14,14 @@ class Appointments extends Migration
     public function up()
     {
         Schema::create('appointments', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->unique();
 	    $table->date('date');
 	    $table->time('time');
             $table->integer('station_id');
 	    $table->integer('line_id');
 	    $table->timestamps();
+	    $table->foreign('station_id')->references('id')->on('stations')->onDelete('cascade');
+	    $table->foreign('line_id')->references('id')->on('lines')->onDelete('cascade');
         });
     }
 
