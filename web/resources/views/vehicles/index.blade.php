@@ -3,46 +3,24 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-12 col-md-offset-0">
             <div class="panel panel-default">
                 <div class="panel-heading">Vehicles <a href="{{route('vehicle.create')}}" class="btn btn-link"><i class="fa fa-plus"></i></a></div>
 
                 <div class="panel-body">
 		    <table class="table table-striped">
 			<thead>
-			  <tr>
-			    <th>vehicle Plate Number: </th>
-			  </tr>
-			  <tr>
-			    <th>vehicle Plate Code: </th>
-			  </tr>
-			  <tr>
-			    <th>vehicle Brand: </th>
-			  </tr>
-			  <tr>
-			    <th>vehicle Model: </th>
-			  </tr>
-			  <tr>
-			    <th>vehicle Production Year: </th>
-			  </tr>
-			  <tr>
-			    <th>vehicle Color: </th>
-			  </tr>
-			  <tr>
-			    <th>vehicle Chasis Number: </th>
-			  </tr>
-			  <tr>
-			    <th>vehicle Engine Number: </th>
-			  </tr>
-			  <tr>
-			    <th>vehicle Aquisition Date: </th>
-			  </tr>
-			  <tr>
-			    <th>vehicle Type: </th>
-			  </tr>
-			  <tr>
-			    <th>vehicle Aperation Year: </th>
-			  </tr>
+			    <th>Plate #: </th>
+			    <th>Plate Code: </th>
+			    <th>Brand: </th>
+			    <th>Model: </th>
+			    <th>Production Year: </th>
+			    <th>Color: </th>
+			    <th>Chasis Number: </th>
+			    <th>Engine Number: </th>
+			    <th>Aquisition Date: </th>
+			    <th>Type: </th>
+			    <th>Operation Year: </th>
 			    <th>Actions</th>
 			</thead>
 			<tbody>

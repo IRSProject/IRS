@@ -8,7 +8,7 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-		    <form action="{{ route('station.store') }}" method="post">
+		    <form action="{{ route('vehicle.store') }}" method="post">
 			{{ csrf_field() }}
 
 			<div class="form-group{{ $errors->has('plate_number') ? ' has-error' : '' }}">
@@ -119,7 +119,7 @@
                             <label for="aquisition_date" class="col-md-4 control-label">Aquisition Date</label>
 
                             <div class="col-md-6">
-                                <input id="aquisition_date" type="text" class="form-control" name="aquisition_date" value="{{ old('aquisition_date') }}" required autofocus>
+                                <input id="aquisition_date" type="date" class="form-control" name="aquisition_date" value="{{ old('aquisition_date') }}" required autofocus>
 
                                 @if ($errors->has('aquisition_date'))
                                     <span class="help-block">
@@ -155,6 +155,7 @@
                             </div>
                         </div>
 
+			<input type="submit" class="btn btn-success" value="save" />
 		    </form>
                 </div>
             </div>

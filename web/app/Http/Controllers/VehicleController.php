@@ -7,6 +7,11 @@ use App\Vehicle;
 
 class VehicleController extends Controller
 {
+    public function index() {
+	$vehicles = Vehicle::paginate(20);
+	return view('vehicles.index', ['vehicles' => $vehicles]);
+    }
+
     public function create() {
 	return view('vehicles.create');
     }
