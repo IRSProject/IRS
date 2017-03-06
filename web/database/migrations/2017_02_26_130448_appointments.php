@@ -17,8 +17,8 @@ class Appointments extends Migration
             $table->increments('id')->unique();
 	    $table->date('date');
 	    $table->time('time');
-            $table->integer('station_id');
-	    $table->integer('line_id');
+	    $table->integer('station_id')->unsigned()->length(10);
+	    $table->integer('line_id')->unsigned()->length(10);
 	    $table->timestamps();
 	    $table->foreign('station_id')->references('id')->on('stations')->onDelete('cascade');
 	    $table->foreign('line_id')->references('id')->on('lines')->onDelete('cascade');
