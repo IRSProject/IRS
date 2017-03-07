@@ -100,7 +100,7 @@
                             <label for="phone" class="col-md-4 control-label">Phone</label>
 
                             <div class="col-md-6">
-                                <input id="phone" type="integer" class="form-control" name="phone" value="{{ old('phone') }}" required>
+                                <input id="phone" type="integer" class="form-control" name="phone" value="{{ old('phone') }}" required placeholder="00961xxxxxxxx">
 
                                 @if ($errors->has('phone'))
                                     <span class="help-block">
@@ -128,7 +128,7 @@
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required 						placeholder="someone@someone.com">
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
