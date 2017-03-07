@@ -72,7 +72,7 @@
                             <label for="date_of_birth" class="col-md-4 control-label">Date Of Birth</label>
 
                             <div class="col-md-6">
-                                <input id="date_of_birth" type="text" class="form-control" name="date_of_birth" 					value="{{ old	('date_of_birth') }}" required autofocus>
+                                <input id="date_of_birth" type="date" class="form-control" name="date_of_birth" value="{{ old	('date_of_birth') }}" required autofocus>
 
                                 @if ($errors->has('date_of_birth'))
                                     <span class="help-block">
@@ -86,7 +86,7 @@
                             <label for="place_of_birth" class="col-md-4 control-label">Place Of Birth</label>
 
                             <div class="col-md-6">
-                                <input id="place_of_birth" type="text" class="form-control" name="place_of_birth" 						value="{{ old('place_of_birth') }}" required>
+                                <input id="place_of_birth" type="text" class="form-control" name="place_of_birth" value="{{ old('place_of_birth') }}" required>
 
                                 @if ($errors->has('place_of_birth'))
                                     <span class="help-block">
