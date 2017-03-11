@@ -6,7 +6,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
 		<div class="panel-heading">Lines 
-		<a href="{{route('line.create')}}" class="btn btn-link"><i class="fa fa-plus"></i></a></div>
+		<a href="{{route('line.create')}}" class="btn btn-link"><i class="glyphicon glyphicon-plus"></i></a></div>
 
                 <div class="panel-body">
 		    <table class="table table-striped">

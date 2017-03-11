@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-16 col-md-offset-0">
             <div class="panel panel-default">
-                <div class="panel-heading">Vehicles <a href="{{route('vehicle.create')}}" class="btn btn-link"><i class="fa fa-plus"></i></a></div>
+                <div class="panel-heading">Vehicles <a href="{{route('vehicle.create')}}" class="btn btn-link"><i class="glyphicon glyphicon-plus"></i></a></div>
 
                 <div class="panel-body">
 		    <table class="table table-striped">
