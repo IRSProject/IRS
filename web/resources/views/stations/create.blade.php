@@ -37,7 +37,9 @@
                                 @endif
                             </div>
                         </div>
-			<input type="submit" value="save" class="btn btn-success" />
+			<div class="col-xs-12 col-sm-12 col-md-12 text-center">
+			  <input type="submit" value="save" class="btn btn-success" />
+			</div>
                 </div>
             </div>
         </div>

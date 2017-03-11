@@ -25,7 +25,7 @@
 				<a href="{{route('station.edit', ['id' => $station->id])}}" class="btn btn-success"> Edit </a>
 				<form action="{{route('station.delete')}}" method="POST">
 				    {{csrf_field()}}
-				    <input type="hidden" name="_method" value="DELETE" />
+				    <input type="hidden" name="_method" value="Delete" />
 				    <input type="hidden" name="id" value="{{$station->id}}" />
 				    <input type="submit" value="DELETE" class="btn btn-danger" />
 				</form>

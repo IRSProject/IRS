@@ -18,6 +18,7 @@ class VehicleController extends Controller
 
     public function store(Request $request) {
 	Vehicle::create($request->all());
+	return redirect()->route('vehicle.index');
     }
 
     public function edit(Vehicle $vehicles) {
@@ -28,6 +29,13 @@ class VehicleController extends Controller
 	$vehicle = Vehicle::find($request->id);
 	$vehicle->fill($request->all());
 	$vehicle->save();
-	return back();
-}
+	return redirect()->route('vehicle.index');
+    }
+    public function delete(Request $request) {
+	$line = Line::find($request->id);
+	if($line) {
+	    $line->delete();
+	}
+	return redirect()->route('line.index');
+    }
 }

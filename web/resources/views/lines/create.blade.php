@@ -11,11 +11,11 @@
 		    <form action="{{ route('line.store') }}" method="post">
 			{{ csrf_field() }}
 			<div class="form-group{{ $errors->has('number') ? ' has-error' : '' }}">
-                            <label for="number" class="col-md-4 control-label">Line Number</label>
+                            <label for="n" class="col-md-4 control-label">Line Number</label>
 
                             <div class="col-md-6">
 				<input id="number" type="integer" 
-				class="form-control" name="number" 
+				class="form-control" name="number"
 				value="{{ old('number') }}" required autofocus>
 
                                 @if ($errors->has('number'))
@@ -43,7 +43,9 @@
                             </div>
                         </div>
 			<div style="clear:both"></div>
-			<input type="submit" value="save" class="btn btn-success pull-right" >
+			<div class="col-xs-12 col-sm-12 col-md-12 text-center">
+			  <input type="submit" value="save" class="btn btn-success pull-center" >
+			</div>
 		    </form>
                 </div>
             </div>

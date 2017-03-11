@@ -11,5 +11,8 @@ class Station extends Model
     public function lines() {
 	return $this->hasMany(Line::class);
     }
+    public function appointments() {
+	return $this->hasMany(Appointment::class);
+    }
 
 }

@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('auth.register');
+    return view('welcome');
 });
 
 Route::group(['middleware' => 'auth'], function () {
@@ -29,19 +29,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/vehicle','VehicleController@store')->name('vehicle.store');
     Route::get('/vehicle/{vehicle}/edit', 'VehicleController@edit')->name('vehicle.edit');
     Route::patch('/vehicle', 'VehicleController@update')->name('vehicle.update');;
-
-
+    Route::delete('/vehicle', 'VehicleController@delete')->name('vehicle.delete');
 
     Route::get('/appointment','AppointmentController@index')->name('appointment.index');
     Route::get('/appointment/create','AppointmentController@create')->name('appointment.create');
     Route::post('/appointment','AppointmentController@store')->name('appointment.store');
     Route::get('/appointment/{appointment}/edit', 'AppointmentController@edit')->name('appointment.edit');
     Route::patch('/appointment', 'AppointmentController@update')->name('appointment.update');;
-
-});
-
-Route::group(['middleware' => ['App\Http\Middleware\Admin', 'auth']], function () {
-
 
     Route::get('/line','LineController@index')->name('line.index');
     Route::get('/line/create','LineController@create')->name('line.create');
@@ -50,9 +44,11 @@ Route::group(['middleware' => ['App\Http\Middleware\Admin', 'auth']], function (
     Route::patch('/line', 'LineController@update')->name('line.update');;
     Route::delete('/line', 'LineController@delete')->name('line.delete');;
 
+});
 
+Route::group(['middleware' => ['App\Http\Middleware\Admin', 'auth']], function () {
 
-
+    
 });
 
 Auth::routes();

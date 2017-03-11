@@ -19,7 +19,8 @@
 			<tbody>
 			@foreach($appointments as $appointment)
 			  <tr>
-			      <td><a href="{{route('appointment.station', 'appointment.line' , ['appointment' => $appointment->id])}}">{{$appointment->date}}</a>< 					td>
+			      <td><a href="{{route('appointment.stations', ['appointment' => $appointment->id])}}">{{$appointment->date}}
+				</a></td>
 			      <td>{{$appointment->time}}</td>
 			      <td>
 				<a href="{{route('appointment.edit', ['id' => $appointment->id])}}" class="btn btn-success"> Edit </a>

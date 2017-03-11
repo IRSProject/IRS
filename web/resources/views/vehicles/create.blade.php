@@ -153,9 +153,10 @@
                                     </span>
                                 @endif
                             </div>
-                        </div>
-
-			<input type="submit" class="btn btn-success" value="save" />
+                        </div>	
+			<div class="col-xs-12 col-sm-12 col-md-12 text-center">
+			  <input type="submit" value="save" class="btn btn-success" />
+			</div>
 		    </form>
                 </div>
             </div>

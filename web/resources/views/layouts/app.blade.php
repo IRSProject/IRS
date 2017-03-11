@@ -52,7 +52,12 @@
 			
                             <li><a href="{{ route('station.index') }}">Stations</a></li>
                             <li><a href="{{ route('vehicle.index') }}">Vehicles</a></li>
+			    <li><a href="{{ route('line.index') }}">Lines</a></li>
                             <li><a href="{{ route('appointment.index') }}">Appointments</a></li>
+                    </ul>
+		<!-- Right Side Of Navbar -->
+		<ul class="nav navbar-nav navbar-right">
+                    <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
@@ -77,7 +82,7 @@
                                 </ul>
                             </li>
                         @endif
-                    </ul>
+                 </ul>
                 </div>
             </div>
         </nav>

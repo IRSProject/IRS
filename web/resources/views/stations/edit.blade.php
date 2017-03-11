@@ -13,9 +13,22 @@
 			<input type="hidden" name="id" value="{{$station->id}}" />
 			{{ csrf_field() }}
 
-			<input name="name" value="{{$station->name}}" type="text" class="form-control" placeholder="name" />
-			<input name="address" value="{{$station->address}}" type="text" class="form-control" placeholder="address" />
-			<input type="submit" />
+			<div class="col-xs-12 col-sm-12 col-md-12">
+		   	  <div class="form-group">
+			   <strong>Name</strong>
+			   <input name="name" value="{{$station->name}}" type="text" class="form-control" placeholder="name">
+		  	  </div>
+	       		</div>
+
+			<div class="col-xs-12 col-sm-12 col-md-12">
+		   	  <div class="form-group">
+		           <strong>Address</strong>
+		           <input name="address" value="{{$station->address}}" type="text" class="form-control" placeholder="address" >
+		  	  </div>
+	       		 </div>
+			<div class="col-xs-12 col-sm-12 col-md-12 text-center">
+			  <button type="submit" class="btn btn-primary">Submit</button>
+			</ div>
 		    </form>
                 </div>
             </div>
@@ -23,3 +36,5 @@
     </div>
 </div>
 @endsection
+
+

@@ -37,7 +37,41 @@
                                 @endif
                             </div>
                         </div>
-			<input type="submit" value="save" class="btn btn-success" />
+			<div class="form-group{{ $errors->has('station_id') ? ' has-error' : '' }}">
+                            <label for="station_id" class="col-md-4 control-label">Station</label>
+
+                            <div class="col-md-6">
+				<select name="station_id" id="station_id" class="form-control">
+				    @foreach(App\Station::all() as $station)
+				    <option value="{{$station->id}}">{{$station->name}}</option>
+				    @endforeach
+				</select>
+                                @if ($errors->has('station_id'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('station_id') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+			<div class="form-group{{ $errors->has('line_id') ? ' has-error' : '' }}">
+                            <label for="line_id" class="col-md-4 control-label">Line</label>
+
+                            <div class="col-md-6">
+				<select name="line_id" id="line_id" class="form-control">
+				    @foreach(App\Line::all() as $line)
+				    <option value="{{$line->id}}">{{$line->name}}</option>
+				    @endforeach
+				</select>
+                                @if ($errors->has('line_id'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('line_id') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+			<div class="col-xs-12 col-sm-12 col-md-12 text-center">
+			  <input type="submit" value="save" class="btn btn-success" />
+			</div>
 		    </form>
                 </div>
             </div>
