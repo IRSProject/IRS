@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('fname');
 	    $table->string('lname');
-	    $table->string('role');
+	    $table->string('role')->default('user');
 	    $table->string('mother_name');
 	    $table->string('verification_code');
 	    $table->date('date_of_birth');
