@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Appointment <a href="{{route('appointment.create')}}" class="btn btn-link"><i class="glyphicon glyphicon-plus"></i></a></div>
+                <div class="panel-heading">Appointment for station: {{ $station }}<a href="{{route('appointment.create')}}" class="btn btn-link"><i class="glyphicon glyphicon-plus"></i></a></div>
 
                 <div class="panel-body">
 		    <table class="table table-striped">
@@ -19,12 +19,12 @@
 			<tbody>
 			@foreach($appointments as $appointment)
 			  <tr>
-			      <td><a href="{{route('appointment.stations', ['appointment' => $appointment->id])}}">{{$appointment->date}}
+			      <td><a href="">{{$appointment->date}}
 				</a></td>
 			      <td>{{$appointment->time}}</td>
 			      <td>
 				<a href="{{route('appointment.edit', ['id' => $appointment->id])}}" class="btn btn-success"> Edit </a>
-				<form action="{{route('appointment.delete')}}" method="POST">
+				<form action="{{route('appointment.delete', ['id' => $appointment->id, 'station_id' => $appointment->station->id])}}" method="POST">
 				    {{csrf_field()}}
 				    <input type="hidden" name="_method" value="DELETE" />
 				    <input type="hidden" name="id" value="{{$appointment->id}}" />

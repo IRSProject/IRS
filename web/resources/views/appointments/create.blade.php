@@ -59,7 +59,7 @@
                             <div class="col-md-6">
 				<select name="line_id" id="line_id" class="form-control">
 				    @foreach(App\Line::all() as $line)
-				    <option value="{{$line->id}}">{{$line->name}}</option>
+					<option value="{{$line->id}}">{{$line->number}}</option>
 				    @endforeach
 				</select>
                                 @if ($errors->has('line_id'))

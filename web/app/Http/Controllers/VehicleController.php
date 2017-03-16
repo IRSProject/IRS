@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Vehicle;
+use Auth;
 
 class VehicleController extends Controller
 {
@@ -17,7 +18,7 @@ class VehicleController extends Controller
     }
 
     public function store(Request $request) {
-	Vehicle::create($request->all());
+	$vehicle = Vehicle::create($request->all());
 	return redirect()->route('vehicle.index');
     }
 

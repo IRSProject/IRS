@@ -4,11 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Station;
+use App\Appointment;
 
 class StationController extends Controller
 {
     public function index() {
 	return view('stations.index', ['stations' => Station::paginate(20)]);
+    }
+
+    public function appointments(Station $station) {
+	$appointments = $station->appointments;
+	
+	return view('appointments.index', ['appointments' => $appointments, 'station' => $station->name]);
     }
 
     public function lines(Station $station) {

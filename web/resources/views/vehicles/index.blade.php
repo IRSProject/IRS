@@ -26,7 +26,8 @@
 			<tbody>
 			@foreach($vehicles as $vehicle)
 			  <tr>
-			      <td><a href="{{route('vehicle.auth', ['vehicle' => $vehicle->id])}}">{{$vehicle->name}}</a></td>
+			      <td>{{ $vehicle->plate_number }}
+			      <td><a href="">{{$vehicle->name}}</a></td>
 			      <td>{{$vehicle->address}}</td>
 			      <td>
 				<a href="{{route('vehicle.edit', ['id' => $vehicle->id])}}" class="btn btn-success"> Edit </a>

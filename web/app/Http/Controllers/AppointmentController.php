@@ -21,10 +21,10 @@ class AppointmentController extends Controller
     public function store(Request $request) {
 	//dd($request->all());
 	Appointment::create($request->all());
-	return redirect()->route('appointment.index');
+	return redirect()->route('station.appointments', ['station' => $request->station_id]);
     }
 
-    public function edit(Line $appointments) {
+    public function edit(Appointment $appointment) {
 	return view('appointments.edit', ['appointment' => $appointment]);
     }
 
@@ -32,13 +32,13 @@ class AppointmentController extends Controller
 	$appointment = appointment::find($request->id);
 	$appointment->fill($request->all());
 	$appointment->save();
-	return redirect()->route('appointment.index');
+	return redirect()->route('station.appointments', ['station' => $request->station_id]);
     }
     public function delete(Request $request) {
 	$appointment = Appointment::find($request->id);
 	if($appointment) {
 	    $appointment->delete();
 	}
-	return redirect()->route('appointment.index');
+	return redirect()->route('station.appointments', ['station' => $request->station_id]);
     } 
 }
