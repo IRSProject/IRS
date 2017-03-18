@@ -10,7 +10,9 @@ class LineController extends Controller
     public function index() {
 	return view('lines.index', ['lines' => Line::paginate(20)]);
     }
-
+    public function stations(Line $station) {
+	return view('stations.index', ['stations' => $line->stations]);
+    }
     public function create() {
 	return view('lines.create');
     }
@@ -20,7 +22,7 @@ class LineController extends Controller
 	return redirect()->route('line.index');
     }
 
-    public function edit(Line $lines) {
+    public function edit(Line $line) {
 	return view('lines.edit', ['line' => $line]);
     }
 

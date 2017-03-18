@@ -14,13 +14,17 @@
                             <label for="name" class="col-md-4 control-label">Name</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
-
+                                <select id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+				  <option value="hadath">Hadath</option>
+				  <option value="saida">Saida</option>
+				  <option value="tripoli">Tripoli</option>
+				  <option value="zahle">Zahle</option>
                                 @if ($errors->has('name'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
                                 @endif
+				</select>
                             </div>
                         </div>
 
@@ -28,13 +32,17 @@
                             <label for="address" class="col-md-4 control-label">Address</label>
 
                             <div class="col-md-6">
-                                <input id="address" type="text" class="form-control" name="address" value="{{ old('address') }}" requir	ed autofocus>
-
+                                <select id="address" type="text" class="form-control" name="address" value="{{ old('address') }}" requir	ed autofocus>
+				  <option value="hadath">Hadath</option>
+				  <option value="saida">Saida</option>
+				  <option value="tripoli">Tripoli</option>
+				  <option value="zahle">Zahle</option>
                                 @if ($errors->has('address'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('address') }}</strong>
                                     </span>
                                 @endif
+				</select>
                             </div>
                         </div>
 			<div class="col-xs-12 col-sm-12 col-md-12 text-center">

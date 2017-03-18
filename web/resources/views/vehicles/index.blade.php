@@ -27,6 +27,17 @@
 			@foreach($vehicles as $vehicle)
 			  <tr>
 			      <td>{{ $vehicle->plate_number }}
+			      <td>{{ $vehicle->plate_code }}
+			      <td>{{ $vehicle->brand }}
+			      <td>{{ $vehicle->model }}
+			      <td>{{ $vehicle->production_year  }}
+		       	      <td>{{ $vehicle->color  }}
+			      <td>{{ $vehicle->chassis_number  }}
+			      <td>{{ $vehicle->engine_number  }}
+			      <td>{{ $vehicle->type  }}
+			      <td>{{ $vehicle->operation_year  }}
+			      <td>{{ $vehicle->user_id }}</td>
+
 			      <td><a href="">{{$vehicle->name}}</a></td>
 			      <td>{{$vehicle->address}}</td>
 			      <td>

@@ -28,7 +28,18 @@
                             <label for="plate_code" class="col-md-4 control-label">Plate Code</label>
 
                             <div class="col-md-6">
-                                <input id="plate_code" type="text" class="form-control" name="plate_code" value="{{ old('plate_code') }}" required autofocus>
+                                <select id="plate_code" type="text" class="form-control" name="plate_code" value="{{ old('plate_code') }}" required autofocus>
+				 <option value="--">--</option>
+				 <option value="*">*</option>
+				 <option value="b">B</option>
+				 <option value="g">G</option>
+				 <option value="m">M</option>
+				 <option value="n">N</option>
+				 <option value="o">O</option>
+				 <option value="s">S</option>
+				 <option value="t">t</option>
+				 <option value="z">z</option>
+				</select>
 
                                 @if ($errors->has('plate_code'))
                                     <span class="help-block">

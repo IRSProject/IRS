@@ -35,7 +35,7 @@ class AppointmentController extends Controller
 	return redirect()->route('station.appointments', ['station' => $request->station_id]);
     }
     public function delete(Request $request) {
-	$appointment = Appointment::find($request->id);
+	$appointment = appointment::find($request->id);
 	if($appointment) {
 	    $appointment->delete();
 	}

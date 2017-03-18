@@ -33,10 +33,10 @@ class VehicleController extends Controller
 	return redirect()->route('vehicle.index');
     }
     public function delete(Request $request) {
-	$line = Line::find($request->id);
-	if($line) {
-	    $line->delete();
+	$vehicle = vehicle::find($request->id);
+	if($vehicle) {
+	    $vehicle->delete();
 	}
-	return redirect()->route('line.index');
+	return redirect()->route('vehicle.index');
     }
 }
