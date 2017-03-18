@@ -22,8 +22,9 @@
 			      <td><a href="{{route('station.lines', ['station' => $station->id])}}">{{$station->name}}</a></td>
 			      <td>{{$station->address}}</td>
 			      <td>
-				<a href="{{route('station.edit', ['id' => $station->id])}}" class="btn btn-success"> Edit </a>
+				
 				<form action="{{route('station.delete')}}" method="POST">
+					<a href="{{route('station.edit', ['id' => $station->id])}}" class="btn btn-success"> Edit </a>
 				    {{csrf_field()}}
 				    <input type="hidden" name="_method" value="DELETE" />
 				    <input type="hidden" name="id" value="{{$station->id}}" />

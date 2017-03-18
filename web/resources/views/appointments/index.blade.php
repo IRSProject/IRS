@@ -23,8 +23,9 @@
 				</a></td>
 			      <td>{{$appointment->time}}</td>
 			      <td>
-				<a href="{{route('appointment.edit', ['id' => $appointment->id])}}" class="btn btn-success"> Edit </a>
+				
 				<form action="{{route('appointment.delete', ['id' => $appointment->id, 'station_id' => $appointment->station->id])}}" method="POST">
+				<a href="{{route('appointment.edit', ['id' => $appointment->id])}}" class="btn btn-success"> Edit </a>
 				    {{csrf_field()}}
 				    <input type="hidden" name="_method" value="DELETE" />
 				    <input type="hidden" name="id" value="{{$appointment->id}}" />

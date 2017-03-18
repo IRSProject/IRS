@@ -41,8 +41,8 @@
 			      <td><a href="">{{$vehicle->name}}</a></td>
 			      <td>{{$vehicle->address}}</td>
 			      <td>
-				<a href="{{route('vehicle.edit', ['id' => $vehicle->id])}}" class="btn btn-success"> Edit </a>
 				<form action="{{route('vehicle.delete')}}" method="POST">
+					<a href="{{route('vehicle.edit', ['id' => $vehicle->id])}}" class="btn btn-success"> Edit </a>
 				    {{csrf_field()}}
 				    <input type="hidden" name="_method" value="DELETE" />
 				    <input type="hidden" name="id" value="{{$vehicle->id}}" />

@@ -23,8 +23,9 @@
 			      <td>{{$line->number}}</td>
 			      <td>{{$line->station->name}}</td>
 			      <td>
-				<a href="{{route('line.edit', ['id' => $line->id])}}" class="btn btn-success"> Edit </a>
+				
 				<form action="{{route('line.delete')}}" method="POST">
+				<a href="{{route('line.edit', ['id' => $line->id])}}" class="btn btn-success"> Edit </a>
 				    {{csrf_field()}}
 				    <input type="hidden" name="_method" value="DELETE" />
 				    <input type="hidden" name="id" value="{{$line->id}}" />
