@@ -23,7 +23,7 @@
 			<div class="col-xs-12 col-sm-12 col-md-12">
 		   	  <div class="form-group">
 		           <strong>Station</strong>
-		           <select name="address" value="{{$line->address}}" type="text" class="form-control" placeholder="address" >
+		           <select name="address" value="{{$line->address}}" type="text" class="form-control" placeholder="address">
 				    @foreach(App\Station::all() as $station)
 				    <option value="{{$station->id}}">{{$station->address}}</option>
 				    @endforeach

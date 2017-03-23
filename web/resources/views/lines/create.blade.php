@@ -16,7 +16,7 @@
                             <div class="col-md-6">
 				<input id="number" type="integer" 
 				class="form-control" name="number"
-				value="{{ old('number') }}" required autofocus>
+				value="{{ old('number') }}" required autofocus><br />
 
                                 @if ($errors->has('number'))
                                     <span class="help-block">
@@ -34,7 +34,7 @@
 				    @foreach(App\Station::all() as $station)
 				    <option value="{{$station->id}}">{{$station->name}}</option>
 				    @endforeach
-				</select>
+				</select><br />
                                 @if ($errors->has('station_id'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('station_id') }}</strong>

@@ -31,18 +31,16 @@
 			      <td>{{ $vehicle->brand }}
 			      <td>{{ $vehicle->model }}
 			      <td>{{ $vehicle->production_year  }}
-		       	      <td>{{ $vehicle->color  }}
+		       	  <td>{{ $vehicle->color  }}
 			      <td>{{ $vehicle->chassis_number  }}
 			      <td>{{ $vehicle->engine_number  }}
 			      <td>{{ $vehicle->type  }}
 			      <td>{{ $vehicle->operation_year  }}
 			      <td>{{ $vehicle->user_id }}</td>
 
-			      <td><a href="">{{$vehicle->name}}</a></td>
-			      <td>{{$vehicle->address}}</td>
 			      <td>
-				<form action="{{route('vehicle.delete')}}" method="POST">
-					<a href="{{route('vehicle.edit', ['id' => $vehicle->id])}}" class="btn btn-success"> Edit </a>
+					<form action="{{route('vehicle.delete')}}" method="POST">
+					<a href="{{route('vehicle.edit', ['id' => $vehicle->id])}}" class="btn btn-success">Edit</a>
 				    {{csrf_field()}}
 				    <input type="hidden" name="_method" value="DELETE" />
 				    <input type="hidden" name="id" value="{{$vehicle->id}}" />

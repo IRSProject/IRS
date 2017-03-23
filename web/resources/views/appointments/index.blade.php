@@ -5,8 +5,9 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Appointment for station: {{ $station }}<a href="{{route('appointment.create')}}" class="btn btn-link"><i class="glyphicon glyphicon-plus"></i></a></div>
-
+                <div class="panel-heading">Appointment for station: {{ $station }}<a href="{{route('appointment.create')}}" class="btn btn-link">
+		<i class="glyphicon glyphicon-plus"></i></a>
+		</div>
                 <div class="panel-body">
 		    <table class="table table-striped">
 			<thead>

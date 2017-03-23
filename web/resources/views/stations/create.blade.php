@@ -15,16 +15,16 @@
 
                             <div class="col-md-6">
                                 <select id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
-				  <option value="hadath">Hadath</option>
-				  <option value="saida">Saida</option>
-				  <option value="tripoli">Tripoli</option>
-				  <option value="zahle">Zahle</option>
+								  <option value="hadath">Hadath</option>
+								  <option value="saida">Saida</option>
+								  <option value="tripoli">Tripoli</option>
+								  <option value="zahle">Zahle</option>
                                 @if ($errors->has('name'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
                                 @endif
-				</select>
+				</select><br />
                             </div>
                         </div>
 
@@ -33,16 +33,16 @@
 
                             <div class="col-md-6">
                                 <select id="address" type="text" class="form-control" name="address" value="{{ old('address') }}" requir	ed autofocus>
-				  <option value="hadath">Hadath</option>
-				  <option value="saida">Saida</option>
-				  <option value="tripoli">Tripoli</option>
-				  <option value="zahle">Zahle</option>
+								  <option value="hadath">Beirut, Hadath, Between Jamouss Street and Kafaat School.</option>
+								  <option value="saida">Saida, Ghazieh, Near army point, facing op Line.</option>
+								  <option value="tripoli">Tripoli, Mejdlaya, near Nafaa.</option>
+								  <option value="zahle">Zahle, Maalaka, facing (Difaa Madani).</option>
                                 @if ($errors->has('address'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('address') }}</strong>
                                     </span>
                                 @endif
-				</select>
+				</select><br />
                             </div>
                         </div>
 			<div class="col-xs-12 col-sm-12 col-md-12 text-center">
