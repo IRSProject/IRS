@@ -11,7 +11,7 @@
     <title>{{ config('app.name', 'IRS') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/login.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/register.css') }}" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
@@ -21,7 +21,7 @@
     </script>
 </head>
 <body>
-    <div id="login">
+    <div id="register">
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
@@ -36,7 +36,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        {{ config('app.name', 'IRS') }}
                     </a>
                 </div>
 

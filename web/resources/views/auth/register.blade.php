@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Register</div>
+                <div class="panel-heading">IRS Register Form</div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
@@ -24,7 +24,7 @@
                             </div>
                         </div>
 
-			<div class="form-group{{ $errors->has('lname') ? ' has-error' : '' }}">
+			         <div class="form-group{{ $errors->has('lname') ? ' has-error' : '' }}">
                             <label for="lname" class="col-md-4 control-label">Last Name</label>
 
                             <div class="col-md-6">
@@ -38,7 +38,7 @@
                             </div>
                         </div>
 
-			<div class="form-group{{ $errors->has('mother_name') ? ' has-error' : '' }}">
+		          	<div class="form-group{{ $errors->has('mother_name') ? ' has-error' : '' }}">
                             <label for="mother_name" class="col-md-4 control-label">Mother Name</label>
 
                             <div class="col-md-6">
@@ -52,9 +52,7 @@
                             </div>
                         </div>
 
-
-
-			<div class="form-group{{ $errors->has('date_of_birth') ? ' has-error' : '' }}">
+		          	<div class="form-group{{ $errors->has('date_of_birth') ? ' has-error' : '' }}">
                             <label for="date_of_birth" class="col-md-4 control-label">Date Of Birth</label>
 
                             <div class="col-md-6">
@@ -68,7 +66,7 @@
                             </div>
                         </div>
 
-			<div class="form-group{{ $errors->has('place_of_birth') ? ' has-error' : '' }}">
+		          	<div class="form-group{{ $errors->has('place_of_birth') ? ' has-error' : '' }}">
                             <label for="place_of_birth" class="col-md-4 control-label">Place Of Birth</label>
 
                             <div class="col-md-6">
@@ -82,7 +80,7 @@
                             </div>
                         </div>
 
-			<div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
+		          	<div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
                             <label for="phone" class="col-md-4 control-label">Phone</label>
 
                             <div class="col-md-6">
@@ -96,7 +94,7 @@
                             </div>
                         </div> 
 
-			<div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
+		          	<div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
                             <label for="address" class="col-md-4 control-label">Address</label>
 
                             <div class="col-md-6">
@@ -110,7 +108,7 @@
                             </div>
                         </div>                       
 
-			<div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+		          	<div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
                             <div class="col-md-6">
