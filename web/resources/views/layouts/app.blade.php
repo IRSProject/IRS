@@ -52,7 +52,7 @@
 			
                             <li><a href="{{ route('station.index') }}">Stations</a></li>
                             <li><a href="{{ route('vehicle.index') }}">Vehicles</a></li>
-			    <li><a href="{{ route('line.index') }}">Lines</a></li>
+			               <li><a href="{{ route('line.index') }}">Lines</a></li>
                             <li><a href="{{ route('appointment.index') }}">Appointments</a></li>
                     </ul>
 		<!-- Right Side Of Navbar -->
