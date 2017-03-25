@@ -29,7 +29,6 @@
       background-image: url('images/contactus.jpg');
     }
    </style>
-    <title>IRS</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -43,6 +42,41 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <!--------------- TYPING/MOVING TITLE ----------------------->
+
+    <script type="text/javascript">
+    var rev = "fwd";
+    function titlebar(val)
+    {
+    var msg = "Inspection Reservation System";
+    var res = " ";
+    var speed = 200;
+    var pos = val;
+    msg = "Inspection Reservation System";
+    var le = msg.length;
+    if(rev == "fwd"){
+    if(pos < le){
+    pos = pos+1;
+    scroll = msg.substr(0,pos);
+    document.title = scroll;
+    timer = window.setTimeout("titlebar("+pos+")",speed);}
+    else{
+    rev = "bwd";
+    timer = window.setTimeout("titlebar("+pos+")",speed);}}
+    else{
+    if(pos > 0){
+    pos = pos-1;
+    var ale = le-pos;
+    scrol = msg.substr(ale,le);
+    document.title = scrol;
+    timer = window.setTimeout("titlebar("+pos+")",speed);}
+    else{
+    rev = "fwd";
+    timer = window.setTimeout("titlebar("+pos+")",speed);
+    }}}
+    titlebar(0);
+    </script>
 
 </head>
 
