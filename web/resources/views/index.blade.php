@@ -19,7 +19,7 @@
    .carousel-inner > .item > img,
    .carousel-inner > .item > a > img
    {
-       width: auto;
+       width: 70%;
        margin: auto;
    }
    .imageContainer {
@@ -159,14 +159,13 @@
     <section id="about" class="about-section">
         <div class="container">
             <div class="row">
-                <div class="col-xxs-12 col-lg-10 m-x-auto">
+                <div>
                   <section class="card card-lg" id="about-about">
                     <h1 class="text-xxxl m-b-sm m-t-sm text-xxs-center">- Our Mission -</h1>
                       <p class="text-sm m-b-lg text-xxs-center">Save time for vehicle owners.</p>
                       <br />
-                        <h2 class="text-xxl m-b text-xxs-center">About</h2>
-                          <div class="text-xs text-justify m-x-auto" style="max-width: 74rem;">
-                            <p class="m-b-xs">
+                        <h2 class="text-xxxl m-b-sm m-t-sm text-xxs-center">About</h2>
+                            <p class="text-sm m-b-lg text-xxs-center">
                               At IRS we solved the problem that most of the people complain about which is the time they waste waiting for
                               their turn so their vehicle could be inspected.
                               <br />
@@ -174,7 +173,6 @@
                             </p>
                             <br />
                             <center><img src="images/logo.png" alt="logo"/></center>
-                          </div>
                   </section>
                 </div>
             </div>
