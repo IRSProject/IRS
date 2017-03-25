@@ -19,11 +19,11 @@
    .carousel-inner > .item > img,
    .carousel-inner > .item > a > img
    {
-       width: 70%;
+       width: auto;
        margin: auto;
    }
    .imageContainer {
-      width:966.1px;
+      width:auto;
       height:auto;
       color: white;
       background-image: url('images/contactus.jpg');
