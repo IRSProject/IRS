@@ -1,0 +1,104 @@
+/*html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;margin:0;padding:0;}*/
+body{line-height:1; background: url(../../images/bkg/fondo.gif) repeat center; /*overflow:hidden;*/ margin:0 auto;}
+table{border-collapse:collapse;border-spacing:0;}
+ul{list-style:disc;}
+ol{list-style:decimal;}
+ol li{margin-left:2.25em;}
+dt{font-weight:700;}
+h1,h2,h3,h4,h5,h6,p,table,ul,ol,dl,pre{margin:10px 0;}
+ul ul,ol ol{margin:0;}
+ul li,dd,blockquote{margin-left:1.5em;}
+/* Firefox Dotted Outline Fix */
+a:active { outline: none; }
+/* Firefox Dotted Outline Fix */
+a:focus { -moz-outline-style: none; }
+
+/**********		HOME    *****************/
+#container.home{ height:280px;}
+#container_divisions.home{ height: 395px; }
+#pinf.cpinf{}
+#container.home_over{}
+#pinf.cpinf_over{}
+#page{ width:100%; margin:0px auto; background: url(../../img/bk_top.png) repeat-x; min-height:30px; }
+
+/********     Header    *****************/
+#header{position:relative;z-index:699; width:1000px; margin:0px auto;}
+#header *{margin:0;}
+#utilities{ list-style:none; color:#000; z-index:599; /*width:500px;*/ cursor:hand; cursor:pointer; display:block; float:right;}
+#utilities li{float:left; padding:0; list-style:none; line-height:30px; background:none; margin-right:12px;}
+#utilities #util-international{z-index:1000; }
+#utilities #util-international li{  padding:0px; }
+#utilities #util-international a{background:url(../../img/paises.png) no-repeat; width:169px; height:32px; display:block; font-size:12px; color:#4c4c4c; text-align:center;}
+
+#utilities #divisions li{padding:0px; }
+#utilities #divisions a{background:url(../../img/btn_1.png) no-repeat; width:120px; height:32px; display:block;font-size:12px; color:#4c4c4c; text-align:center;}
+
+#utilities #group li{padding:0px; }
+#utilities #group a{background:url(../../img/btn_1.png) no-repeat; width:120px; height:32px; display:block;font-size:12px; color:#4c4c4c; text-align:center;}
+
+/************ #placeholder-regions ****************/
+#placeholder-regions{background-color:#dcdcdc;}
+/**************** #util-regions ******************/
+#util-regions{background:url("../../images/bkg/fondoMapamundi.png") no-repeat scroll 0 0 transparent; display:none;width:1000px;margin:0 auto;height:190px;position:relative;}
+/**#util-regions a,#util-regions a:link,#util-regions a:visited{color:#767676;text-decoration:none;}**/
+#util-regions a,#util-regions a:link,#util-regions a:visited{color:#FD6706;text-decoration:none;}
+/**#util-regions a:hover,#util-regions a:focus,#util-regions a:active{color:#767676;text-decoration:underline;}**/
+#util-regions a:hover,#util-regions a:focus,#util-regions a:active{color:#FD6706;text-decoration:underline;}
+#util-regions h4{background:url("../../images/headline/applusarround.png") no-repeat scroll 0 0 transparent;position:absolute;top:15px;left:100px;width:300px;height:25px;text-indent:-9999px; color:#b0b0b0;}
+#util-regions h4.es{background:url("../../images/headline/applusarround_es.png") no-repeat scroll 0 0 transparent;position:absolute;top:15px;left:100px;width:223px;height:25px;text-indent:-9999px; color:#b0b0b0;}
+#util-regions h3{margin:18px 135px 10px;padding:0;float:left;list-style:none;font-size:14px;background:none;font-weight:bold;color:#B1B1B1; font-family:Tahoma, Geneva, sans-serif;}
+#util-regions ul{margin:0;padding:0;list-style:none;position:absolute;top:35px;left:125px;}
+#util-regions li{margin:18px 10px 0 10px;padding:0;float:left;list-style:none;font-size:12px;background:none;text-transform:uppercase;font-weight:bold;color:#767676; font-family:Tahoma, Geneva, sans-serif;}
+#util-regions li.separador{margin:0;padding:0; background:url("../../images/headline/linea_intercontinental.gif") no-repeat top left; display:block; float:left; width:4px; height:145px; position:relative; top:10px; left:4px;}
+#util-regions ol{margin:0px;padding:0px; display:block;}
+#util-regions li.lang{margin:0;padding:0;background:none;float:none;clear:right;display:list-item;list-style:none;font-size:11px; font-weight:bold;line-height:15px;font-weight:normal;text-transform:none;white-space:nowrap;}
+#util-regions li.lang span.idioma{font-weight:normal; color:#5c5c5c;}
+#util-regions li.lang a.sublang, #util-regions li.lang a:link.sublang, #util-regions li.lang a:visited.sublang{font-weight:normal; color:#FD6706;}
+
+/**************** #util-regions *****************
+#util-regions-US{background:url("../../images/bkg/fondoMapamundi.png") no-repeat scroll 0 0 transparent; display:none;width:1000px;margin:0 auto;height:190px;position:relative;}
+#util-regions-US a,#util-regions a:link,#util-regions a:visited{color:#767676;text-decoration:none;}
+#util-regions-US a:hover,#util-regions a:focus,#util-regions a:active{color:#767676;text-decoration:underline;}
+#util-regions-US h4{background:url("../../images/headline/applusarround.png") no-repeat scroll 0 0 transparent;position:absolute;top:15px;left:100px;width:223px;height:25px;text-indent:-9999px; color:#b0b0b0;}
+#util-regions-US h4.es{background:url("../../images/headline/applusarround_es.png") no-repeat scroll 0 0 transparent;position:absolute;top:15px;left:100px;width:223px;height:25px;text-indent:-9999px; color:#b0b0b0;}
+#util-regions-US ul{margin:0;padding:0;list-style:none;position:absolute;top:35px;left:125px;}
+#util-regions-US li{margin:18px 10px 0 10px;padding:0;float:left;list-style:none;font-size:12px;background:none;text-transform:uppercase;font-weight:bold;color:#767676; font-family:Tahoma, Geneva, sans-serif;}
+#util-regions-US li.separador{margin:0;padding:0; background:url("../../images/headline/linea_intercontinental.gif") no-repeat top left; display:block; float:left; width:4px; height:145px; position:relative; top:10px; left:4px;}
+#util-regions-US ol{margin:0px;padding:0px; display:block;}
+#util-regions-US li.lang{margin:0;padding:0;background:none;float:none;clear:right;display:list-item;list-style:none;font-size:11px; font-weight:bold;line-height:15px;font-weight:normal;text-transform:none;white-space:nowrap;}
+#util-regions-US li.lang span.idioma{font-weight:normal; color:#5c5c5c;}
+#util-regions-US li.lang a.sublang, #util-regions li.lang a:link.sublang, #util-regions li.lang a:visited.sublang{font-weight:normal; color:#FD6706;}
+*/
+#utilities a,#utilities a:link,#utilities a:visited{color:#ff0000; text-decoration:none;}
+#utilities a:hover,#utilities a:focus,#utilities a:active{color:#fff;text-decoration:underline;}
+
+/************* Menu DIVISIONES ************/
+/* Menu Body */
+ul#menu{height:70px; margin:6px 0 0 0; padding:0px; display:block; width:790px; margin:6px auto;}
+/* Float LI Elements - horizontal display */
+ul#menu li{float:left;}
+/* Link - common attributes */
+ul#menu li a{background:url(../../images/sprite.png) no-repeat scroll top left; display:block; height:62px; position:relative;}
+/* Specify width and background position attributes specifically for the class: "norcontrol" */
+ul#menu li a.automotive{width:130px; background-position:0px 1px;}
+ul#menu li a.idiada{width:130px; background-position:-130px 1px;}
+ul#menu li a.testing{width:130px; background-position:-260px 1px;}
+ul#menu li a.certification{width:130px; background-position:-390px 1px;}
+ul#menu li a.norcontrol{width:130px; background-position:-520px 1px;}
+ul#menu li a.rtd{width:130px; background-position:-650px 1px;}
+ul#menu li a.velosi{width:130px; background-position:-780px 1px;}
+/* Span (on hover) - common attributes */
+ul#menu li a span{background:url(../../images/sprite.png) no-repeat scroll bottom left; display:block; position:absolute; top:0; left:0; height:62px; width:130px; z-index:100;}
+/* Span (on hover) - display pointer */
+ul#menu li a span:hover{cursor:pointer;}
+/* Shift background position on hover for the class: "norcontrol" */
+ul#menu li a.automotive span{background-position:0px -61px;}
+ul#menu li a.idiada span{background-position:-130px -61px;}
+ul#menu li a.testing span{background-position:-260px -61px;}
+ul#menu li a.certification span{background-position:-390px -61px;}
+ul#menu li a.norcontrol span{background-position:-520px -61px;}
+ul#menu li a.rtd span{background-position:-650px -61px;}
+ul#menu li a.velosi span{background-position:-780px -61px;}
+
+ul{padding:0;list-style-type:none;}
+ul li{margin:0;padding:0;}

@@ -1,0 +1,86 @@
+#container_slide {width:998px; margin:0 auto; display:inline; float:left; z-index:0;}
+#example {width:998px; position:relative;}
+#frame {position:absolute; z-index:0; width:739px; height:341px; top:-3px; left:-80px;}
+
+/*
+	Slideshow
+*/
+
+#slides {position:absolute;	top:13px; left:0px;	z-index:-100;}
+#slides_divisions{ position:absolute; top:13px;	left:0px; z-index:-100;}
+#slides_divisions .slides_container a {width:998px; height:210px; display:block;}
+#slides_interior{position:absolute;	top:13px; left:0px;	z-index:-100;}
+#slides_interior .slides_container a {width:998px; height:210px; display:block;}
+
+/*
+	Slides container
+	Important:
+	Set the width of your slides container
+	Set to display none, prevents content flash
+*/
+
+.slides_container {	width:998px; overflow:hidden; position:relative; display:none;}
+
+/*
+	Each slide
+	Important:
+	Set the width of your slides
+	If height not specified height will be set by the slide content
+	Set to display block
+*/
+
+.slides_container a {width:998px; height:255px;	display:block;}
+.slides_container a img { display:block;}
+.slides_container_divisions a {width:998px;	height:350px; display:block;}
+.slides_container_divisions a img {display:block;}
+
+/*
+	Next/prev buttons
+*/
+
+#slides .next,#slides .prev {position:absolute;	top:107px;	left:-39px;	width:24px;	height:43px; display:block;	z-index:101;}
+#slides .next {left:585px;}
+
+/*
+	Pagination
+*/
+.pagination {margin:-20px 5px 10px 10px; position:absolute; right:0px; z-index:8000; width:65px;}
+.pagination li { float:left; margin:0 1px; list-style:none;}
+.pagination li a {display:block; width:12px; height:0; padding-top:12px; background: url(../../img/pagination.png);	background-position:0 0; float:left; overflow:hidden;	z-index:8000; cursor:pointer;}
+.pagination li.current a { background-position:0 -12px;}
+
+#slides_two{ width:296px; height:80px; padding-top:10px;}
+#slides_two .slides_container {width:250px; overflow:hidden; position:relative; float:left;	display:none;}
+#slides_two ul.pagination{ display:none;}
+#slides_two .slides_container a{ height:90px;}
+#slides_two a.next, #slides_two a.prev {display:block; float:left;	width:20px;	height:80px; display:block;	z-index:101;}
+#slides_two a.next {float: right; width:20px; height:90px;}
+#slides_two a.prev {float:left;width:20px; margin-left:4px;	height:80px;}
+#slides_two a.next img, #slides_two a.prev img{ margin-top:30px;}
+
+#slides_tres{ width:296px; height:80px; padding-top:10px;}
+#slides_tres .slides_container {width:250px; overflow:hidden; position:relative; float:left; display:none;}
+#slides_tres ul.pagination{ display:none;}
+#slides_tres .slides_container a{ height:90px;}
+#slides_tres a.next, #slides_two a.prev {display:block; float:left; width:20px;	height:80px; display:block;	z-index:101;}
+#slides_tres a.next {float: right; width:20px; height:90px;}
+#slides_tres a.prev {float:left;width:20px; margin-left:4px; height:80px;}
+#slides_tres a.next img, #slides_tres a.prev img{ margin-top:30px;}
+
+#slides_detail{ width:350px; height:80px; padding-top:10px;}
+#slides_detail .slides_container {width:300px; overflow:hidden; position:relative; float:left;	display:none; margin-top:5px;}
+#slides_detail ul.pagination{ display:none;}
+#slides_detail .slides_container a{ height:210px;}
+#slides_detail a.next, #slides_detail a.prev {display:block; float:left; width:20px; height:80px; display:block;	z-index:101;}
+#slides_detail a.next {float: right; width:20px; height:90px;}
+#slides_detail a.prev {float:left; width:20px; margin-left:4px;	height:210px;}
+#slides_detail a.next img, #slides_detail a.prev img{ margin-top:100px;}
+
+#slides_ourh{ width:520px; height:80px; padding-top:10px;}
+#slides_ourh .slides_container {width:300px; overflow:hidden; position:relative; float:left;	display:none; margin:5px 70px;}
+#slides_ourh ul.pagination{ display:none;}
+#slides_ourh .slides_container a{ height:210px;}
+#slides_ourh a.next, #slides_ourh a.prev {display:block; float:left; width:20px; height:80px; display:block;	z-index:101;}
+#slides_ourh a.next {float: right; width:20px; height:90px;}
+#slides_ourh a.prev {float:left; width:20px; margin-left:15px;	height:210px;}
+#slides_ourh a.next img, #slides_ourh a.prev img{ margin-top:100px;}
