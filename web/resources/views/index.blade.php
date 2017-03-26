@@ -8,11 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="stylesheet" href='css/global.css' type="text/css"/>
-    <link rel="stylesheet" href='css/css_jq/base/jquery.ui.all.css'  type="text/css"/>
-    <link rel="stylesheet" href='css/styles.css' type="text/css" />
-    <link rel="stylesheet" href='css/full_mod.min.css' type="text/css" media="all" />
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+
    <script src="js/jquery.min.js"></script>
    <script src="js/bootstrap.min.js"></script>
    <style>
@@ -35,6 +31,11 @@
 
     <!-- Custom CSS -->
     <link href="css/scrolling-nav.css" rel="stylesheet">
+    <link rel="stylesheet" href='css/global.css' type="text/css"/>
+    <link rel="stylesheet" href='css/css_jq/base/jquery.ui.all.css'  type="text/css"/>
+    <link rel="stylesheet" href='css/styles.css' type="text/css" />
+    <link rel="stylesheet" href='css/full_mod.min.css' type="text/css" media="all" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -187,7 +188,6 @@
             </div>
         </div>
     </section>
-    <br />
 
     <!-- About Section -->
     <section id="about" class="about-section">
