@@ -11,12 +11,24 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::get('/index', function () {
+Route::get('/', function () {
     return view('index');
+});
+
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+
+Route::get('/license', function () {
+    return view('license');
 });
 
 Route::group(['middleware' => 'auth'], function () {
