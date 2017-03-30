@@ -93,12 +93,15 @@
         <!-- Intro Content -->
         <div class="row">
             <div class="col-md-6">
-                <img class="img-responsive" src="images/logo.png" alt="" width="750" height="450">
+                <img class="img-responsive img-portfolio img-hover" src="images/logo.png" alt="" width="430" height="200">
             </div>
             <div class="col-md-6">
                 <h2>About IRS</h2>
                 <p>At IRS we solved the problem that most of the people complain about which is the time they waste waiting for their turn so their vehicle could be inspected.</p>
                 <p>Here you can reserve an appointment at a specific time so you can get your vehicle inspected without waiting.</p>
+                <br/>
+                <p>Instead of waiting for a long time to get your car inspected, we will provide you a specific date & time to get your vehicle inspected.</p>
+                <p>Therefore you don't need to take a day off from work and not getting the chance to finish your vehicle inspection.</p>
             </div>
         </div>
         <!-- /.row -->
@@ -110,7 +113,7 @@
             </div>
             <div class="col-md-6 text-center">
                 <div class="thumbnail">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                    <img class="img-responsive" src="Leaders/Issam1.jpg" alt="Issam Shahine">
                     <div class="caption">
                         <h3>Issam Shahine<br>
                             <small>Team Member</small>
@@ -125,7 +128,7 @@
             </div>
             <div class="col-md-6 text-center">
                 <div class="thumbnail">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                    <img class="img-responsive" src="Leaders/Mousbah1.jpg" alt="Mousbah Arabi">
                     <div class="caption">
                         <h3>Mousbah Arabi<br>
                             <small>Team Member</small>
@@ -140,7 +143,7 @@
             </div>
             <div class="col-md-6 text-center">
                 <div class="thumbnail">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                    <img class="img-responsive" src="Leaders/Nasreddine1.jpg" alt="Nasreddine El Darazi">
                     <div class="caption">
                         <h3>Nasreddine El Darazi<br>
                             <small>Team Member</small>
@@ -155,7 +158,7 @@
             </div>
             <div class="col-md-6 text-center">
                 <div class="thumbnail">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                    <img class="img-responsive" src="Leaders/Ali1.jpg" alt="Ali Banat">
                     <div class="caption">
                         <h3>Ali Banat<br>
                             <small>Team Member</small>

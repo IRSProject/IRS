@@ -14,6 +14,8 @@
 
     <!-- Custom CSS -->
     <link href="css/modern-business.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/dropdown.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -57,7 +59,62 @@
                       @if (Auth::check())
                         <a href="{{ url('/home') }}">Home</a>
                       @else
-                        <a href="{{ url('/login') }}">Login</a>
+                      <a href="{{url('/login')}}" class="dropdown-toggle" data-toggle="dropdown">Log In <span class="caret"></span></a>
+                     <ul class="dropdown-menu dropdown-lr animated flipInX" role="menu">
+                       <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
+                           {{ csrf_field() }}
+
+                           <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                               <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+
+                               <div class="col-md-6">
+                                   <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus placeholder ="someone@someone.com">
+
+                                   @if ($errors->has('email'))
+                                       <span class="help-block">
+                                           <strong>{{ $errors->first('email') }}</strong>
+                                       </span>
+                                   @endif
+                               </div>
+                           </div>
+
+                           <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                               <label for="password" class="col-md-4 control-label">Password</label>
+
+                               <div class="col-md-6">
+                                   <input id="password" type="password" class="form-control" name="password" required>
+
+                                   @if ($errors->has('password'))
+                                       <span class="help-block">
+                                           <strong>{{ $errors->first('password') }}</strong>
+                                       </span>
+                                   @endif
+                               </div>
+                           </div>
+
+                           <div class="form-group">
+                               <div class="col-md-6 col-md-offset-4">
+                                   <div class="checkbox">
+                                       <label>
+                                           <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+                                       </label>
+                                   </div>
+                               </div>
+                           </div>
+
+                           <div class="form-group">
+                               <div class="col-md-8 col-md-offset-4">
+                                   <button type="submit" class="btn btn-primary">
+                                       Login
+                                   </button>
+
+                                   <a class="btn btn-link" href="{{ route('password.request') }}">
+                                       Forgot Your Password?
+                                   </a>
+                               </div>
+                           </div>
+                       </form>
+                     </ul>
                     </li>
                     <li>
                         <a href="{{ url('/register') }}">Register</a>
@@ -134,7 +191,7 @@
                         <h4><i class="fa fa-fw fa-compass"></i> Easy to Use</h4>
                     </div>
                     <div class="panel-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
+                        <p>-----</p>
                         <a href="#" class="btn btn-default">Learn More</a>
                     </div>
                 </div>
@@ -142,40 +199,20 @@
         </div>
         <!-- /.row -->
 
-        <!-- Portfolio Section -->
+        <!-- Download Section -->
+
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="page-header">Portfolio Heading</h2>
+                <h2 class="page-header">IRS Application</h2>
             </div>
             <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                <a href="#">
+                    <img class="img-responsive img-portfolio img-hover" src="images/android.jpg">
                 </a>
             </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
+            <div class="col-md-8 ">
+              <p> We've developed an <strong> android application </strong> for you to make your online reservation easier and more efficient, you can download it on any android device. </p>
+              <p>To download the application simply <strong>Click the picture!</strong></p>
             </div>
         </div>
         <!-- /.row -->
@@ -186,15 +223,16 @@
                 <h2 class="page-header">- Our Mission -</h2>
             </div>
             <div class="col-md-6">
-                <p>We are here to :</p>
                 <ul>
-                    <li><strong>Save you time in line</strong></li>
-                    <li>Making your inspection process easy & fast</li>
+                    <li><strong>Save your time.</strong></li>
+                    <li>Make your inspection procedure easy.</li>
+                    <li>Get your inspection process done faster.</li>
+                    <li>-----</li>
                 </ul>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
+                <p>Using our this project will make .</p>
             </div>
-            <div class="col-md-6">
-                <img class="img-responsive" src="images/logo.png" alt="">
+            <div class="col-md-4 col-sm-6">
+                <img class="img-responsive img-portfolio img-hover" src="images/logo.png" alt="">
             </div>
         </div>
         <!-- /.row -->

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ config('app.locale') }}">
-<head>  
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,7 +22,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+        <nav class="navbar navbar-inverse">
             <div class="container">
                 <div class="navbar-header">
 
@@ -49,14 +49,14 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-left">
                         <!-- Authentication Links -->
-			
+
                             <li><a href="{{ route('station.index') }}">Stations</a></li>
                             <li><a href="{{ route('vehicle.index') }}">Vehicles</a></li>
 			               <li><a href="{{ route('line.index') }}">Lines</a></li>
                             <li><a href="{{ route('appointment.index') }}">Appointments</a></li>
                     </ul>
-		<!-- Right Side Of Navbar -->
-		<ul class="nav navbar-nav navbar-right">
+    		<!-- Right Side Of Navbar -->
+    		<ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Login</a></li>
@@ -78,6 +78,9 @@
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
+                                    </li>
+                                    <li>
+                                      <a href="{{ url('/home') }}">Home</a>
                                     </li>
                                 </ul>
                             </li>

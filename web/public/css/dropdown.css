@@ -1,0 +1,19 @@
+
+/* General sizing */
+ul.dropdown-lr
+{
+  width: 400px;
+}
+
+/* mobile fix */
+@media (max-width: 768px)
+{
+    .dropdown-lr h3
+  {
+    color: #eee;
+  }
+    .dropdown-lr label
+  {
+    color: #eee;
+  }
+}
