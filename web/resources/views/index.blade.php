@@ -227,9 +227,8 @@
                     <li><strong>Save your time.</strong></li>
                     <li>Make your inspection procedure easy.</li>
                     <li>Get your inspection process done faster.</li>
-                    <li>-----</li>
+                    <li>Make your life easier.</li>
                 </ul>
-                <p>Using our this project will make .</p>
             </div>
             <div class="col-md-4 col-sm-6">
                 <img class="img-responsive img-portfolio img-hover" src="images/logo.png" alt="">
