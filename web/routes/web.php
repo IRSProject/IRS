@@ -51,6 +51,9 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::group(['middleware' => ['App\Http\Middleware\Admin', 'auth']], function () {
+    Route::post('/appointment/create', 'AppointmentController@createAppointment')->name('appointment.create');
+    Route::get('/appointment/resources', 'AppointmentController@resources')->name('appointment.resources');
+    Route::get('/appointment/events', 'AppointmentController@events')->name('appointment.events');
 
     Route::get('/station', 'StationController@index')->name('station.index');
     Route::get('/station/create', 'StationController@create')->name('station.create');

@@ -12,6 +12,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/fullcalendar.min.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
 
     <!-- Scripts -->
     <script>
@@ -94,6 +96,5 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

@@ -15,15 +15,17 @@ class Appointments extends Migration
     {
         Schema::create('appointments', function (Blueprint $table) {
             $table->increments('id')->unique();
-	    $table->date('date');
-	    $table->time('time');
-	    $table->integer('station_id')->unsigned()->length(10);
-	    $table->integer('line_id')->unsigned()->length(10);
+	    $table->string('title')->nullable();
+	    $table->datetime('start');
+	    $table->datetime('end');
+	    $table->integer('resourceId')->unsigned()->length(10);
+	    $table->integer('vehicle_id')->unsigned()->length(10);
 	    $table->integer('user_id')->unsigned()->length(10);
+
+	    $table->foreign('vehicle_id')->references('id')->on('vehicles')->onDelete('cascade');
+	    $table->foreign('user_id')->references('id')->on('user')->onDelete('cascade');
+	    $table->foreign('resourceId')->references('id')->on('lines')->onDelete('cascade');
 	    $table->timestamps();
-	    $table->foreign('station_id')->references('id')->on('stations')->onDelete('cascade');
-	    $table->foreign('line_id')->references('id')->on('lines')->onDelete('cascade');
-	    $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

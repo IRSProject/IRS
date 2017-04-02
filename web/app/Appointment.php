@@ -9,7 +9,7 @@ use Auth;
 
 class Appointment extends Model
 {
-    protected $fillable = [ 'date' , 'time' , 'station_id' , 'line_id', 'user_id'];
+    protected $fillable = [ 'date' , 'start_time', 'end_time' , 'line_id', 'vehicle_id', 'user_id'];
 
     public static function boot() {
 	Appointment::saving(function ($appointment) {
@@ -19,9 +19,5 @@ class Appointment extends Model
     
     public function line() {
 	return $this->belongsTo(Line::class);
-    }
-
-    public function station () {
-	return $this->belongsTo(Station::class);
     }
 }
