@@ -8,71 +8,68 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-		    <form action="{{ route('appointment.store') }}" method="post">
-			{{ csrf_field() }}
-                        <div class="form-group{{ $errors->has('date') ? ' has-error' : '' }}">
-                            <label for="date" class="col-md-4 control-label">Date</label>
+        		    <form action="{{ route('appointment.store') }}" method="post">
+        			        {{ csrf_field() }}
+                        <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
+                            <label for="title" class="col-md-4 control-label">Title</label>
 
                             <div class="col-md-6">
-                                <input id="date" type="date" class="form-control" name="date" value="{{ old('date') }}" required autofocus>
+                                <input id="title" type="text" class="form-control" name="title" value="{{ old('title') }}" required autofocus>
 
-                                @if ($errors->has('date'))
+                                @if ($errors->has('title'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('date') }}</strong>
+                                        <strong>{{ $errors->first('title') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
-			<div class="form-group{{ $errors->has('time') ? ' has-error' : '' }}">
-                            <label for="time" class="col-md-4 control-label">Time</label>
+			                     <div class="form-group{{ $errors->has('start') ? ' has-error' : '' }}">
+                            <label for="start" class="col-md-4 control-label">start Time</label>
 
                             <div class="col-md-6">
-                                <input id="time" type="time" class="form-control" name="time" value="{{ old('time') }}" required autofocus>
+                                <input id="start" type="datetime" class="form-control" name="start" value="{{ old('start') }}" required autofocus>
 
-                                @if ($errors->has('time'))
+                                @if ($errors->has('start'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('time') }}</strong>
+                                        <strong>{{ $errors->first('start') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
-			<div class="form-group{{ $errors->has('station_id') ? ' has-error' : '' }}">
-                            <label for="station_id" class="col-md-4 control-label">Station</label>
+                        <div class="form-group{{ $errors->has('end') ? ' has-error' : '' }}">
+                            <label for="end" class="col-md-4 control-label">End Time</label>
 
                             <div class="col-md-6">
-				<select name="station_id" id="station_id" class="form-control">
-				    @foreach(App\Station::all() as $station)
-				    <option value="{{$station->id}}">{{$station->name}}</option>
-				    @endforeach
-				</select>
-                                @if ($errors->has('station_id'))
+                                <input id="end" type="datetime" class="form-control" name="end" value="{{ old('end') }}" required autofocus>
+
+                                @if ($errors->has('end'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('station_id') }}</strong>
+                                        <strong>{{ $errors->first('end') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
-			<div class="form-group{{ $errors->has('line_id') ? ' has-error' : '' }}">
-                            <label for="line_id" class="col-md-4 control-label">Line</label>
+              			<div class="form-group{{ $errors->has('resourceId') ? ' has-error' : '' }}">
+                                          <label for="resourceId" class="col-md-4 control-label">Line</label>
 
-                            <div class="col-md-6">
-				<select name="line_id" id="line_id" class="form-control">
-				    @foreach(App\Line::all() as $line)
-					<option value="{{$line->id}}">{{$line->number}}</option>
-				    @endforeach
-				</select>
-                                @if ($errors->has('line_id'))
+                                          <div class="col-md-6">
+              				<select name="resourceId" id="resourceId" class="form-control">
+              				    @foreach(App\Line::all() as $line)
+              					<option value="{{$line->id}}">{{$line->number}}</option>
+              				    @endforeach
+              				</select>
+                                @if ($errors->has('resourceId'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('line_id') }}</strong>
+                                        <strong>{{ $errors->first('resourceId') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
-			<div class="col-xs-12 col-sm-12 col-md-12 text-center">
-			  <input type="submit" value="save" class="btn btn-success" />
-			</div>
-		    </form>
+        			<div class="col-xs-12 col-sm-12 col-md-12 text-center">
+        			  <input type="submit" value="save" class="btn btn-success" />
+        			</div>
+        		    </form>
                 </div>
             </div>
         </div>
