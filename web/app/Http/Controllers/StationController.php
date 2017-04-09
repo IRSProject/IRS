@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Station;
 use App\Appointment;
+use App\Line;
 
 class StationController extends Controller
 {
@@ -49,4 +50,8 @@ class StationController extends Controller
 	}
 	return redirect()->route('station.index');
     } 
+
+    public function apiLines(Request $request, Station $station) {
+	return response()->json(['data' => $station->lines]);
+    }
 }

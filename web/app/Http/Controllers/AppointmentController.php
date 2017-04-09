@@ -6,11 +6,16 @@ use Illuminate\Http\Request;
 use App\Appointment;
 use App\Station;
 use Carbon;
+use Auth;
 
 class AppointmentController extends Controller
 {
     public function index(){
 	return view('appointments.index', ['appointments' => Appointment::paginate(20)]);
+    }
+
+    public function all() {
+	return response()->json(Appointment::all()->toArray());
     }
 
     public function resources() {
@@ -45,13 +50,17 @@ class AppointmentController extends Controller
 	return view('appointments.index', ['appointments' => $appointment->appointments]);
     }
     public function create() {
-	return view('appointments.create');
+	$vehicles = [];
+	$stations = Station::all();
+	if(Auth::check()) {
+	    $vehicles = Auth::user()->vehicles;
+	}
+	return view('appointments.create', ['vehicles' => $vehicles, 'stations' => $stations]);
     }
 
     public function store(Request $request) {
-	//dd($request->all());
 	Appointment::create($request->all());
-	return redirect()->route('station.appointments', ['station' => $request->station_id]);
+	return redirect()->route('appointment.index');
     }
 
     public function edit(Appointment $appointment) {

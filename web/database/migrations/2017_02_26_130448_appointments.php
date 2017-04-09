@@ -14,7 +14,7 @@ class Appointments extends Migration
     public function up()
     {
         Schema::create('appointments', function (Blueprint $table) {
-            $table->increments('id')->unique();
+            $table->increments('id');
 	    $table->string('title')->nullable();
 	    $table->datetime('start');
 	    $table->datetime('end');
@@ -23,7 +23,7 @@ class Appointments extends Migration
 	    $table->integer('user_id')->unsigned()->length(10);
 
 	    $table->foreign('vehicle_id')->references('id')->on('vehicles')->onDelete('cascade');
-	    $table->foreign('user_id')->references('id')->on('user')->onDelete('cascade');
+	    $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 	    $table->foreign('resourceId')->references('id')->on('lines')->onDelete('cascade');
 	    $table->timestamps();
         });

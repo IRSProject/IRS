@@ -9,8 +9,10 @@ use Auth;
 class VehicleController extends Controller
 {
     public function index() {
-	$vehicles = Vehicle::paginate(20);
-	return view('vehicles.index', ['vehicles' => $vehicles]);
+	if(Auth::check()) {
+	    $vehicles = Auth::user()->vehicles()->paginate(20);
+	    return view('vehicles.index', ['vehicles' => $vehicles]);
+	}
     }
 
     public function create() {

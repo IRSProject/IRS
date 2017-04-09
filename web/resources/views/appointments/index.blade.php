@@ -2,7 +2,7 @@
 
 @section('content')
 <input type="hidden" id="resources_url" value="{{ route('appointment.resources') }}" />
-<input type="hidden" id="events_url" value="{{ route('appointment.events') }}" />
+<input type="hidden" id="events_url" value="{{ route('api.v1.appointments.all') }}" />
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">

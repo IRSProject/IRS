@@ -73,6 +73,8 @@ Route::group(['middleware' => ['App\Http\Middleware\Admin', 'auth']], function (
     Route::delete('/line', 'LineController@delete')->name('line.delete');;
 });
 
+Route::get('/api/v1/station/{station}/lines','StationController@apiLines')->name('api.v1.station.lines');
+Route::get('/api/v1/appointments','AppointmentController@all')->name('api.v1.appointments.all');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');

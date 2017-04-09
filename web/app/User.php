@@ -4,10 +4,15 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Vehicle;
 
 class User extends Authenticatable
 {
     use Notifiable;
+
+    public function vehicles() {
+	return $this->hasMany(Vehicle::class);
+    }
 
     public static function boot() {
 	User::saving(function ($user) {

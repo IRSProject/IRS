@@ -9,7 +9,7 @@ use Auth;
 
 class Appointment extends Model
 {
-    protected $fillable = [  'date' , 'start_time', 'end_time' , 'line_id', 'vehicle_id', 'user_id'];
+    protected $fillable = [  'title' , 'start', 'end' , 'resourceId', 'vehicle_id', 'user_id'];
 
     public static function boot() {
 	Appointment::saving(function ($appointment) {
