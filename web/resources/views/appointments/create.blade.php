@@ -90,19 +90,7 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="form-group{{ $errors->has('end') ? ' has-error' : '' }}">
-                            <label for="end" class="col-md-4 control-label">End Time</label>
 
-                            <div class="col-md-6">
-                                <input id="end" type="datetime-local" class="form-control" name="end" value="{{ old('end') }}" required autofocus>
-
-                                @if ($errors->has('end'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('end') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
 
         			<div class="col-xs-12 col-sm-12 col-md-12 text-center">
         			  <input type="submit" value="save" class="btn btn-success" />
@@ -120,7 +108,7 @@ $(document).ready(function () {
 	$.get(window.location.origin + '/api/v1/station/' + id + '/lines', function (response) {
 	    var data = response.data;
 	    var options = $('#resourceId');
-	    options.find('option').remove().end(); 
+	    options.find('option').remove().end();
 	    $.each(data, function () {
 		options.append($('<option />').val(this.id).text(this.number));
 	    });
