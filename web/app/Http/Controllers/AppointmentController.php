@@ -59,7 +59,10 @@ class AppointmentController extends Controller
     }
 
     public function store(Request $request) {
-	Appointment::create($request->all());
+	$data = $request->all();
+	$data['start'] = Carbon\Carbon::parse($data['start'])->toDateTimeString();
+	$data['end'] = Carbon\Carbon::parse($data['start'])->addMinutes(15)->toDateTimeString();
+	Appointment::create($data);
 	return redirect()->route('appointment.index');
     }
 
