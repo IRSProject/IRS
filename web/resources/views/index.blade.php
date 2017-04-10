@@ -134,7 +134,6 @@
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
         </ol>
 
         <!-- Wrapper for slides -->
@@ -144,9 +143,6 @@
             </div>
             <div class="item">
                 <div class="fill" style="background-image:url('images/Inspection2.jpg');"></div>
-            </div>
-            <div class="item">
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
             </div>
         </div>
 
