@@ -47,6 +47,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::patch('/appointment', 'AppointmentController@update')->name('appointment.update');;
     Route::delete('/appointment/{appointment}', 'AppointmentController@delete')->name('appointment.delete');
 
+    Route::get('/appointment/times', 'AppointmentController@times')->name('appointment.times');
 
 });
 
@@ -75,6 +76,7 @@ Route::group(['middleware' => ['App\Http\Middleware\Admin', 'auth']], function (
 
 Route::get('/api/v1/station/{station}/lines','StationController@apiLines')->name('api.v1.station.lines');
 Route::get('/api/v1/appointments','AppointmentController@all')->name('api.v1.appointments.all');
+Route::get('/api/v1/times/{date}/{line}', 'AppointmentController@jsonTimes')->name('api.v1.jsontimes');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');

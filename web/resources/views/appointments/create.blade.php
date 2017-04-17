@@ -77,15 +77,32 @@
                             </div>
                         </div>
 
-			                     <div class="form-group{{ $errors->has('start') ? ' has-error' : '' }}">
-                            <label for="start" class="col-md-4 control-label">start Time</label>
+			 <div class="form-group{{ $errors->has('month') ? ' has-error' : '' }}">
+                            <label for="month" class="col-md-4 control-label">month</label>
 
                             <div class="col-md-6">
-                                <input id="start" type="datetime-local" class="form-control" name="start" value="{{ old('start') }}" required autofocus>
+                                <input id="month" type="date" class="form-control" name="month" value="{{ old('month') }}" required autofocus>
 
-                                @if ($errors->has('start'))
+                                @if ($errors->has('month'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('start') }}</strong>
+                                        <strong>{{ $errors->first('month') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+			 <div class="form-group{{ $errors->has('time') ? ' has-error' : '' }}">
+                            <label for="time" class="col-md-4 control-label">time </label>
+
+                            <div class="col-md-6">
+                                <select id="time" class="form-control" name="time" value="{{ old('time') }}" required >
+				    @foreach($times as $time)
+				    <option value="$time">{{$time}}</option>
+				    @endforeach
+				</select>
+                                @if ($errors->has('time'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('time') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -103,6 +120,7 @@
 </div>
 <script>
 $(document).ready(function () {
+
     $('#station_id').change(function () {
 	var id = $(this).val();
 	$.get(window.location.origin + '/api/v1/station/' + id + '/lines', function (response) {
@@ -114,6 +132,22 @@ $(document).ready(function () {
 	    });
 	});
     });
+
+    $('#resourceId').change(function () {
+	$('#month').trigger('change');
+    });
+
+    $('#month').change(function () {
+	$.get(window.location.origin + '/api/v1/times/' + $('#month').val() + '/' + $('#resourceId').val(), function (response) {
+	    $('#time').find('option').remove().end();
+	    $.each(response, function () {
+		$('#time').append($('<option />').val(this).text(this));
+	    });
+	});
+    });
+
+    $('#station_id').trigger('change');
+    
 });
 </script>
 @endsection

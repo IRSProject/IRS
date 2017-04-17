@@ -49,18 +49,56 @@ class AppointmentController extends Controller
     public function appointments(Appointment $appointment) {
 	return view('appointments.index', ['appointments' => $appointment->appointments]);
     }
+
     public function create() {
 	$vehicles = [];
 	$stations = Station::all();
 	if(Auth::check()) {
 	    $vehicles = Auth::user()->vehicles;
 	}
-	return view('appointments.create', ['vehicles' => $vehicles, 'stations' => $stations]);
+	return view('appointments.create', ['vehicles' => $vehicles, 'stations' => $stations, 'times' => []]);
+    }
+
+    public function times($date, $line, $startTime = '7:30') {
+	$firstTime = Carbon\Carbon::createFromTime('07', '30', '00');
+	$times = [];
+	while($firstTime <= Carbon\Carbon::createFromTime('16', '00', '00')) {
+	    $times[] = $firstTime->toTimeString();
+	    $firstTime->addMinutes(15);
+	}
+
+	$reservedTimes = $this->getTimes($date, $line);
+	$result = array_diff($times, $reservedTimes);
+	
+	return $result;
+    }
+
+    public function jsonTimes($date, $line, $startTime = null) {
+	return response()->json($this->times($date, $line, $startTime));
+    }
+
+    public function getTimes($date, $line) {
+	$minDate = Carbon\Carbon::createFromFormat('Y-m-d H:i:s', date($date) . '00:00:00');
+	$maxDate = Carbon\Carbon::createFromFormat('Y-m-d H:i:s', date($date) . '24:00:00');
+
+	$date = Appointment::where('start', '>=', $minDate)->where('start', '<=', $maxDate)->where('resourceId', $line)->get();
+	$results = [];
+	foreach($date as $item) {
+	    $results[] = $item->start->toTimeString();
+	}
+	return $results;
+    }
+
+    public function makeStartTime($month, $time) {
+
     }
 
     public function store(Request $request) {
+	$this->validate($request, ['vehicle_id' => 'required', 'title' => 'required']);
+
 	$data = $request->all();
-	$data['start'] = Carbon\Carbon::parse($data['start'])->toDateTimeString();
+	$startTime = Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $data['month'] . $data['time']);
+	$data['start'] = Carbon\Carbon::parse($startTime)->toDateTimeString();
 	$data['end'] = Carbon\Carbon::parse($data['start'])->addMinutes(15)->toDateTimeString();
 	Appointment::create($data);
 	return redirect()->route('appointment.index');
