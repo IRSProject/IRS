@@ -39,7 +39,7 @@ class AppointmentController extends Controller
 
 	//return response()->json([ Appointment::all()->toArray() ]);
 	return response()->json([[
-	    'id' => 1, 'resourceId' => 3, 'start'=> strtotime('2017-04-03 7:30:00') * 1000, 'end' => strtotime('2017-04-03 7:45:00') * 1000, 'title' => 'sss'
+	    'id' => 1, 'resourceId' => 3, 'start'=> strtotime('2017-04-03 7:30:00') * 1000, 'end' => strtotime('2017-04-03 7:45:00') * 1000
 	]]);
     }
 
