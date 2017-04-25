@@ -29,7 +29,7 @@ class VehicleController extends Controller
     }
 
     public function edit(Vehicle $vehicles) {
-	return view('vehicles.edit', ['vehicle' => $vehicle]);
+	return view('vehicles.edit', ['vehicle' => $vehicles]);
     }
 
     public function update(Request $request) {

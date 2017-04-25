@@ -27,13 +27,6 @@
 		    axer='axer' axer-action = "{{ route('appointment.create') }}"
 		    axer-after = "saved">
 		    {{ csrf_field() }}
-		    <div class="form-group required">
-			<label for='title'> Title </label>
-			<input type="text" name="title" id="title" class='form-control' placeholder='Title' />
-			<span class="bar-warning">
-			    <strong style="color: red"></strong>
-			</span>
-		    </div>
 
 		    <div class="form-group ">
 			<label for="description">Description</label>

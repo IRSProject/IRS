@@ -9,7 +9,7 @@ use Auth;
 
 class Appointment extends Model
 {
-    protected $fillable = [  'title' , 'start', 'end' , 'resourceId', 'vehicle_id', 'user_id'];
+    protected $fillable = [ 'start', 'end' , 'resourceId', 'vehicle_id', 'user_id'];
     protected $dates = ['created_at', 'updated_at', 'start', 'end'];
 
     public static function boot() {
