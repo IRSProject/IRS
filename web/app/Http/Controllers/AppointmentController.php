@@ -69,7 +69,7 @@ class AppointmentController extends Controller
 
 	$reservedTimes = $this->getTimes($date, $line);
 	$result = array_diff($times, $reservedTimes);
-	
+
 	return $result;
     }
 
@@ -90,7 +90,15 @@ class AppointmentController extends Controller
     }
 
     public function makeStartTime($month, $time) {
+      $thisyear = Carbon\Carbon::createFromFormat('Y-m-d', month($month) . 'Y/m/d');
+    	$finalyear = Carbon\Carbon::createFromFormat('Y-m-d', month($month) . 'Y/12/d');
 
+    	$month = Appointment::where('date', '>=', $thisyear)->where('date', '<=', $finalyear)->where('vehicle_id', $time)->get();
+    	$results = [];
+    	foreach($month as $item) {
+    	    $results[] = $item->date->toTimeString();
+    	}
+    	return $results;
     }
 
     public function store(Request $request) {

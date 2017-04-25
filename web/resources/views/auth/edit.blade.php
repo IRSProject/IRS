@@ -8,22 +8,22 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-          		    <form action="{{ route('station.update') }}" method="post">
+          		    <form action="{{ route('auth.update') }}" method="post">
           			<input type="hidden" name="_method" value="patch" />
-          			<input type="hidden" name="id" value="{{$station->id}}" />
+          			<input type="hidden" name="id" value="{{auth->id}}" />
           			{{ csrf_field() }}
 
           			<div class="col-xs-12 col-sm-12 col-md-12">
           		   	  <div class="form-group">
-          			   <strong>Name</strong>
-          			   <input name="name" value="{{$station->name}}" type="text" class="form-control" placeholder="name">
+          			   <strong>Email</strong>
+          			   <input name="email" value="{{auth->email}}" type="email" class="form-control" placeholder="email">
           		  	  </div>
           	       		</div>
 
           			<div class="col-xs-12 col-sm-12 col-md-12">
           		   	  <div class="form-group">
-          		           <strong>Address</strong>
-          		           <input name="address" value="{{$station->address}}" type="text" class="form-control" placeholder="address" >
+          		           <strong>Password</strong>
+          		           <input name="password" value="{{$auth->password}}" type="password" class="form-control" placeholder="password" >
           		  	  </div>
           	       		 </div>
           			<div class="col-xs-12 col-sm-12 col-md-12 text-center">

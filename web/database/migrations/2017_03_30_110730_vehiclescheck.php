@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Vehiclecheck extends Migration
+class Vehiclescheck extends Migration
 {
   /**
    * Run the migrations.
@@ -13,7 +13,7 @@ class Vehiclecheck extends Migration
    */
   public function up()
   {
-      Schema::create('vehiclecheck', function (Blueprint $table) {
+      Schema::create('vehiclescheck', function (Blueprint $table) {
           $table->increments('id')->unique();
           $table->integer('plate_number');
           $table->string('plate_code');
@@ -38,6 +38,6 @@ class Vehiclecheck extends Migration
    */
   public function down()
   {
-      Schema::dropIfExists('vehiclecheck');
+      Schema::dropIfExists('vehiclescheck');
   }
 }

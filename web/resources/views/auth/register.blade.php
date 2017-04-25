@@ -16,11 +16,6 @@
                             <div class="col-md-6">
                                 <input id="fname" type="text" class="form-control" name="fname" value="{{ old('fname') }}" required autofocus>
 
-                                @if ($errors->has('fname'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('fname') }}</strong>
-                                    </span>
-                                @endif
                             </div>
                         </div>
 
@@ -92,7 +87,7 @@
                                     </span>
                                 @endif
                             </div>
-                        </div> 
+                        </div>
 
 		          	<div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
                             <label for="address" class="col-md-4 control-label">Address</label>
@@ -106,7 +101,7 @@
                                     </span>
                                 @endif
                             </div>
-                        </div>                       
+                        </div>
 
 		          	<div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>

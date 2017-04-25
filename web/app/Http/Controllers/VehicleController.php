@@ -21,6 +21,10 @@ class VehicleController extends Controller
 
     public function store(Request $request) {
 	$vehicle = Vehicle::create($request->all());
+  $this->validate($request, ['plate_number' => 'required', 'plate_code' => 'required', 'brand' => 'required'
+                            , 'model' => 'required', 'production_year' => 'required', 'color' => 'required'
+                            , 'chassis_number' => 'required', 'engine_number' => 'required', 'aquisition_date' => 'required'
+                            , 'type' => 'required', 'operation_year' => 'required']);
 	return redirect()->route('vehicle.index');
     }
 
