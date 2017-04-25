@@ -7,6 +7,7 @@ use App\Appointment;
 use App\Station;
 use Carbon;
 use Auth;
+use App\Vehicle;
 
 class AppointmentController extends Controller
 {
@@ -60,10 +61,12 @@ class AppointmentController extends Controller
     }
 
     public function times($date, $line, $startTime = '7:30') {
-	$firstTime = Carbon\Carbon::createFromTime('07', '30', '00');
+	$firstTime = Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $date . '07:30:00');
 	$times = [];
-	while($firstTime <= Carbon\Carbon::createFromTime('16', '00', '00')) {
-	    $times[] = $firstTime->toTimeString();
+	while($firstTime->lte(Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $date . '16:00:00'))) {
+	    if($firstTime->gt(Carbon\Carbon::create())) {
+		$times[] = $firstTime->toTimeString();
+	    }
 	    $firstTime->addMinutes(15);
 	}
 
@@ -77,6 +80,8 @@ class AppointmentController extends Controller
 	return response()->json($this->times($date, $line, $startTime));
     }
 
+
+    //get reserved times from database.
     public function getTimes($date, $line) {
 	$minDate = Carbon\Carbon::createFromFormat('Y-m-d H:i:s', date($date) . '00:00:00');
 	$maxDate = Carbon\Carbon::createFromFormat('Y-m-d H:i:s', date($date) . '24:00:00');
@@ -90,7 +95,7 @@ class AppointmentController extends Controller
     }
 
     public function makeStartTime($month, $time) {
-      $thisyear = Carbon\Carbon::createFromFormat('Y-m-d', month($month) . 'Y/m/d');
+	$thisyear = Carbon\Carbon::createFromFormat('Y-m-d', month($month) . 'Y/m/d');
     	$finalyear = Carbon\Carbon::createFromFormat('Y-m-d', month($month) . 'Y/12/d');
 
     	$month = Appointment::where('date', '>=', $thisyear)->where('date', '<=', $finalyear)->where('vehicle_id', $time)->get();
@@ -101,6 +106,34 @@ class AppointmentController extends Controller
     	return $results;
     }
 
+    public function getSection($date) {
+	if($date->day <= 20)
+	    return 1;
+	return 2;
+    }
+
+    public function validateAppointment($vehicle_id, $start) {
+	$currentMonth = Carbon\Carbon::create();
+	$vehicle = Vehicle::find($vehicle_id)->first();
+	$lastNumber = substr($vehicle->plate_number, -1);
+	$allowedMonth = intval($lastNumber) + 1;
+	$start = Carbon\Carbon::parse($start);
+
+	if($start->diffInDays($currentMonth) <= 1) {
+	    return true;
+	} else {
+	    if($start->month == $allowedMonth) {
+		return true;
+	    } else {
+		if($this->getSection($start) == 2) {
+		    return true;
+		} else {
+		    return false;
+		}
+	    }
+	}
+    }
+
     public function store(Request $request) {
 	$this->validate($request, ['vehicle_id' => 'required', 'title' => 'required']);
 
@@ -108,7 +141,13 @@ class AppointmentController extends Controller
 	$startTime = Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $data['month'] . $data['time']);
 	$data['start'] = Carbon\Carbon::parse($startTime)->toDateTimeString();
 	$data['end'] = Carbon\Carbon::parse($data['start'])->addMinutes(15)->toDateTimeString();
-	Appointment::create($data);
+
+	if($this->validateAppointment($data['vehicle_id'], $data['start'])) {
+	    Appointment::create($data);
+	} else {
+	    // return the rules.
+	}
+
 	return redirect()->route('appointment.index');
     }
 
