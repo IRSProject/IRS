@@ -28,8 +28,8 @@ class VehicleController extends Controller
 	return redirect()->route('vehicle.index');
     }
 
-    public function edit(Vehicle $vehicles) {
-	return view('vehicles.edit', ['vehicle' => $vehicles]);
+    public function edit(Vehicle $vehicle) {
+	return view('vehicles.edit', ['vehicle' => $vehicle]);
     }
 
     public function update(Request $request) {
@@ -38,8 +38,9 @@ class VehicleController extends Controller
 	$vehicle->save();
 	return redirect()->route('vehicle.index');
     }
+
     public function delete(Request $request) {
-	$vehicle = vehicle::find($request->id);
+	$vehicle = Vehicle::find($request->id);
 	if($vehicle) {
 	    $vehicle->delete();
 	}
