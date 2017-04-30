@@ -60,6 +60,15 @@ class AppointmentController extends Controller
 	return view('appointments.create', ['vehicles' => $vehicles, 'stations' => $stations, 'times' => []]);
     }
 
+    public function generate() {
+  $vehicles = [];
+  $stations = Station::all();
+  if(Auth::check()) {
+      $vehicles = Auth::user()->vehicles;
+  }
+  return view('appointments.create', ['vehicles' => $vehicles, 'stations' => $stations, 'times' => []]);
+    }
+
     public function times($date, $line, $startTime = '7:30') {
 	$firstTime = Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $date . '07:30:00');
 	$times = [];
