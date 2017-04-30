@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+                <div class="panel-heading">Generate Appointment</div>
 
                 <div class="panel-body">
         		    <form action="{{ route('appointment.store') }}" method="post">
@@ -16,10 +16,10 @@
 
                             <div class="col-md-6">
                                 <select id="vehicle_id" class="form-control" name="vehicle_id" required >
-				    @foreach($vehicles as $vehicle)
-				    <option value="{{$vehicle->id}}">{{ $vehicle->plate_number . ' ' . $vehicle->plate_code}}</option>
-				    @endforeach
-				</select>
+                        				    @foreach($vehicles as $vehicle)
+                        				    <option value="{{$vehicle->id}}">{{$vehicle->plate_code . ' ' . $vehicle->plate_number}}</option>
+                        				    @endforeach
+                        				</select>
 
                                 @if ($errors->has('vehicle_id'))
                                     <span class="help-block">
@@ -34,10 +34,10 @@
 
                             <div class="col-md-6">
                                 <select id="station_id" class="form-control" name="station_id" required >
-				    @foreach($stations as $station)
-				    <option value="{{$station->id}}">{{ $station->name }}</option>
-				    @endforeach
-				</select>
+                          			    @foreach($stations as $station)
+                          			    <option value="{{$station->id}}">{{ $station->name }}</option>
+                          			    @endforeach
+                          			</select>
 
                                 @if ($errors->has('station_id'))
                                     <span class="help-block">
@@ -47,46 +47,43 @@
                             </div>
                         </div>
 
-			<div class="form-group{{ $errors->has('resourceId') ? ' has-error' : '' }}">
-			  <label for="resourceId" class="col-md-4 control-label">Line</label>
+			                  <div class="form-group{{ $errors->has('month') ? ' has-error' : '' }}">
+                            <label for="month" class="col-md-4 control-label">From Date</label>
 
-			      <div class="col-md-6">
-				<select name="resourceId" id="resourceId" class="form-control">
-				    @foreach(App\Line::all() as $line)
-					<option value="{{$line->id}}">{{$line->number}}</option>
-				    @endforeach
-				</select>
-                                @if ($errors->has('resourceId'))
+                            <div class="col-md-6">
+                                <input id="month" type="date" class="form-control" name="frommonth" value="{{ old('frommonth') }}" required autofocus>
+
+                                @if ($errors->has('frommonth'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('resourceId') }}</strong>
+                                        <strong>{{ $errors->first('frommonth') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
-			 <div class="form-group{{ $errors->has('month') ? ' has-error' : '' }}">
-                            <label for="month" class="col-md-4 control-label">month</label>
+                        <div class="form-group{{ $errors->has('month') ? ' has-error' : '' }}">
+                            <label for="month" class="col-md-4 control-label">To Date</label>
 
                             <div class="col-md-6">
-                                <input id="month" type="date" class="form-control" name="month" value="{{ old('month') }}" required autofocus>
+                                <input id="month" type="date" class="form-control" name="tomonth" value="{{ old('tomonth') }}" required autofocus>
 
-                                @if ($errors->has('month'))
+                                @if ($errors->has('tomonth'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('month') }}</strong>
+                                        <strong>{{ $errors->first('tomonth') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
-			 <div class="form-group{{ $errors->has('time') ? ' has-error' : '' }}">
-                            <label for="time" class="col-md-4 control-label">time </label>
+                			 <div class="form-group{{ $errors->has('time') ? ' has-error' : '' }}">
+                                            <label for="time" class="col-md-4 control-label">time </label>
 
-                            <div class="col-md-6">
-                                <select id="time" class="form-control" name="time" value="{{ old('time') }}" required >
-				    @foreach($times as $time)
-				    <option value="$time">{{$time}}</option>
-				    @endforeach
-				</select>
+                                            <div class="col-md-6">
+                                                <select id="time" class="form-control" name="time" value="{{ old('time') }}" required >
+                				    @foreach($times as $time)
+                				    <option value="$time">{{$time}}</option>
+                				    @endforeach
+                				</select>
                                 @if ($errors->has('time'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('time') }}</strong>
@@ -97,7 +94,7 @@
 
 
         			<div class="col-xs-12 col-sm-12 col-md-12 text-center">
-        			  <input type="submit" value="save" class="btn btn-success" />
+        			  <input type="submit" value="generate" class="btn btn-success" />
         			</div>
         		    </form>
                 </div>

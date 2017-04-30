@@ -61,12 +61,30 @@ class AppointmentController extends Controller
     }
 
     public function generate() {
-  $vehicles = [];
-  $stations = Station::all();
-  if(Auth::check()) {
-      $vehicles = Auth::user()->vehicles;
-  }
-  return view('appointments.create', ['vehicles' => $vehicles, 'stations' => $stations, 'times' => []]);
+      $this->generate['validator']->extend('days_in_between', function ($attribute, $value, $parameters) {
+
+              $minDate = Carbon::parse($value);
+              $maxDate = Carbon::parse($parameters[2]);
+
+              $diff_in_days = $minDate->diffInDays($maxDate);
+
+              if (($diff_in_days <= $parameters[0]) OR ($diff_in_days >= $parameters[1])) {
+                  return false;
+              }
+
+              return true;
+          });
+          $yesterday = Carbon::yesterday();
+
+        $two_weeks_from_now = $yesterday->addWeeks(2);
+
+        $maxDate =  Carbon::parse($this->start);
+
+        return [
+            'title' => 'required',
+            'description' => 'required',
+            'start' => 'required|date|before:end|after:' . $two_weeks_from_now . '',
+            'end' => 'required|date|after:' . $two_weeks_from_now . '|days_in_between:6,28,' . $maxDate, ];
     }
 
     public function times($date, $line, $startTime = '7:30') {
