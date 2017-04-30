@@ -94,6 +94,18 @@ class AppointmentController extends Controller
 	return $results;
     }
 
+    public function getAppointment($date, $station) {
+	$minDate = Carbon\Carbon::createFromFormat('Y-m-d H:i:s', date($date) . '00:00:00');
+	$maxDate = Carbon\Carbon::createFromFormat('Y-m-d H:i:s', date($date) . '24:00:00');
+
+	$date = Appointment::where('start', '>=', $minDate)->where('start', '<=', $maxDate)->where('station_id', $station)->get();
+	$results = [];
+	foreach($date as $item) {
+	    $results[] = $item->start->toTimeString();
+	}
+	return $results;
+    }
+
     public function makeStartTime($month, $time) {
 	$thisyear = Carbon\Carbon::createFromFormat('Y-m-d', month($month) . 'Y/m/d');
     	$finalyear = Carbon\Carbon::createFromFormat('Y-m-d', month($month) . 'Y/12/d');
