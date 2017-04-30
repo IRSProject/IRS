@@ -147,7 +147,7 @@ class AppointmentController extends Controller
     }
 
     public function store(Request $request) {
-	$this->validate($request, ['vehicle_id' => 'required']);
+	$this->validate($request, ['vehicle_id' => 'required'],['title' => 'required']);
 
 	$data = $request->all();
 	$startTime = Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $data['month'] . $data['time']);

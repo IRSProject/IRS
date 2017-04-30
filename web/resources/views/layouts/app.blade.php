@@ -21,6 +21,10 @@
             'csrfToken' => csrf_token(),
         ]) !!};
     </script>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 </head>
 <body>
     <div id="app">
@@ -69,7 +73,7 @@
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
-                                <ul class="dropdown-menu" role="menu">
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
