@@ -38,8 +38,9 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/appointment','AppointmentController@index')->name('appointment.index');
     Route::get('/appointment/create','AppointmentController@create')->name('appointment.create');
-    Route::get('/appointment/generate','AppointmentController@generate')->name('appointment.generate');
+    Route::get('/appointment/generate/{vehicle_id}/{date}/{station}','AppointmentController@generate')->name('appointment.generate');
     Route::post('/appointment','AppointmentController@store')->name('appointment.store');
+    Route::post('/appointment/storegenerated','AppointmentController@storeGenerated')->name('appointment.accept');
     Route::get('/appointment/{appointment}/edit', 'AppointmentController@edit')->name('appointment.edit');
     Route::patch('/appointment', 'AppointmentController@update')->name('appointment.update');;
     Route::delete('/appointment/{appointment}', 'AppointmentController@delete')->name('appointment.delete');

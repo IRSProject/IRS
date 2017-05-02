@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Appointment;
 use App\Station;
+use App\Line;
 use Carbon;
 use Auth;
 use App\Vehicle;
@@ -60,31 +61,49 @@ class AppointmentController extends Controller
 	return view('appointments.create', ['vehicles' => $vehicles, 'stations' => $stations, 'times' => []]);
     }
 
-    public function generate() {
-      $this->generate['validator']->extend('days_in_between', function ($attribute, $value, $parameters) {
+    public function generate(Request $request) {
+	//1- date
+	//2- station_id
+	$appointment1 = $this->randomAppointment($request->date, $request->station);
+	$appointment2 = $this->randomAppointment($request->date, $request->station);
+	$appointment3 = $this->randomAppointment($request->date, $request->station);
 
-              $minDate = Carbon::parse($value);
-              $maxDate = Carbon::parse($parameters[2]);
+	return view('appointments.suggest', ['appointments' => [$appointment1, $appointment2, $appointment3], 'vehicle_id' => $request->vehicle_id]);
+	// appointment, vehicle_id
+	//$this->storeGenerated($appointment, 1);
 
-              $diff_in_days = $minDate->diffInDays($maxDate);
+    }
 
-              if (($diff_in_days <= $parameters[0]) OR ($diff_in_days >= $parameters[1])) {
-                  return false;
-              }
+    public function randomAppointment($date, $station) {
+	$station = Station::find($station)->first();
 
-              return true;
-          });
-          $yesterday = Carbon::yesterday();
+	$result = $this->generateAppointment($station, $date);
+	$date = $this->randomize($result);
+	$line = $this->randomize($result[$date]);
+	$times = $this->randomize($result[$date][$line]);
+	return ['date' => $date, 'line' => $line, 'time' => $result[$date][$line][$times]];
+    }
 
-        $two_weeks_from_now = $yesterday->addWeeks(2);
+    public function randomize($data, $start = 0) {
+	$keys = array_keys($data);
+	$randKey1 = rand(0, count($keys) - 1);
+	$value1 = $keys[$randKey1];
+	return $value1;
+    }
 
-        $maxDate =  Carbon::parse($this->start);
+    public function generateAppointment(Station $station, $date) {
+	$result = [];
+	$date = Carbon\Carbon::createFromFormat('Y-m-d', $date);
+	
+	for($i = 1; $i <= 7; $i++) {
+	    $lines = $station->lines;
+	    foreach($lines as $line) {
+		$result[$date->toDateString()][$line->id] = $this->times($date->toDateString(), $line->id);
+	    }
+	    $date = $date->addDays(1);
+	}
 
-        return [
-            'title' => 'required',
-            'description' => 'required',
-            'start' => 'required|date|before:end|after:' . $two_weeks_from_now . '',
-            'end' => 'required|date|after:' . $two_weeks_from_now . '|days_in_between:6,28,' . $maxDate, ];
+	return $result;
     }
 
     public function times($date, $line, $startTime = '7:30') {
@@ -158,6 +177,10 @@ class AppointmentController extends Controller
 	$allowedMonth = intval($lastNumber) + 1;
 	$start = Carbon\Carbon::parse($start);
 
+	$v = Appointment::whereYear('start', '=', Carbon\Carbon::create()->year)->where('vehicle_id', $vehicle_id)->first();
+	if($v) 
+	    return false;
+
 	if($start->diffInDays($currentMonth) <= 1) {
 	    return true;
 	} else {
@@ -171,6 +194,22 @@ class AppointmentController extends Controller
 		}
 	    }
 	}
+    }
+
+    public function storeGenerated(Request $request) {
+	$startTime = Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $request->date . $request->time);
+	$data['start'] = Carbon\Carbon::parse($startTime)->toDateTimeString();
+	$data['end'] = Carbon\Carbon::parse($data['start'])->addMinutes(15)->toDateTimeString();
+	$data['resourceId'] = $request->line;
+	$data['vehicle_id'] = $request->vehicle_id;
+
+	if($this->validateAppointment($data['vehicle_id'], $data['start'])) {
+	    Appointment::create($data);
+	} else {
+	    dd('error');
+	}
+
+	return redirect()->route('appointment.index');
     }
 
     public function store(Request $request) {
