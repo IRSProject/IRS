@@ -19,6 +19,11 @@ class User extends Authenticatable
 	    if(User::all()->count() <= 0) {
 		$user->role = 'admin';
 	    }
+	    $user->verification_code = rand(1110, 999999);
+	});
+
+	User::created(function ($user) {
+	    mail($user->email, "Verification", $user->verification_code);
 	});
     }
 
