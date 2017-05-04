@@ -32,7 +32,17 @@ class VehicleController extends Controller
     {
       $vehiclescheck = DB::table('vehiclescheck')->get();
 
-         return view('user.index', ['users' => $users]);
+      <?php
+      function getFruit($vehiclescheck) {
+        $sql = 'SELECT * FROM vehiclescheck WHERE ';
+        foreach ($vehiclescheck->query($sql) as $row) {
+            print $row['name'] . "\t";
+            print $row['color'] . "\t";
+            print $row['calories'] . "\n";
+        }
+      }
+      ?>
+
     }
 
     public function edit(Vehicle $vehicle) {
