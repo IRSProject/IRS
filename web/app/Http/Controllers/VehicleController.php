@@ -28,22 +28,7 @@ class VehicleController extends Controller
 	return redirect()->route('vehicle.index');
     }
 
-    public function vehiclecheck()
-    {
-      $vehiclescheck = DB::table('vehiclescheck')->get();
 
-      <?php
-      function getFruit($vehiclescheck) {
-        $sql = 'SELECT * FROM vehiclescheck WHERE ';
-        foreach ($vehiclescheck->query($sql) as $row) {
-            print $row['name'] . "\t";
-            print $row['color'] . "\t";
-            print $row['calories'] . "\n";
-        }
-      }
-      ?>
-
-    }
 
     public function edit(Vehicle $vehicle) {
 	return view('vehicles.edit', ['vehicle' => $vehicle]);
