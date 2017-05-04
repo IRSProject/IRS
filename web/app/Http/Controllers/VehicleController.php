@@ -28,6 +28,13 @@ class VehicleController extends Controller
 	return redirect()->route('vehicle.index');
     }
 
+    public function vehiclecheck()
+    {
+      $vehiclescheck = DB::table('vehiclescheck')->get();
+
+         return view('user.index', ['users' => $users]);
+    }
+
     public function edit(Vehicle $vehicle) {
 	return view('vehicles.edit', ['vehicle' => $vehicle]);
     }

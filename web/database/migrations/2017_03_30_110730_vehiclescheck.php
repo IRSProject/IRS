@@ -26,7 +26,6 @@ class Vehiclescheck extends Migration
           $table->date('aquisition_date');
           $table->string('type');
           $table->string('operation_year');
-          $table->integer('vehicles_id');
           $table->timestamps();
       });
   }

@@ -5,10 +5,10 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Generate Appointment</div>
+                <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-        		    <form action="{{ route('appointment.store') }}" method="post">
+        		    <form action="{{ route('appointment.generate') }}" method="post">
         			        {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('vehicle') ? ' has-error' : '' }}">
@@ -29,15 +29,29 @@
                             </div>
                         </div>
 
+			                     <div class="form-group{{ $errors->has('month') ? ' has-error' : '' }}">
+                            <label for="month" class="col-md-4 control-label">Month</label>
+
+                            <div class="col-md-6">
+                                <input id="month" type="date" class="form-control" name="month" value="{{ old('month') }}" required autofocus>
+
+                                @if ($errors->has('month'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('month') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group{{ $errors->has('station_id') ? ' has-error' : '' }}">
                             <label for="station_id" class="col-md-4 control-label">Stations</label>
 
                             <div class="col-md-6">
                                 <select id="station_id" class="form-control" name="station_id" required >
-                          			    @foreach($stations as $station)
-                          			    <option value="{{$station->id}}">{{ $station->name }}</option>
-                          			    @endforeach
-                          			</select>
+                        				    @foreach($stations as $station)
+                        				    <option value="{{$station->id}}">{{ $station->name }}</option>
+                        				    @endforeach
+                        				</select>
 
                                 @if ($errors->has('station_id'))
                                     <span class="help-block">
@@ -47,55 +61,15 @@
                             </div>
                         </div>
 
-			                  <div class="form-group{{ $errors->has('month') ? ' has-error' : '' }}">
-                            <label for="month" class="col-md-4 control-label">From Date</label>
-
-                            <div class="col-md-6">
-                                <input id="month" type="date" class="form-control" name="frommonth" value="{{ old('frommonth') }}" required autofocus>
-
-                                @if ($errors->has('frommonth'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('frommonth') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('month') ? ' has-error' : '' }}">
-                            <label for="month" class="col-md-4 control-label">To Date</label>
-
-                            <div class="col-md-6">
-                                <input id="month" type="date" class="form-control" name="tomonth" value="{{ old('tomonth') }}" required autofocus>
-
-                                @if ($errors->has('tomonth'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('tomonth') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                			 <div class="form-group{{ $errors->has('time') ? ' has-error' : '' }}">
-                                            <label for="time" class="col-md-4 control-label">time </label>
-
-                                            <div class="col-md-6">
-                                                <select id="time" class="form-control" name="time" value="{{ old('time') }}" required >
-                				    @foreach($times as $time)
-                				    <option value="$time">{{$time}}</option>
-                				    @endforeach
-                				</select>
-                                @if ($errors->has('time'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('time') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-
-        			<div class="col-xs-12 col-sm-12 col-md-12 text-center">
-        			  <input type="submit" value="generate" class="btn btn-success" />
-        			</div>
+ 
+                        <form action="{{route('appointment.accept')}}" method="POST">
+                            {{csrf_field()}}
+                            <input type="hidden" name="vehicle_id" value="{{$appointment['vehicle_id']}}" />
+                            <input type="hidden" name="date" value="{{$appointment['date']}}" />
+                            <input type="hidden" name="station_id" value="{{$appointment['station']}}" />
+                            <input type="hidden" name="vehicle_id" value="{{$vehicle_id}}" />
+                            <input type="submit" value="Generate" class="btn btn-success" />
+                        </form>
         		    </form>
                 </div>
             </div>

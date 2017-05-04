@@ -16,10 +16,10 @@
 
                             <div class="col-md-6">
                                 <select id="vehicle_id" class="form-control" name="vehicle_id" required >
-				    @foreach($vehicles as $vehicle)
-				    <option value="{{$vehicle->id}}">{{$vehicle->plate_code . ' ' . $vehicle->plate_number}}</option>
-				    @endforeach
-				</select>
+                        				    @foreach($vehicles as $vehicle)
+                        				    <option value="{{$vehicle->id}}">{{$vehicle->plate_code . ' ' . $vehicle->plate_number}}</option>
+                        				    @endforeach
+                        				</select>
 
                                 @if ($errors->has('vehicle_id'))
                                     <span class="help-block">
@@ -34,10 +34,10 @@
 
                             <div class="col-md-6">
                                 <select id="station_id" class="form-control" name="station_id" required >
-				    @foreach($stations as $station)
-				    <option value="{{$station->id}}">{{ $station->name }}</option>
-				    @endforeach
-				</select>
+                        				    @foreach($stations as $station)
+                        				    <option value="{{$station->id}}">{{ $station->name }}</option>
+                        				    @endforeach
+                        				</select>
 
                                 @if ($errors->has('station_id'))
                                     <span class="help-block">
@@ -47,15 +47,15 @@
                             </div>
                         </div>
 
-			<div class="form-group{{ $errors->has('resourceId') ? ' has-error' : '' }}">
-			  <label for="resourceId" class="col-md-4 control-label">Line</label>
+                  			<div class="form-group{{ $errors->has('resourceId') ? ' has-error' : '' }}">
+                  			  <label for="resourceId" class="col-md-4 control-label">Line</label>
 
-			      <div class="col-md-6">
-				<select name="resourceId" id="resourceId" class="form-control">
-				    @foreach(App\Line::all() as $line)
-					<option value="{{$line->id}}">{{$line->number}}</option>
-				    @endforeach
-				</select>
+                  			      <div class="col-md-6">
+                  				<select name="resourceId" id="resourceId" class="form-control">
+                  				    @foreach(App\Line::all() as $line)
+                  					<option value="{{$line->id}}">{{$line->number}}</option>
+                  				    @endforeach
+                  				</select>
                                 @if ($errors->has('resourceId'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('resourceId') }}</strong>
@@ -64,7 +64,7 @@
                             </div>
                         </div>
 
-			 <div class="form-group{{ $errors->has('month') ? ' has-error' : '' }}">
+			                     <div class="form-group{{ $errors->has('month') ? ' has-error' : '' }}">
                             <label for="month" class="col-md-4 control-label">month</label>
 
                             <div class="col-md-6">
@@ -78,15 +78,15 @@
                             </div>
                         </div>
 
-			 <div class="form-group{{ $errors->has('time') ? ' has-error' : '' }}">
-                            <label for="time" class="col-md-4 control-label">time </label>
+                  			 <div class="form-group{{ $errors->has('time') ? ' has-error' : '' }}">
+                      <label for="time" class="col-md-4 control-label">time </label>
 
-                            <div class="col-md-6">
-                                <select id="time" class="form-control" name="time" value="{{ old('time') }}" required >
-				    @foreach($times as $time)
-				    <option value="$time">{{$time}}</option>
-				    @endforeach
-				</select>
+                      <div class="col-md-6">
+                          <select id="time" class="form-control" name="time" value="{{ old('time') }}" required >
+                  				    @foreach($times as $time)
+                  				    <option value="$time">{{$time}}</option>
+                  				    @endforeach
+                  				</select>
                                 @if ($errors->has('time'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('time') }}</strong>

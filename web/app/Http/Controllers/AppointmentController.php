@@ -61,18 +61,7 @@ class AppointmentController extends Controller
 	return view('appointments.create', ['vehicles' => $vehicles, 'stations' => $stations, 'times' => []]);
     }
 
-    public function generate(Request $request) {
-	//1- date
-	//2- station_id
-	$appointment1 = $this->randomAppointment($request->date, $request->station);
-	$appointment2 = $this->randomAppointment($request->date, $request->station);
-	$appointment3 = $this->randomAppointment($request->date, $request->station);
 
-	return view('appointments.suggest', ['appointments' => [$appointment1, $appointment2, $appointment3], 'vehicle_id' => $request->vehicle_id]);
-	// appointment, vehicle_id
-	//$this->storeGenerated($appointment, 1);
-
-    }
 
     public function randomAppointment($date, $station) {
 	$station = Station::find($station)->first();
@@ -82,6 +71,19 @@ class AppointmentController extends Controller
 	$line = $this->randomize($result[$date]);
 	$times = $this->randomize($result[$date][$line]);
 	return ['date' => $date, 'line' => $line, 'time' => $result[$date][$line][$times]];
+    }
+
+    public function generate(Request $request){
+  //1- date
+  //2- station_id
+  $appointment1 = $this->randomAppointment($request->date, $request->station);
+  $appointment2 = $this->randomAppointment($request->date, $request->station);
+  $appointment3 = $this->randomAppointment($request->date, $request->station);
+
+  return view('appointments.suggest', ['appointments' => [$appointment1, $appointment2, $appointment3], 'vehicle_id' => $request->vehicle_id]);
+  // appointment, vehicle_id
+  //$this->storeGenerated($appointment, 1);
+
     }
 
     public function randomize($data, $start = 0) {
@@ -94,7 +96,7 @@ class AppointmentController extends Controller
     public function generateAppointment(Station $station, $date) {
 	$result = [];
 	$date = Carbon\Carbon::createFromFormat('Y-m-d', $date);
-	
+
 	for($i = 1; $i <= 7; $i++) {
 	    $lines = $station->lines;
 	    foreach($lines as $line) {
@@ -178,7 +180,7 @@ class AppointmentController extends Controller
 	$start = Carbon\Carbon::parse($start);
 
 	$v = Appointment::whereYear('start', '=', Carbon\Carbon::create()->year)->where('vehicle_id', $vehicle_id)->first();
-	if($v) 
+	if($v)
 	    return false;
 
 	if($start->diffInDays($currentMonth) <= 1) {
