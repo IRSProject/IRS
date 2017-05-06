@@ -29,7 +29,6 @@
 
                             <div class="col-md-6">
                                 <select id="plate_code" type="text" class="form-control" name="plate_code" value="{{ old('plate_code') }}" required autofocus>
-									 <option value="--">--</option>
 									 <option value="*">*</option>
 									 <option value="b">B</option>
 									 <option value="g">G</option>

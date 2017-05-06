@@ -24,7 +24,6 @@
 		   	  <div class="form-group">
 			   <strong>Plate Code</strong>
 			   <select name="plate_code" value="{{$vehicle->plate_code}}" type="text" class="form-control" placeholder="plate_code">
-					<option value="--">--</option>
                     <option value="*">*</option>
                     <option value="b">B</option>
                     <option value="g">G</option>
