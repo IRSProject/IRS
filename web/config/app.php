@@ -177,6 +177,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         *Edit Profile
+
+         Laravel\Laraveleditprofile\EditprofileServiceProvider::class
+         */
     ],
 
     /*

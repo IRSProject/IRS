@@ -31,7 +31,7 @@
 			      <td>{{ $vehicle->brand }}
 			      <td>{{ $vehicle->model }}
 			      <td>{{ $vehicle->production_year  }}
-		       	  <td>{{ $vehicle->color  }}
+		       	<td>{{ $vehicle->color  }}
 			      <td>{{ $vehicle->chassis_number  }}
 			      <td>{{ $vehicle->engine_number  }}
 			      <td>{{ $vehicle->type  }}
@@ -42,9 +42,9 @@
 					<form action="{{route('vehicle.delete')}}" method="POST">
 					<a href="{{route('vehicle.edit', ['id' => $vehicle->id])}}" class="btn btn-success">Edit</a>
 				    {{csrf_field()}}
-				    <input type="hidden" name="_method" value="DELETE" />
+				    <input type="hidden" name="_method" value="Delete" />
 				    <input type="hidden" name="id" value="{{$vehicle->id}}" />
-				    <input type="submit" value="DELETE" class="btn btn-danger" />
+				    <input type="submit" value="Delete" class="btn btn-danger" />
 				</form>
 			      </td>
 			  </tr>

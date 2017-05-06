@@ -37,8 +37,8 @@
 									 <option value="n">N</option>
 									 <option value="o">O</option>
 									 <option value="s">S</option>
-									 <option value="t">t</option>
-									 <option value="z">z</option>
+									 <option value="t">T</option>
+									 <option value="z">Z</option>
 								</select>
 
                                 @if ($errors->has('plate_code'))
@@ -164,7 +164,7 @@
                                     </span>
                                 @endif
                             </div>
-                        </div>	
+                        </div>
 			<div class="col-xs-12 col-sm-12 col-md-12 text-center">
 			  <input type="submit" value="save" class="btn btn-success" />
 			</div>

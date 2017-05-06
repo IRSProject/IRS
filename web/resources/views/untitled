@@ -1,0 +1,11 @@
+<tbody>
+  @foreach($vehicle as $vehicles)
+    <tr class="gradeA odd" role="row">
+      <td class="sorting_1">{{$vehicle->plate_number}}</td>
+      <td>{{$vehicle->plate_code}}</td>
+      <td>{{$vehicle->brand}}</td>
+      <td class="center">{{$vehicle->model}}</td>
+      <td class="center">{{$vehicle->production_year}}</td>
+    </tr>
+  @endforeach
+</tbody>

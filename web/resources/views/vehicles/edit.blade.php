@@ -32,8 +32,8 @@
                     <option value="n">N</option>
                     <option value="o">O</option>
                     <option value="s">S</option>
-                    <option value="t">t</option>
-                    <option value="z">z</option>
+                    <option value="t">T</option>
+                    <option value="z">Z</option>
 			   </select>
 		  	  </div>
 	       		</div>
