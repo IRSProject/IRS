@@ -125,7 +125,7 @@ $(document).ready(function () {
     });
 
     $('#month').change(function () {
-	$.get(window.location.origin + '/api/v1/times/' + $('#month').val() + '/' + $('#resourceId').val(), function (response) {
+	$.get(window.location.origin + '/api/v1/times/' + $('#month').val() + '/' + $('#resourceId').val() + '/?vehicle_id=' + $('#vehicle_id').val(), function (response) {
 	    $('#time').find('option').remove().end();
 	    $.each(response, function () {
 		$('#time').append($('<option />').val(this).text(this));

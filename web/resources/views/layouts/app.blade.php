@@ -22,9 +22,9 @@
         ]) !!};
     </script>
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <script src="{{asset('js/jquery.min.js')}}"></script>
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css')}}">
 </head>
 <body>
     <div id="app">

@@ -21,16 +21,6 @@
                             <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
                               <div class="row">
                                 <div class="col-sm-6">
-                                  <div class="dataTables_length" id="dataTables-example_length">
-                                    <label>Show
-                                      <select name="dataTables-example_length" aria-controls="dataTables-example" class="form-control input-sm">
-                                        <option value="10">10</option>
-                                        <option value="25">25</option>
-                                        <option value="50">50</option>
-                                        <option value="100">100</option>
-                                      </select> entries
-                                    </label>
-                                  </div>
                                 </div>
                               </div>
                               <div class="row">

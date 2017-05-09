@@ -63,24 +63,32 @@ class AppointmentController extends Controller
 
 
 
-    public function randomAppointment($date, $station) {
+    public function randomAppointment($date, $station, $vehicle_id = null) {
 	$station = Station::find($station)->first();
 
-	$result = $this->generateAppointment($station, $date);
+	$result = $this->generateAppointment($station, $date, $vehicle_id);
+	if(!$result)
+	    return null;
 	$date = $this->randomize($result);
 	$line = $this->randomize($result[$date]);
-	$times = $this->randomize($result[$date][$line]);
-	return ['date' => $date, 'line' => $line, 'time' => $result[$date][$line][$times]];
+	if(!empty($result[$date][$line])) {
+	    $times = $this->randomize($result[$date][$line]);
+	    return ['date' => $date, 'line' => $line, 'time' => $result[$date][$line][$times]];
+	} else {
+	    return $this->randomAppointment($date, $station, $vehicle_id);
+	}
     }
 
     public function generate(Request $request){
   //1- date
   //2- station_id
-  $appointment1 = $this->randomAppointment($request->date, $request->station);
-  $appointment2 = $this->randomAppointment($request->date, $request->station);
-  $appointment3 = $this->randomAppointment($request->date, $request->station);
+    $appointment1 = $this->randomAppointment($request->date, $request->station, $request->vehicle_id);
+    $appointment2 = $this->randomAppointment($request->date, $request->station, $request->vehicle_id);
+    $appointment3 = $this->randomAppointment($request->date, $request->station, $request->vehicle_id);
 
-  return view('appointments.suggest', ['appointments' => [$appointment1, $appointment2, $appointment3], 'vehicle_id' => $request->vehicle_id]);
+    
+
+  return view('appointments.suggest', ['appointments' => array_filter([$appointment1, $appointment2, $appointment3], function ($item) { return $item != null ; }), 'vehicle_id' => $request->vehicle_id]);
   // appointment, vehicle_id
   //$this->storeGenerated($appointment, 1);
 
@@ -93,7 +101,7 @@ class AppointmentController extends Controller
 	return $value1;
     }
 
-    public function generateAppointment(Station $station, $date) {
+    public function generateAppointment(Station $station, $date, $vehicle_id = null) {
 	$result = [];
 	$date = Carbon\Carbon::createFromFormat('Y-m-d', $date);
 
@@ -105,6 +113,11 @@ class AppointmentController extends Controller
 	    $date = $date->addDays(1);
 	}
 
+	foreach($result as $key => $item) {
+	    if(!$this->validateAppointment($vehicle_id, $key)) {
+		unset($result[$key]);
+	    }
+	}
 	return $result;
     }
 
@@ -120,7 +133,9 @@ class AppointmentController extends Controller
 
 	$reservedTimes = $this->getTimes($date, $line);
 	$result = array_diff($times, $reservedTimes);
-
+	if(!$this->validateAppointment($_GET['vehicle_id'], $firstTime->toDateString())) {
+	    return [];
+	}
 	return $result;
     }
 

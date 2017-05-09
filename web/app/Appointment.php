@@ -15,6 +15,8 @@ class Appointment extends Model
     public static function boot() {
 	Appointment::saving(function ($appointment) {
 	    $appointment->user_id = Auth::user()->id;
+	    $vehicle = Vehicle::find($appointment->vehicle_id)->first();
+	    $appointment->title = $vehicle->plate_number . ' ' . $vehicle->plate_code;
 	});
     }
 

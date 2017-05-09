@@ -8,6 +8,9 @@
           		<div class="panel-heading">Suggestions
 
                           <div class="panel-body">
+				@if(count($appointments) <= 0)
+				<div> No Appointments. </div>
+				@else
           		    <table class="table table-striped">
           			<thead>
           			  <tr>
@@ -38,6 +41,7 @@
           			@endforeach
           			</tbody>
           		    </table>
+			    @endif
                 </div>
             </div>
         </div>
