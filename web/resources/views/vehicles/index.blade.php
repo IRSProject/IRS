@@ -47,16 +47,16 @@
 				    <input type="submit" value="Delete" class="btn btn-danger" />
 				</form>
 
-				<form method="get" action="/appointment/generate">
-				    <input type="date" name="date" />
-				    <input type="hidden" name="vehicle_id" value="{{$vehicle->id}}" />
-				    <select name="station">
-					@foreach(App\Station::all() as $station)
-					<option value="{{ $station->id }}">{{ $station->name }}</option>
-					@endforeach
-				    </select>
-				    <input type="submit" value="Delete" class="btn btn-danger" />
-				</form>
+        <form method="get" action="/appointment/generate">
+ +				    <input type="date" name="date" />
+ +				    <input type="hidden" name="vehicle_id" value="{{$vehicle->id}}" />
+ +				    <select name="station">
+ +					@foreach(App\Station::all() as $station)
+ +					<option value="{{ $station->id }}">{{ $station->name }}</option>
+ +					@endforeach
+ +				    </select>
+ +				    <input type="submit" value="Delete" class="btn btn-danger" />
+ +				</form>
 
 			      </td>
 			  </tr>

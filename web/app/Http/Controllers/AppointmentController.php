@@ -86,7 +86,7 @@ class AppointmentController extends Controller
     $appointment2 = $this->randomAppointment($request->date, $request->station, $request->vehicle_id);
     $appointment3 = $this->randomAppointment($request->date, $request->station, $request->vehicle_id);
 
-    
+
 
   return view('appointments.suggest', ['appointments' => array_filter([$appointment1, $appointment2, $appointment3], function ($item) { return $item != null ; }), 'vehicle_id' => $request->vehicle_id]);
   // appointment, vehicle_id
@@ -248,6 +248,10 @@ class AppointmentController extends Controller
 
     public function edit(Appointment $appointment) {
 	return view('appointments.edit', ['appointment' => $appointment]);
+    }
+
+    public function myapp(Appointment $appointment) {
+  return view('appointments.myapp', ['appointment' => $appointment]);
     }
 
     public function update(Request $request) {

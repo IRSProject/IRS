@@ -13,6 +13,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/fullcalendar.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/morris.css') }}">
+    <link rel="stylesheet" href="{{ asset('metisMenu/metisMenu.min.css') }}">
     <script src="{{ asset('js/jquery.min.js') }}"></script>
 
     <!-- Scripts -->

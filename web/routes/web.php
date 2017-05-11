@@ -36,6 +36,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::patch('/vehicle', 'VehicleController@update')->name('vehicle.update');;
     Route::delete('/vehicle', 'VehicleController@delete')->name('vehicle.delete');
 
+    Route::get('/activate','ActivateController@activate')->name('auth.activate');
+
     Route::get('/appointment','AppointmentController@index')->name('appointment.index');
     Route::get('/appointment/create','AppointmentController@create')->name('appointment.create');
     Route::get('/appointment/generate','AppointmentController@generate')->name('appointment.generate');
@@ -46,6 +48,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::delete('/appointment/{appointment}', 'AppointmentController@delete')->name('appointment.delete');
 
     Route::get('/appointment/times', 'AppointmentController@times')->name('appointment.times');
+
+    Route::get('/appointment/myapp', 'AppointmentController@myapp')->name('appointment.myapp');
+
 
 });
 

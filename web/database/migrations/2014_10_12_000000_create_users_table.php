@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
       	    $table->string('mother_name');
       	    $table->string('verification_code');
       	    $table->date('date_of_birth');
-	    $table->boolean('status')->default(false);
+	          $table->boolean('status')->default(false);
       	    $table->string('place_of_birth');
       	    $table->string('phone');
       	    $table->text('address');
