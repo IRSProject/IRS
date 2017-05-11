@@ -271,6 +271,6 @@ class AppointmentController extends Controller
 	if($appointment) {
 	    $appointment->delete();
 	}
-	return redirect()->route('station.appointments', ['station' => $request->station_id]);
+	return redirect()->route('appointment.index');
     }
 }
