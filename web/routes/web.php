@@ -53,6 +53,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/appointment/generates','AppointmentController@generates')->name('appointment.generates');
 
+    Route::get('/auth/{auth}/edit', 'RegisterController@edit')->name('auth.edit');
+
 });
 
 Route::group(['middleware' => ['App\Http\Middleware\Admin', 'auth']], function () {

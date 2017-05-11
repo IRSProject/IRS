@@ -15,7 +15,8 @@
     <link href="{{ asset('css/fullcalendar.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/morris.css') }}">
     <link rel="stylesheet" href="{{ asset('metisMenu/metisMenu.min.css') }}">
-    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('css/sb-admin-2.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
 
     <!-- Scripts -->
     <script>
@@ -26,6 +27,8 @@
 
     <script src="{{asset('js/jquery.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('js/metisMenu.min.js')}}"></script>
+    <script src="{{asset('js/jquery.min.js')}}"></script>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css')}}">
 </head>
 <body>
@@ -63,8 +66,8 @@
 			               <li><a href="{{ route('line.index') }}">Lines</a></li>
                             <li><a href="{{ route('appointment.index') }}">Appointments</a></li>
                     </ul>
-    		<!-- Right Side Of Navbar -->
-    		<ul class="nav navbar-nav navbar-right">
+                		<!-- Right Side Of Navbar -->
+                		<ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Login</a></li>
