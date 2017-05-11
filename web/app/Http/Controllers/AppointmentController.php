@@ -48,8 +48,14 @@ class AppointmentController extends Controller
 
     }
 
-    public function appointments(Appointment $appointment) {
-	return view('appointments.index', ['appointments' => $appointment->appointments]);
+    public function appointments() {
+      $vehicles = [];
+      $stations = Station::all();
+	return view('appointments.index', ['vehicles' => $vehicles, 'stations' => $stations]);
+    }
+
+    public function generates(Appointment $appointment) {
+	return view('appointments.generates', ['appointments' => $appointment->appointments]);
     }
 
     public function create() {
