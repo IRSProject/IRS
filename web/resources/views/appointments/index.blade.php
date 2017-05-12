@@ -8,7 +8,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
               <div class="panel-heading">Book Appointment <a href="{{route('appointment.create')}}" class="btn btn-link"><i class="glyphicon glyphicon-plus"></i></a> Generate Appointment
-                                                             <a href="{{route ('appointment.generates')}}" class="btn btn-link"><i class="glyphicon glyphicon-refresh"></i></a>My Appointments
+                                                             <a href="#" class="btn btn-link"><i class="glyphicon glyphicon-refresh"></i></a>My Appointments
                                                              <a href="{{route('appointment.myapp')}}" class="btn btn-link"><i class="glyphicon glyphicon-list"></i></a>
             </a></div>
 
