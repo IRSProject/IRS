@@ -30,11 +30,11 @@
                     {{csrf_field()}}
                     <input type="hidden" name="_method" value="DELETE" />
                     <input type="hidden" name="id" value="{{$appointment->id}}" />
-                    <input type="submit" value="Delete" class="btn btn-danger" />
+                    <button class="btn btn-danger btn-xs glyphicon glyphicon-trash" data-title="Delete" data-toggle="modal" data-target="#delete"></button>
                 </form>
               </td>
           </tr>
-        @endforeach 
+        @endforeach
       </tbody>
         </table>
                 </div>
