@@ -63,8 +63,11 @@
                             <li><a href="{{ url('/home') }}">Home</a></li>
                             <li><a href="{{ route('station.index') }}">Stations</a></li>
                             <li><a href="{{ route('vehicle.index') }}">Vehicles</a></li>
-			               <li><a href="{{ route('line.index') }}">Lines</a></li>
+			                      <li><a href="{{ route('line.index') }}">Lines</a></li>
                             <li><a href="{{ route('appointment.index') }}">Appointments</a></li>
+                            @if ( Auth::user() && Auth::user()->role == 'admin' )
+                            <li><a href="{{ route('user.index') }}">Users</a></li>
+                            @endif
                     </ul>
                 		<!-- Right Side Of Navbar -->
                 		<ul class="nav navbar-nav navbar-right">
