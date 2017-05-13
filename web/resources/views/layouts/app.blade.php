@@ -16,9 +16,9 @@
     <link rel="stylesheet" href="{{ asset('css/morris.css') }}">
     <link rel="stylesheet" href="{{ asset('metisMenu/metisMenu.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/sb-admin-2.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/69544cf85b.css">
+
     <!-- Scripts -->
     <script>
         window.Laravel = {!! json_encode([
@@ -29,7 +29,6 @@
     <script src="{{asset('js/jquery.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <script src="{{asset('js/metisMenu.min.js')}}"></script>
-    <script src="{{asset('js/jquery.min.js')}}"></script>
 
 </head>
 <body>
