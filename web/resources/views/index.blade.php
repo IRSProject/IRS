@@ -136,6 +136,7 @@
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
         </ol>
 
         <!-- Wrapper for slides -->
@@ -145,6 +146,9 @@
             </div>
             <div class="item">
                 <div class="fill" style="background-image:url('images/Inspection2.jpg');"></div>
+            </div>
+            <div class="item">
+                <div class="fill" style="background-image:url('images/Inspection3.jpg');"></div>
             </div>
         </div>
 
@@ -159,7 +163,7 @@
 
     <!-- Page Content -->
     <div class="container">
-      <marquee onmouseover="this.stop()" onmouseout="this.start()" scrollamount="4" scrolldelay="20" direction="left">
+      <marquee bgcolor=orange onmouseover="this.stop()" onmouseout="this.start()" scrollamount="4" scrolldelay="20" direction="left">
         <span>
           Vehicle inspection hours in all branches are from 7:30 AM till 4:15 PM from Monday to Saturday
         </span>
@@ -205,7 +209,7 @@
             </div>
             <div class="col-md-4 col-sm-6">
                 <a href="#">
-                    <img class="img-responsive img-portfolio img-hover" src="images/android.jpg">
+                    <img class="img-responsive img-portfolio img-hover" src="images/android.jpg" alt="android application">
                 </a>
             </div>
             <div class="col-md-8 ">

@@ -17,7 +17,8 @@
     <link rel="stylesheet" href="{{ asset('metisMenu/metisMenu.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/sb-admin-2.css') }}">
     <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
-
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">
     <!-- Scripts -->
     <script>
         window.Laravel = {!! json_encode([
@@ -29,7 +30,7 @@
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <script src="{{asset('js/metisMenu.min.js')}}"></script>
     <script src="{{asset('js/jquery.min.js')}}"></script>
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css')}}">
+
 </head>
 <body>
     <div id="app">
