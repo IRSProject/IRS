@@ -3,9 +3,9 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">Users <a href="{{route('station.create')}}" class="btn btn-link"><i class="glyphicon glyphicon-plus"></i></a></div>
+                <div class="panel-heading">Users <a href="{{route('user.create')}}" class="btn btn-link"><i class="glyphicon glyphicon-plus"></i></a></div>
 
                 <div class="panel-body">
           		    <table class="table table-striped">
@@ -20,7 +20,6 @@
                         <th>Phone</th>
                         <th>Address</th>
                         <th>Email</th>
-                        <th>Password</th>
               			    <th>Actions</th>
               			  </tr>
               			</thead>
@@ -31,16 +30,15 @@
               			      <td>{{$user->lname}}</td>
                           <td>{{$user->role}}</td>
                           <td>{{$user->mother_name}}</td>
-                          <td>{{$user->Date_of_birth}}</td>
+                          <td>{{$user->date_of_birth}}</td>
                           <td>{{$user->place_of_birth}}</td>
                           <td>{{$user->phone}}</td>
                           <td>{{$user->address}}</td>
                           <td>{{$user->email}}</td>
-                          <td>{{$user->password}}</td>
               			      <td>
 
-              				<form action="{{route('station.delete')}}" method="POST">
-              					<a href="{{route('station.edit', ['id' => $user->id])}}" class="btn btn-primary btn-xs glyphicon glyphicon-pencil"></a>
+              				<form action="{{route('user.delete')}}" method="POST">
+              					<a href="{{route('user.edit', ['id' => $user->id])}}" class="btn btn-primary btn-xs glyphicon glyphicon-pencil"></a>
               				    {{csrf_field()}}
               				    <input type="hidden" name="_method" value="DELETE" />
               				    <input type="hidden" name="id" value="{{$user->id}}" />

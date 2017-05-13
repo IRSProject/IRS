@@ -76,6 +76,13 @@ Route::group(['middleware' => ['App\Http\Middleware\Admin', 'auth']], function (
     Route::patch('/line', 'LineController@update')->name('line.update');;
     Route::delete('/line', 'LineController@delete')->name('line.delete');;
 
+    Route::get('/user','UserController@index')->name('user.index');
+    Route::get('/user/create','UserController@create')->name('user.create');
+    Route::post('/user','UserController@store')->name('user.store');
+    Route::get('/user/{user}/edit', 'UserController@edit')->name('user.edit');
+    Route::patch('/user', 'UserController@update')->name('user.update');;
+    Route::delete('/user', 'UserController@delete')->name('user.delete');;
+
 });
 
 

@@ -8,7 +8,7 @@
                 <div class="panel-heading">Edit Station</div>
 
                 <div class="panel-body">
-          		    <form action="{{ route('station.update') }}" method="post">
+          		    <form action="{{ route('user.update') }}" method="post">
               			<input type="hidden" name="_method" value="patch" />
               			<input type="hidden" name="id" value="{{$user->id}}" />
               			{{ csrf_field() }}

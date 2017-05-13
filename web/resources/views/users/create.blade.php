@@ -8,7 +8,7 @@
                 <div class="panel-heading">Add user</div>
 
                 <div class="panel-body">
-          		    <form action="{{ route('station.store') }}" method="post">
+          		    <form action="{{ route('user.store') }}" method="post">
           			       {{ csrf_field() }}
                        <div class="form-group{{ $errors->has('fname') ? ' has-error' : '' }}">
                            <label for="fname" class="col-md-4 control-label">First Name</label>
