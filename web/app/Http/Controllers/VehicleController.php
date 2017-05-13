@@ -31,6 +31,7 @@ class VehicleController extends Controller
 
 
     public function edit(Vehicle $vehicle) {
+              $request->session()->flash('notif', 'Successfully Edited!');
 	return view('vehicles.edit', ['vehicle' => $vehicle]);
     }
 
@@ -38,6 +39,7 @@ class VehicleController extends Controller
 	$vehicle = Vehicle::find($request->id);
 	$vehicle->fill($request->all());
 	$vehicle->save();
+          $request->session()->flash('notif', 'Successfully Edited!');
 	return redirect()->route('vehicle.index');
     }
 
@@ -46,6 +48,7 @@ class VehicleController extends Controller
 	if($vehicle) {
 	    $vehicle->delete();
 	}
+    $request->session()->flash('notifdeleted', 'Successfully Deleted!');
 	return redirect()->route('vehicle.index');
     }
 }

@@ -15,7 +15,7 @@ class StationController extends Controller
 
     public function appointments(Station $station) {
 	$appointments = $station->appointments;
-	
+
 	return view('appointments.index', ['appointments' => $appointments, 'station' => $station->name]);
     }
 
@@ -29,10 +29,12 @@ class StationController extends Controller
 
     public function store(Request $request) {
 	Station::create($request->all());
+  $request->session()->flash('notif', 'Successfully Added!');
 	return redirect()->route('station.index');
     }
 
     public function edit(Station $station) {
+        $request->session()->flash('notif', 'Successfully Edited!');
 	return view('stations.edit', ['station' => $station]);
     }
 
@@ -40,6 +42,7 @@ class StationController extends Controller
 	$station = Station::find($request->id);
 	$station->fill($request->all());
 	$station->save();
+    $request->session()->flash('notif', 'Successfully Edited!');
 	return redirect()->route('station.index');
     }
 
@@ -48,8 +51,9 @@ class StationController extends Controller
 	if($station) {
 	    $station->delete();
 	}
+  $request->session()->flash('notifdeleted', 'Successfully Deleted!');
 	return redirect()->route('station.index');
-    } 
+    }
 
     public function apiLines(Request $request, Station $station) {
 	return response()->json(['data' => $station->lines]);

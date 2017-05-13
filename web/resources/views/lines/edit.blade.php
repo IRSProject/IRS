@@ -16,7 +16,7 @@
 			<div class="col-xs-12 col-sm-12 col-md-12">
 		   	  <div class="form-group">
 			   <strong>Line	Number</strong>
-			   <input name="number" value="{{$line->number}}" type="number" class="form-control" placeholder="number">
+			   <input name="number" value="{{$line->number}}" type="integer" class="form-control" placeholder="number">
 		  	  </div>
 	       		</div>
 
@@ -46,5 +46,3 @@
     </div>
 </div>
 @endsection
-
-

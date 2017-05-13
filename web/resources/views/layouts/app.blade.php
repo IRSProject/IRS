@@ -99,8 +99,28 @@
                 </div>
             </div>
         </nav>
+        <div class="container">
+          @if(session()->has('notif'))
+          <div class="row">
+            <div class="alert alert-success">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              <strong>Notfication</strong> {{ session()->get('notif')}}
+            </div>
+          </div>
+          @endif
 
-        @yield('content')
+          @if(session()->has('notifdeleted'))
+          <div class="row">
+            <div class="alert alert-danger">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              <strong>Notfication</strong> {{ session()->get('notifdeleted')}}
+            </div>
+          </div>
+          @endif
+
+          @yield('content')
+        </div>
+
     </div>
 
     <!-- Scripts -->

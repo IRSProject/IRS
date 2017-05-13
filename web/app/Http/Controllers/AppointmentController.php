@@ -248,11 +248,12 @@ class AppointmentController extends Controller
 	} else {
 	    // return the rules.
 	}
-
+$request->session()->flash('notif', 'Successfully Added!');
 	return redirect()->route('appointment.index');
     }
 
     public function edit(Appointment $appointment) {
+      $request->session()->flash('notif', 'Successfully Edited!');
 	return view('appointments.edit', ['appointment' => $appointment]);
     }
 
@@ -260,10 +261,15 @@ class AppointmentController extends Controller
   return view('appointments.myapp', ['appointment' => $appointment]);
     }
 
+    public function allapp(Appointment $appointment) {
+  return view('appointments.allapp', ['appointment' => $appointment]);
+    }
+
     public function update(Request $request) {
 	$appointment = appointment::find($request->id);
 	$appointment->fill($request->all());
 	$appointment->save();
+  $request->session()->flash('notif', 'Successfully Edited!');
 	return redirect()->route('station.appointments', ['station' => $request->station_id]);
     }
     public function delete(Request $request) {
@@ -271,6 +277,7 @@ class AppointmentController extends Controller
 	if($appointment) {
 	    $appointment->delete();
 	}
+  $request->session()->flash('notifdeleted', 'Successfully Deleted!');
 	return redirect()->route('appointment.index');
     }
 }
