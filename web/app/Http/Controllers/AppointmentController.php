@@ -54,8 +54,8 @@ class AppointmentController extends Controller
 	return view('appointments.index', ['vehicles' => $vehicles, 'stations' => $stations]);
     }
 
-    public function generates(Appointment $appointment) {
-	return view('appointments.generates', ['appointments' => $appointment->appointments]);
+    public function generates(Request $request) {
+	return view('appointments.generates', []);
     }
 
     public function create() {

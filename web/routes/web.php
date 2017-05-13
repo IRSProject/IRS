@@ -46,6 +46,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::delete('/appointment', 'AppointmentController@delete')->name('appointment.delete');
     Route::get('/appointment/times', 'AppointmentController@times')->name('appointment.times');
     Route::get('/appointment/myapp', 'AppointmentController@myapp')->name('appointment.myapp');
+    Route::get('/appointment/generates', 'AppointmentController@generates')->name('appointment.generates');
 
     Route::get('/auth/{auth}/edit', 'RegisterController@edit')->name('auth.edit');
 
@@ -53,7 +54,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/station', 'StationController@index')->name('station.index');
     Route::get('/appointment/resources', 'AppointmentController@resources')->name('appointment.resources');
-    
+
 });
 
 Route::group(['middleware' => ['App\Http\Middleware\Admin', 'auth']], function () {

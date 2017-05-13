@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Generate Appointment</div>
                 <div class="panel-body">
-          		    <form action="{{ route('appointment.generates') }}" method="get">
+          		    <form action="/appointment/generate" method="get">
                     {{ csrf_field() }}
                     <div class="form-group{{ $errors->has('vehicle') ? ' has-error' : '' }}">
                         <label for="vehicle" class="col-md-4 control-label">Vehicle</label>
@@ -58,7 +58,7 @@
 
               			<div class="col-xs-12 col-sm-12 col-md-12 text-center">
                       <br />
-              			  <input type="submit" value="Generate" class="btn btn-outline btn-warning" />
+              			  <input type="submit" value="Generate" class="btn btn-warning" />
               			</div>
           		    </form>
                 </div>
