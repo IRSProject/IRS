@@ -13,7 +13,7 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-comments fa-5x"></i>
+                                    <i class="fa fa-home fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge">{{ App\Station::count() }}</div>
@@ -35,7 +35,7 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-tasks fa-5x"></i>
+                                    <i class="fa fa-car fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge">{{ App\Vehicle::count() }}</div>
@@ -57,7 +57,7 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-shopping-cart fa-5x"></i>
+                                    <i class="fa fa-list-ul fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge">{{ App\Appointment::count() }}</div>
@@ -74,12 +74,13 @@
                         </a>
                     </div>
                 </div>
+                @if ( Auth::user() && Auth::user()->role == 'admin' )
                 <div class="col-lg-3 col-md-6">
                     <div class="panel panel-red">
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-support fa-5x"></i>
+                                    <i class="fa fa-user fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge">{{ App\User::count() }}</div>
@@ -87,7 +88,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="{{route('user.index')}}">
                             <div class="panel-footer">
                                 <span class="pull-left">View Users</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -96,6 +97,7 @@
                         </a>
                     </div>
                 </div>
+                @endif
               </div>
                 </div>
             </div>
@@ -109,7 +111,7 @@
                       <div class="panel-body">
                           <ul class="timeline">
                               <li>
-                                  <div class="timeline-badge"><i class="fa fa-check"></i>
+                                  <div class="timeline-badge"><i class="fa fa-car"></i>
                                   </div>
                                   <div class="timeline-panel">
                                       <div class="timeline-heading">
@@ -123,7 +125,7 @@
                                   </div>
                               </li>
                               <li class="timeline-inverted">
-                                  <div class="timeline-badge warning"><i class="fa fa-credit-card"></i>
+                                  <div class="timeline-badge warning"><i class="fa fa-home"></i>
                                   </div>
                                   <div class="timeline-panel">
                                       <div class="timeline-heading">
@@ -136,7 +138,7 @@
                                   </div>
                               </li>
                               <li>
-                                  <div class="timeline-badge danger"><i class="fa fa-bomb"></i>
+                                  <div class="timeline-badge danger"><i class="fa fa-cog fa-spin"></i>
                                   </div>
                                   <div class="timeline-panel">
                                       <div class="timeline-heading">

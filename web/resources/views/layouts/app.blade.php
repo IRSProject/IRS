@@ -17,7 +17,8 @@
     <link rel="stylesheet" href="{{ asset('metisMenu/metisMenu.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/sb-admin-2.css') }}">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="https://use.fontawesome.com/69544cf85b.css">
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css')}}">
 
     <!-- Scripts -->
     <script>

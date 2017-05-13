@@ -9,7 +9,7 @@
 
                           <div class="panel-body">
 				@if(count($appointments) <= 0)
-				<div> No Appointments. </div>
+				<div align="center" style="font-size:180%"> <strong>No Appointments</strong> </div>
 				@else
           		    <table class="table table-striped">
           			<thead>
@@ -34,7 +34,7 @@
           				    <input type="hidden" name="line" value="{{$appointment['line']}}" />
           				    <input type="hidden" name="time" value="{{$appointment['time']}}" />
           				    <input type="hidden" name="vehicle_id" value="{{$vehicle_id}}" />
-          				    <input type="submit" value="ACCEPT" class="btn btn-success" />
+                      <button class="btn btn-success btn-xs glyphicon glyphicon-ok" data-title="Delete" data-toggle="modal" data-target="#delete"></button>
           				</form>
           			      </td>
           			  </tr>
