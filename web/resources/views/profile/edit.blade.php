@@ -5,10 +5,10 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Edit User</div>
+                <div class="panel-heading">Edit Profile</div>
 
                 <div class="panel-body">
-          		    <form action="{{ route('user.update') }}" method="post">
+          		    <form action="{{ route('profile.update') }}" method="post">
               			<input type="hidden" name="_method" value="patch" />
               			<input type="hidden" name="id" value="{{$user->id}}" />
               			{{ csrf_field() }}
@@ -73,9 +73,9 @@
                           <input name="password" value="{{$user->password}}" type="password" class="form-control" placeholder="">
                         </div>
                       </div>
-          			<div class="col-xs-12 col-sm-12 col-md-12 text-center">
-          			  <button type="submit" class="btn btn-primary">Submit</button>
-          			</ div>
+              			<div class="col-xs-12 col-sm-12 col-md-12 text-center">
+              			  <button type="submit" class="btn btn-primary">Submit</button>
+              			</div>
           		    </form>
                 </div>
             </div>

@@ -47,14 +47,18 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/appointment/times', 'AppointmentController@times')->name('appointment.times');
     Route::get('/appointment/myapp', 'AppointmentController@myapp')->name('appointment.myapp');
     Route::get('/appointment/generates', 'AppointmentController@generates')->name('appointment.generates');
+    Route::get('/appointment/resources', 'AppointmentController@resources')->name('appointment.resources');
+
+    Route::get('/profile','ProfileController@index')->name('profile.index');
+    Route::post('/profile','ProfileController@store')->name('profile.store');
+    Route::get('/profile/{user}/edit', 'ProfileController@edit')->name('profile.edit');
+    Route::patch('/profile', 'ProfileController@update')->name('profile.update');;
 
     Route::get('/auth/{auth}/edit', 'RegisterController@edit')->name('auth.edit');
 
     Route::get('/line','LineController@index')->name('line.index');
 
     Route::get('/station', 'StationController@index')->name('station.index');
-    Route::get('/appointment/resources', 'AppointmentController@resources')->name('appointment.resources');
-
 });
 
 Route::group(['middleware' => ['App\Http\Middleware\Admin', 'auth']], function () {

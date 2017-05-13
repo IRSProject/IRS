@@ -253,7 +253,7 @@ $request->session()->flash('notif', 'Successfully Added!');
     }
 
     public function edit(Appointment $appointment) {
-      $request->session()->flash('notif', 'Successfully Edited!');
+
 	return view('appointments.edit', ['appointment' => $appointment]);
     }
 

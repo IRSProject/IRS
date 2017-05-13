@@ -26,7 +26,7 @@ class LineController extends Controller
     }
 
     public function edit(Line $line) {
-        $request->session()->flash('notif', 'Successfully Edited!');
+
 	return view('lines.edit', ['line' => $line]);
 
     }

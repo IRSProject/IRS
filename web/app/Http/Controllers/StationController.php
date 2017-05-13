@@ -34,7 +34,7 @@ class StationController extends Controller
     }
 
     public function edit(Station $station) {
-        $request->session()->flash('notif', 'Successfully Edited!');
+
 	return view('stations.edit', ['station' => $station]);
     }
 

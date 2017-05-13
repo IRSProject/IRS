@@ -31,7 +31,7 @@ class VehicleController extends Controller
 
 
     public function edit(Vehicle $vehicle) {
-              $request->session()->flash('notif', 'Successfully Edited!');
+
 	return view('vehicles.edit', ['vehicle' => $vehicle]);
     }
 
