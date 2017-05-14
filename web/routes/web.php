@@ -59,7 +59,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/line','LineController@index')->name('line.index');
 
     Route::get('/station', 'StationController@index')->name('station.index');
-    Route::get('/station/{station}', 'StationController@lines')->name('station.lines');
+    
 });
 
 Route::group(['middleware' => ['App\Http\Middleware\Admin', 'auth']], function () {
