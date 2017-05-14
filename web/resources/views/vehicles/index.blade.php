@@ -55,7 +55,7 @@
      					<option value="{{ $station->id }}">{{ $station->name }}</option>
      					@endforeach
  				    </select>
- 				    <input type="submit" value="Delete" class="btn btn-danger" />
+ 				    <input type="submit" value="Generate" class="btn btn-warning" />
  				</form>
 
 			      </td>

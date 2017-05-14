@@ -9,7 +9,7 @@
                 <div class="panel-body">
           		    <form action="/appointment/generate" method="get">
                     {{ csrf_field() }}
-                    <div class="form-group{{ $errors->has('vehicle') ? ' has-error' : '' }}">
+                    <div class="form-group{{ $errors->has('vehicle') ? ' has-error' : '' }} col-xs-12 col-sm-12 col-md-12">
                         <label for="vehicle" class="col-md-4 control-label">Vehicle</label>
 
                         <div class="col-md-6">
@@ -26,7 +26,7 @@
                             @endif
                         </div>
                     </div>
-                    <div class="form-group{{ $errors->has('station_id') ? ' has-error' : '' }}">
+                    <div class="form-group{{ $errors->has('station_id') ? ' has-error' : '' }} col-xs-12 col-sm-12 col-md-12">
                       <label for="station_id" class="col-md-4 control-label">Station</label>
 
                       <div class="col-md-6">
@@ -42,7 +42,7 @@
                               @endif
                           </div>
                       </div>
-                      <div class="form-group{{ $errors->has('date') ? ' has-error' : '' }}">
+                      <div class="form-group{{ $errors->has('date') ? ' has-error' : '' }} col-xs-12 col-sm-12 col-md-12">
                        <label for="date" class="col-md-4 control-label">Date</label>
 
                        <div class="col-md-6">
@@ -57,7 +57,6 @@
                    </div>
 
               			<div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                      <br />
               			  <input type="submit" value="Generate" class="btn btn-warning" />
               			</div>
           		    </form>

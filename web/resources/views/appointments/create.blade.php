@@ -11,7 +11,7 @@
         		    <form action="{{ route('appointment.store') }}" method="post">
         			        {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('vehicle') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('vehicle') ? ' has-error' : '' }} col-xs-12 col-sm-12 col-md-12">
                             <label for="vehicle" class="col-md-4 control-label">Vehicles</label>
 
                             <div class="col-md-6">
@@ -29,7 +29,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('station_id') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('station_id') ? ' has-error' : '' }} col-xs-12 col-sm-12 col-md-12">
                             <label for="station_id" class="col-md-4 control-label">Stations</label>
 
                             <div class="col-md-6">
@@ -47,7 +47,7 @@
                             </div>
                         </div>
 
-                  			<div class="form-group{{ $errors->has('resourceId') ? ' has-error' : '' }}">
+                  			<div class="form-group{{ $errors->has('resourceId') ? ' has-error' : '' }} col-xs-12 col-sm-12 col-md-12">
                   			  <label for="resourceId" class="col-md-4 control-label">Line</label>
 
                   			      <div class="col-md-6">
@@ -64,8 +64,8 @@
                             </div>
                         </div>
 
-			                     <div class="form-group{{ $errors->has('month') ? ' has-error' : '' }}">
-                            <label for="month" class="col-md-4 control-label">month</label>
+			                     <div class="form-group{{ $errors->has('month') ? ' has-error' : '' }} col-xs-12 col-sm-12 col-md-12">
+                            <label for="month" class="col-md-4 control-label">Month</label>
 
                             <div class="col-md-6">
                                 <input id="month" type="date" class="form-control" name="month" value="{{ old('month') }}" required autofocus>
@@ -78,8 +78,8 @@
                             </div>
                         </div>
 
-                  			 <div class="form-group{{ $errors->has('time') ? ' has-error' : '' }}">
-                      <label for="time" class="col-md-4 control-label">time </label>
+                  			 <div class="form-group{{ $errors->has('time') ? ' has-error' : '' }} col-xs-12 col-sm-12 col-md-12">
+                      <label for="time" class="col-md-4 control-label">Time</label>
 
                       <div class="col-md-6">
                           <select id="time" class="form-control" name="time" value="{{ old('time') }}" required >

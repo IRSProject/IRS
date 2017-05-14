@@ -10,7 +10,7 @@
                 <div class="panel-body">
           		    <form action="{{ route('user.store') }}" method="post">
           			       {{ csrf_field() }}
-                       <div class="form-group{{ $errors->has('fname') ? ' has-error' : '' }}">
+                       <div class="form-group{{ $errors->has('fname') ? ' has-error' : '' }} col-xs-12 col-sm-12 col-md-12">
                            <label for="fname" class="col-md-4 control-label">First Name</label>
 
                            <div class="col-md-6">
@@ -18,8 +18,8 @@
 
                            </div>
                        </div>
-
-                   <div class="form-group{{ $errors->has('lname') ? ' has-error' : '' }}">
+<br/>
+                   <div class="form-group{{ $errors->has('lname') ? ' has-error' : '' }} col-xs-12 col-sm-12 col-md-12">
                            <label for="lname" class="col-md-4 control-label">Last Name</label>
 
                            <div class="col-md-6">
@@ -32,8 +32,8 @@
                                @endif
                            </div>
                        </div>
-
-                   <div class="form-group{{ $errors->has('mother_name') ? ' has-error' : '' }}">
+<br/>
+                   <div class="form-group{{ $errors->has('mother_name') ? ' has-error' : '' }} col-xs-12 col-sm-12 col-md-12">
                            <label for="mother_name" class="col-md-4 control-label">Mother Name</label>
 
                            <div class="col-md-6">
@@ -46,8 +46,8 @@
                                @endif
                            </div>
                        </div>
-
-                   <div class="form-group{{ $errors->has('date_of_birth') ? ' has-error' : '' }}">
+<br/>
+                   <div class="form-group{{ $errors->has('date_of_birth') ? ' has-error' : '' }} col-xs-12 col-sm-12 col-md-12">
                            <label for="date_of_birth" class="col-md-4 control-label">Date Of Birth</label>
 
                            <div class="col-md-6">
@@ -60,8 +60,8 @@
                                @endif
                            </div>
                        </div>
-
-                   <div class="form-group{{ $errors->has('place_of_birth') ? ' has-error' : '' }}">
+<br/>
+                   <div class="form-group{{ $errors->has('place_of_birth') ? ' has-error' : '' }} col-xs-12 col-sm-12 col-md-12">
                            <label for="place_of_birth" class="col-md-4 control-label">Place Of Birth</label>
 
                            <div class="col-md-6">
@@ -74,8 +74,8 @@
                                @endif
                            </div>
                        </div>
-
-                   <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
+<br/>
+                   <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }} col-xs-12 col-sm-12 col-md-12">
                            <label for="phone" class="col-md-4 control-label">Phone</label>
 
                            <div class="col-md-6">
@@ -88,8 +88,8 @@
                                @endif
                            </div>
                        </div>
-
-                   <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
+<br/>
+                   <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }} col-xs-12 col-sm-12 col-md-12">
                            <label for="address" class="col-md-4 control-label">Address</label>
 
                            <div class="col-md-6">
@@ -102,8 +102,8 @@
                                @endif
                            </div>
                        </div>
-
-                   <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+<br/>
+                   <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }} col-xs-12 col-sm-12 col-md-12">
                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
                            <div class="col-md-6">
@@ -116,8 +116,8 @@
                                @endif
                            </div>
                        </div>
-
-                       <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+<br/>
+                       <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }} col-xs-12 col-sm-12 col-md-12">
                            <label for="password" class="col-md-4 control-label">Password</label>
 
                            <div class="col-md-6">
@@ -130,6 +130,7 @@
                                @endif
                            </div>
                        </div>
+                       <br/>
             			<div class="col-xs-12 col-sm-12 col-md-12 text-center">
             			  <input type="submit" value="save" class="btn btn-success" />
             			</div>

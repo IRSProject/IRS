@@ -80,15 +80,15 @@
 
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    <i class="fa fa-user fa-fw"></i> {{{ Auth::user()->fname}}} <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                                    <li><a href="#">Edit Profile</a></li>
+                                    <li><a href="#"><i class="fa fa-pencil fa-fw"></i>Edit Profile</a></li>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                                     document.getElementById('logout-form').submit();"><i class="fa fa-sign-out" aria-hidden="true"></i>
                                             Logout
                                         </a>
 

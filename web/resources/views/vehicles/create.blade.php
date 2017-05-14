@@ -11,7 +11,7 @@
 		    <form action="{{ route('vehicle.store') }}" method="post">
 			{{ csrf_field() }}
 
-			<div class="form-group{{ $errors->has('plate_number') ? ' has-error' : '' }}">
+			<div class="form-group{{ $errors->has('plate_number') ? ' has-error' : '' }} col-xs-12 col-sm-12 col-md-12">
                             <label for="plate_number" class="col-md-4 control-label">Plate Number</label>
 
                             <div class="col-md-6">
@@ -24,7 +24,7 @@
                                 @endif
                             </div>
                         </div>
-			<div class="form-group{{ $errors->has('plate_code') ? ' has-error' : '' }}">
+			<div class="form-group{{ $errors->has('plate_code') ? ' has-error' : '' }} col-xs-12 col-sm-12 col-md-12">
                             <label for="plate_code" class="col-md-4 control-label">Plate Code</label>
 
                             <div class="col-md-6">
@@ -47,7 +47,7 @@
                                 @endif
                             </div>
                         </div>
-			<div class="form-group{{ $errors->has('brand') ? ' has-error' : '' }}">
+			<div class="form-group{{ $errors->has('brand') ? ' has-error' : '' }} col-xs-12 col-sm-12 col-md-12">
                             <label for="brand" class="col-md-4 control-label">Brand</label>
 
                             <div class="col-md-6">
@@ -60,7 +60,7 @@
                                 @endif
                             </div>
                         </div>
-			<div class="form-group{{ $errors->has('model') ? ' has-error' : '' }}">
+			<div class="form-group{{ $errors->has('model') ? ' has-error' : '' }} col-xs-12 col-sm-12 col-md-12">
                             <label for="model" class="col-md-4 control-label">Model</label>
 
                             <div class="col-md-6">
@@ -73,7 +73,7 @@
                                 @endif
                             </div>
                         </div>
-			<div class="form-group{{ $errors->has('production_year') ? ' has-error' : '' }}">
+			<div class="form-group{{ $errors->has('production_year') ? ' has-error' : '' }} col-xs-12 col-sm-12 col-md-12">
                             <label for="production_year" class="col-md-4 control-label">Production Year</label>
 
                             <div class="col-md-6">
@@ -86,7 +86,7 @@
                                 @endif
                             </div>
                         </div>
-			<div class="form-group{{ $errors->has('color') ? ' has-error' : '' }}">
+			<div class="form-group{{ $errors->has('color') ? ' has-error' : '' }} col-xs-12 col-sm-12 col-md-12">
                             <label for="color" class="col-md-4 control-label">Color</label>
 
                             <div class="col-md-6">
@@ -99,7 +99,7 @@
                                 @endif
                             </div>
                         </div>
-			<div class="form-group{{ $errors->has('chassis_number') ? ' has-error' : '' }}">
+			<div class="form-group{{ $errors->has('chassis_number') ? ' has-error' : '' }} col-xs-12 col-sm-12 col-md-12">
                             <label for="chassis_number" class="col-md-4 control-label">Chassis Number</label>
 
                             <div class="col-md-6">
@@ -112,7 +112,7 @@
                                 @endif
                             </div>
                         </div>
-			<div class="form-group{{ $errors->has('engine_number') ? ' has-error' : '' }}">
+			<div class="form-group{{ $errors->has('engine_number') ? ' has-error' : '' }} col-xs-12 col-sm-12 col-md-12">
                             <label for="engine_number" class="col-md-4 control-label">Engine Number</label>
 
                             <div class="col-md-6">
@@ -125,7 +125,7 @@
                                 @endif
                             </div>
                         </div>
-			<div class="form-group{{ $errors->has('aquisition_date') ? ' has-error' : '' }}">
+			<div class="form-group{{ $errors->has('aquisition_date') ? ' has-error' : '' }} col-xs-12 col-sm-12 col-md-12">
                             <label for="aquisition_date" class="col-md-4 control-label">Aquisition Date</label>
 
                             <div class="col-md-6">
@@ -138,7 +138,7 @@
                                 @endif
                             </div>
                         </div>
-			<div class="form-group{{ $errors->has('type') ? ' has-error' : '' }}">
+			<div class="form-group{{ $errors->has('type') ? ' has-error' : '' }} col-xs-12 col-sm-12 col-md-12">
                             <label for="type" class="col-md-4 control-label">Type</label>
 
                             <div class="col-md-6">
@@ -151,7 +151,7 @@
                                 @endif
                             </div>
                         </div>
-			<div class="form-group{{ $errors->has('operation_year') ? ' has-error' : '' }}">
+			<div class="form-group{{ $errors->has('operation_year') ? ' has-error' : '' }} col-xs-12 col-sm-12 col-md-12">
                             <label for="operation_year" class="col-md-4 control-label">Operation Year</label>
 
                             <div class="col-md-6">
