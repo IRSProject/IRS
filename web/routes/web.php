@@ -96,3 +96,5 @@ Route::get('/api/v1/times/{date}/{line}', 'AppointmentController@jsonTimes')->na
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('pagenotfound', ['as' => 'notfound','uses'=>'HomeController@pagenotfound']);
