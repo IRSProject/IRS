@@ -40,7 +40,9 @@
 
 			      <td>
 				<form action="{{route('vehicle.delete')}}" method="POST">
+				@if ( Auth::user() && Auth::user()->role == 'admin' )
 				    <a href="{{route('vehicle.edit', ['id' => $vehicle->id])}}" class="btn btn-primary btn-xs glyphicon glyphicon-pencil"></a>
+				    @endif
 				    {{csrf_field()}}
 				    <input type="hidden" name="_method" value="Delete" />
 				    <input type="hidden" name="id" value="{{$vehicle->id}}" />
