@@ -80,7 +80,7 @@ span.highlight {
                         </a>
                     </div>
                 </div>
-                @if ( Auth::user() && Auth::user()->role == 'admin' )
+
                 <div class="col-lg-3 col-md-6">
                     <div class="panel panel-red">
                         <div class="panel-heading">
@@ -94,16 +94,19 @@ span.highlight {
                                 </div>
                             </div>
                         </div>
+                        @if ( Auth::user() && Auth::user()->role == 'admin' )
                         <a href="{{route('user.index')}}">
+                            @endif
                             <div class="panel-footer">
                                 <span class="pull-left">View Users</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
                         </a>
+
                     </div>
                 </div>
-                @endif
+
               </div>
                 </div>
             </div>
