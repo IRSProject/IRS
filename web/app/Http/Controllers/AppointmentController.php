@@ -20,6 +20,11 @@ class AppointmentController extends Controller
 	return response()->json(Appointment::all()->toArray());
     }
 
+    public function single($id) {
+      
+
+    }
+
     public function resources() {
 	$stations = Station::all();
 	$resources = [];
