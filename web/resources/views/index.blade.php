@@ -175,7 +175,7 @@
                     Inspection Reservation System
                 </h1>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4><i class="fa fa-fw fa-check"></i> What is IRS</h4>
@@ -184,17 +184,6 @@
                         <p>Focuses on statutory vehicle-inspection services, it organize the inspection appointments in each station around Lebanon.
                           It helps vehicle owners inspect their cars easily.</p>
                         <a href="{{url('/about')}}" class="btn btn-default">Learn More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-compass"></i> Easy to Use</h4>
-                    </div>
-                    <div class="panel-body">
-                        <p>-----</p>
-                        <a href="#" class="btn btn-default">Learn More</a>
                     </div>
                 </div>
             </div>

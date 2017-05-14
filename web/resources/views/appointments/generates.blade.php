@@ -30,7 +30,7 @@
                       <label for="station_id" class="col-md-4 control-label">Station</label>
 
                       <div class="col-md-6">
-                      <select name="station_id" id="station_id" class="form-control">
+                      <select name="station" id="station_id" class="form-control">
                           @foreach(App\Station::all() as $station)
                           <option value="{{$station->id}}">{{$station->name}}</option>
                           @endforeach
