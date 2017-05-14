@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+span.highlight {
+    background-color: black;
+    color: grey;
+}
+</style>
 <div class="container">
     <div class="row">
         <div class="col-md-12 col-md-offset-0">
@@ -119,10 +125,10 @@
                                       </div>
                                       <div class="timeline-body">
                                           <p>
-                                            1- First click on the vehicles button up in the navigation bar.
+                                            1- First click on <span class="highlight">Vehicles</span> in the navigation bar.
                                           </p>
                                           <p>
-                                            2- Then click on <i class="glyphicon glyphicon-plus" color="blue"></i>.
+                                            2- Then click on <i class="glyphicon glyphicon-plus"></i>.
                                           </p>
                                           <p>
                                             3- Fill all the information required about your vehicle.
@@ -142,7 +148,7 @@
                                       </div>
                                       <div class="timeline-body">
                                           <p>
-                                            1- First click on the stations button up in the navigation bar.
+                                            1- First click on <span class="highlight">Stations</span> in the navigation bar.
                                           </p>
                                           <p>
                                             2- Choose the station with the nearest address.
@@ -159,7 +165,7 @@
                                       </div>
                                       <div class="timeline-body">
                                           <p>
-                                            1- First click on the appointments button up in the navigation bar.
+                                            1- First click on <span class="highlight">Appointments</span> in the navigation bar.
                                           </p>
                                           <p>
                                             2- Click on <i class="glyphicon glyphicon-refresh"></i>.
