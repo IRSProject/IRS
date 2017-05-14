@@ -16,6 +16,7 @@ class VehicleController extends Controller
     }
 
     public function create() {
+
 	return view('vehicles.create');
     }
 
@@ -25,6 +26,7 @@ class VehicleController extends Controller
                             , 'model' => 'required', 'production_year' => 'required', 'color' => 'required'
                             , 'chassis_number' => 'required', 'engine_number' => 'required', 'aquisition_date' => 'required'
                             , 'type' => 'required', 'operation_year' => 'required']);
+  $request->session()->flash('notif', 'Successfully Added!');
 	return redirect()->route('vehicle.index');
     }
 

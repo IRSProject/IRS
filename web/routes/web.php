@@ -58,6 +58,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/line','LineController@index')->name('line.index');
 
+
     Route::get('/station', 'StationController@index')->name('station.index');
     
 });
@@ -74,6 +75,7 @@ Route::group(['middleware' => ['App\Http\Middleware\Admin', 'auth']], function (
     Route::get('/station/{station}/edit', 'StationController@edit')->name('station.edit');
     Route::patch('/station', 'StationController@update')->name('station.update');
     Route::delete('/station', 'StationController@delete')->name('station.delete');
+    Route::get('/station/{station}', 'StationController@lines')->name('station.lines');
 
     Route::get('/line/create','LineController@create')->name('line.create');
     Route::post('/line','LineController@store')->name('line.store');
