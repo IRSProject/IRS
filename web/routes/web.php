@@ -48,7 +48,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/appointment/generates', 'AppointmentController@generates')->name('appointment.generates');
     Route::get('/appointment/resources', 'AppointmentController@resources')->name('appointment.resources');
 
-    Route::get('/profile','ProfileController@index')->name('profile.index');
     Route::post('/profile','ProfileController@store')->name('profile.store');
     Route::get('/profile/{user}/edit', 'ProfileController@edit')->name('profile.edit');
     Route::patch('/profile', 'ProfileController@update')->name('profile.update');;
@@ -78,7 +77,7 @@ Route::group(['middleware' => ['auth']], function () {
 
 	Route::get('/line/create','LineController@create')->name('line.create');
 	Route::post('/line','LineController@store')->name('line.store');
-	Route::get('/line/{line}/edit', 'LineController@edit')->name('line.edit');
+	Route::post('/line/{line}/edit', 'LineController@edit')->name('line.edit');
 	Route::patch('/line', 'LineController@update')->name('line.update');;
 	Route::delete('/line', 'LineController@delete')->name('line.delete');;
 
@@ -102,6 +101,4 @@ Route::get('/api/v1/appointments','AppointmentController@all')->name('api.v1.app
 Route::get('/api/v1/times/{date}/{line}', 'AppointmentController@jsonTimes')->name('api.v1.jsontimes');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
-
-Route::get('pagenotfound', ['as' => 'notfound','uses'=>'HomeController@pagenotfound']);
+Route::get('/home', 'HomeController@index')->name("home");
