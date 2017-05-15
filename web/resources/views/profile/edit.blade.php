@@ -27,12 +27,6 @@
                       </div>
                       <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
-                          <strong>Role</strong>
-                          <input name="role" value="{{$user->role}}" type="text" class="form-control" placeholder="">
-                        </div>
-                      </div>
-                      <div class="col-xs-12 col-sm-12 col-md-12">
-                        <div class="form-group">
                           <strong>Mother Name</strong>
                           <input name="mother_name" value="{{$user->mother_name}}" type="text" class="form-control" placeholder="">
                         </div>
