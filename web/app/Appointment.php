@@ -21,6 +21,10 @@ class Appointment extends Model
     }
 
     public function line() {
-	return $this->belongsTo(Line::class);
+	return $this->belongsTo(Line::class, 'resourceId');
+    }
+
+    public function station() {
+	return $this->belongsTo(Station::class);
     }
 }

@@ -4,8 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class VehicleCheck extends Model
+class Vehiclecheck extends Model
 {
+    protected $table = 'vehiclescheck';
     protected $fillable = [
 	'plate_number','plate_code',
 	'brand','model','production_year'

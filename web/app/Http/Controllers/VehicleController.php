@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Vehicle;
+use App\Vehiclecheck;
 use Auth;
 
 class VehicleController extends Controller
@@ -21,12 +22,21 @@ class VehicleController extends Controller
     }
 
     public function store(Request $request) {
-	$vehicle = Vehicle::create($request->all());
-  $this->validate($request, ['plate_number' => 'required', 'plate_code' => 'required', 'brand' => 'required'
+	$vehiclecheck = Vehiclecheck::where('plate_number', $request->plate_number)
+	    ->where('plate_code', $request->plate_code)
+	    ->where('brand', $request->brand)
+	    ->where('model', $request->model)->get();
+
+	if(count($vehiclecheck->toArray()) <= 0) {
+	    abort(403);
+	}
+	$this->validate($request, ['plate_number' => 'required', 'plate_code' => 'required', 'brand' => 'required'
                             , 'model' => 'required', 'production_year' => 'required', 'color' => 'required'
                             , 'chassis_number' => 'required', 'engine_number' => 'required', 'aquisition_date' => 'required'
                             , 'type' => 'required', 'operation_year' => 'required']);
-  $request->session()->flash('notif', 'Successfully Added!');
+
+	$vehicle = Vehicle::create($request->all());
+	$request->session()->flash('notif', 'Successfully Added!');
 	return redirect()->route('vehicle.index');
     }
 

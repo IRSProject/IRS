@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Profile;
+use App\User;
 
 class ProfileController extends Controller
 {
@@ -19,8 +20,8 @@ class ProfileController extends Controller
 	return redirect()->route('profile.index');
     }
 
-    public function edit(profile $profile) {
-	return view('profile.edit', ['profile' => $profile]);
+    public function edit(User $user) {
+	return view('profile.edit', ['user' => $user]);
     }
 
     public function update(Request $request) {

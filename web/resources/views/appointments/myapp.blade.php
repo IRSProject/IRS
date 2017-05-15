@@ -19,12 +19,12 @@
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach(App\Appointment::all() as $appointment)
+                      @foreach($appointments as $appointment)
                         <tr>
                           <td>{{ $appointment->title }}</td>
                           <td>{{ $appointment->start }}</td>
-                          <td>{{ $appointment->station_id }}</td>
-                          <td>{{ $appointment->resourceId }}</td>
+			  <td>{{ $appointment->station->name }}</td>
+			  <td>{{ $appointment->line->number }}</td>
                           <td>
                             <form action="{{route('appointment.delete')}}" method="POST">
                               {{csrf_field()}}

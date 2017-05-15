@@ -19,7 +19,7 @@ class Operator
     {
 	if(Auth::user()) {
 	    $user = Auth::user();
-	    if($user->role != 'operator') {
+	    if($user->role != 'operator' && $user->role != 'admin') {
 		abort(403);
 	    }
 	} else {

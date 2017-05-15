@@ -257,8 +257,13 @@ $request->session()->flash('notif', 'Successfully Added!');
 	return view('appointments.edit', ['appointment' => $appointment]);
     }
 
-    public function myapp(Appointment $appointment) {
-  return view('appointments.myapp', ['appointment' => $appointment]);
+    public function myapp() {
+	$appointments = [];
+	if(Auth::check()) {
+	    $user = Auth::user();
+	    $appointments = $user->appointments;
+	}
+	return view('appointments.myapp', ['appointments' => $appointments]);
     }
 
     public function allapp(Appointment $appointment) {

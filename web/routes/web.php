@@ -28,7 +28,6 @@ Route::get('/license', function () {
 });
 
 Route::group(['middleware' => 'auth'], function () {
-
     Route::get('/vehicle','VehicleController@index')->name('vehicle.index');
     Route::get('/vehicle/create','VehicleController@create')->name('vehicle.create');
     Route::post('/vehicle','VehicleController@store')->name('vehicle.store');
@@ -61,35 +60,40 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/station', 'StationController@index')->name('station.index');
 });
 
-Route::group(['middleware' => ['App\Http\Middleware\Admin', 'auth']], function () {
-    Route::post('/appointment/create', 'AppointmentController@createAppointment')->name('appointment.create');
-    Route::get('/appointment/events', 'AppointmentController@events')->name('appointment.events');
-    Route::get('/appointment/allapp', 'AppointmentController@allapp')->name('appointment.allapp');
-    Route::get('/appointment/todayapp', 'AppointmentController@todayapp')->name('appointment.todayapp');
+Route::group(['middleware' => ['auth']], function () {
+    Route::group(['middleware' => ['App\Http\Middleware\Admin']], function () {
+	Route::get('/vehicle/allveh', 'VehicleController@allveh')->name('vehicle.allveh');
 
-    Route::get('/vehicle/allveh', 'VehicleController@allveh')->name('vehicle.allveh');
+	Route::get('/appointment/allapp', 'AppointmentController@allapp')->name('appointment.allapp');
 
-    Route::get('/station/create', 'StationController@create')->name('station.create');
-    Route::post('/station', 'StationController@store')->name('station.store');
 
-    Route::get('/station/{station}/appointments', 'StationController@appointments')->name('station.appointments');
-    Route::get('/station/{station}/edit', 'StationController@edit')->name('station.edit');
-    Route::patch('/station', 'StationController@update')->name('station.update');
-    Route::delete('/station', 'StationController@delete')->name('station.delete');
-    Route::get('/station/{station}', 'StationController@lines')->name('station.lines');
+	Route::get('/station/create', 'StationController@create')->name('station.create');
+	Route::post('/station', 'StationController@store')->name('station.store');
 
-    Route::get('/line/create','LineController@create')->name('line.create');
-    Route::post('/line','LineController@store')->name('line.store');
-    Route::get('/line/{line}/edit', 'LineController@edit')->name('line.edit');
-    Route::patch('/line', 'LineController@update')->name('line.update');;
-    Route::delete('/line', 'LineController@delete')->name('line.delete');;
+	Route::get('/station/{station}/appointments', 'StationController@appointments')->name('station.appointments');
+	Route::get('/station/{station}/edit', 'StationController@edit')->name('station.edit');
+	Route::patch('/station', 'StationController@update')->name('station.update');
+	Route::delete('/station', 'StationController@delete')->name('station.delete');
+	Route::get('/station/{station}', 'StationController@lines')->name('station.lines');
 
-    Route::get('/user','UserController@index')->name('user.index');
-    Route::get('/user/create','UserController@create')->name('user.create');
-    Route::post('/user','UserController@store')->name('user.store');
-    Route::get('/user/{user}/edit', 'UserController@edit')->name('user.edit');
-    Route::patch('/user', 'UserController@update')->name('user.update');;
-    Route::delete('/user', 'UserController@delete')->name('user.delete');;
+	Route::get('/line/create','LineController@create')->name('line.create');
+	Route::post('/line','LineController@store')->name('line.store');
+	Route::get('/line/{line}/edit', 'LineController@edit')->name('line.edit');
+	Route::patch('/line', 'LineController@update')->name('line.update');;
+	Route::delete('/line', 'LineController@delete')->name('line.delete');;
+
+	Route::get('/user','UserController@index')->name('user.index');
+	Route::get('/user/create','UserController@create')->name('user.create');
+	Route::post('/user','UserController@store')->name('user.store');
+	Route::get('/user/{user}/edit', 'UserController@edit')->name('user.edit');
+	Route::patch('/user', 'UserController@update')->name('user.update');;
+	Route::delete('/user', 'UserController@delete')->name('user.delete');;
+    });
+
+    Route::group(['middleware' => ['App\Http\Middleware\Operator']], function () {
+	Route::get('/appointment/events', 'AppointmentController@events')->name('appointment.events');
+	Route::get('/appointment/todayapp', 'AppointmentController@todayapp')->name('appointment.todayapp');
+    });
 });
 
 

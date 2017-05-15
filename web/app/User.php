@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Vehicle;
+use App\Appointment;
 
 class User extends Authenticatable
 {
@@ -12,6 +13,10 @@ class User extends Authenticatable
 
     public function vehicles() {
 	return $this->hasMany(Vehicle::class);
+    }
+
+    public function appointments() {
+	return $this->hasMany(Appointment::class);
     }
 
     public static function boot() {
