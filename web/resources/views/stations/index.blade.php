@@ -25,7 +25,11 @@
 			<tbody>
 			@foreach($stations as $station)
 			  <tr>
+			   @if ( Auth::user() && Auth::user()->role == 'admin' )
 			      <td><a href="{{route('station.lines', ['station' => $station->id])}}">{{$station->name}}</a></td>
+			   @else
+			   		<td>{{$station->name}}</td>
+			   @endif
 			      <td>{{$station->address}}</td>
             @if ( Auth::user() && Auth::user()->role == 'admin' )
 			      <td>

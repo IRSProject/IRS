@@ -67,6 +67,7 @@ Route::group(['middleware' => ['App\Http\Middleware\Admin', 'auth']], function (
     Route::post('/appointment/create', 'AppointmentController@createAppointment')->name('appointment.create');
     Route::get('/appointment/events', 'AppointmentController@events')->name('appointment.events');
     Route::get('/appointment/allapp', 'AppointmentController@allapp')->name('appointment.allapp');
+    Route::get('/vehicle/allveh', 'VehicleController@allveh')->name('vehicle.allveh');
 
     Route::get('/station/create', 'StationController@create')->name('station.create');
     Route::post('/station', 'StationController@store')->name('station.store');

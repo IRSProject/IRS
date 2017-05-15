@@ -53,4 +53,8 @@ class VehicleController extends Controller
     $request->session()->flash('notifdeleted', 'Successfully Deleted!');
 	return redirect()->route('vehicle.index');
     }
+
+    public function allveh(Vehicle $vehicle) {
+  return view('vehicles.allveh', ['vehicle' => $vehicle]);
+    }
 }
