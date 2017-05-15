@@ -58,15 +58,15 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/line','LineController@index')->name('line.index');
 
-
     Route::get('/station', 'StationController@index')->name('station.index');
-    
 });
 
 Route::group(['middleware' => ['App\Http\Middleware\Admin', 'auth']], function () {
     Route::post('/appointment/create', 'AppointmentController@createAppointment')->name('appointment.create');
     Route::get('/appointment/events', 'AppointmentController@events')->name('appointment.events');
     Route::get('/appointment/allapp', 'AppointmentController@allapp')->name('appointment.allapp');
+    Route::get('/appointment/todayapp', 'AppointmentController@todayapp')->name('appointment.todayapp');
+
     Route::get('/vehicle/allveh', 'VehicleController@allveh')->name('vehicle.allveh');
 
     Route::get('/station/create', 'StationController@create')->name('station.create');

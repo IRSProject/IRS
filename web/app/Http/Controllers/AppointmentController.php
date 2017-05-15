@@ -20,11 +20,6 @@ class AppointmentController extends Controller
 	return response()->json(Appointment::all()->toArray());
     }
 
-    public function single($id) {
-      
-
-    }
-
     public function resources() {
 	$stations = Station::all();
 	$resources = [];
@@ -268,6 +263,9 @@ $request->session()->flash('notif', 'Successfully Added!');
 
     public function allapp(Appointment $appointment) {
   return view('appointments.allapp', ['appointment' => $appointment]);
+    }
+    public function todayapp(Appointment $appointment) {
+  return view('appointments.todayapp', ['appointment' => $appointment]);
     }
 
     public function update(Request $request) {

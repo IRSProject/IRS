@@ -21,7 +21,7 @@
                     <tbody>
                       @foreach(App\Appointment::all() as $appointment)
                         <tr>
-                          <td>{{ $appointment->plate_number }}</td>
+                          <td>{{ $appointment->title }}</td>
                           <td>{{ $appointment->start }}</td>
                           <td>{{ $appointment->station_id }}</td>
                           <td>{{ $appointment->resourceId }}</td>
