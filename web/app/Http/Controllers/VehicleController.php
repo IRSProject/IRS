@@ -25,7 +25,14 @@ class VehicleController extends Controller
 	$vehiclecheck = Vehiclecheck::where('plate_number', $request->plate_number)
 	    ->where('plate_code', $request->plate_code)
 	    ->where('brand', $request->brand)
-	    ->where('model', $request->model)->get();
+	    ->where('model', $request->model)
+      ->where('production_year', $request->production_year)
+      ->where('color', $request->color)
+      ->where('chassis_number', $request->chassis_number)
+      ->where('engine_number', $request->engine_number)
+      ->where('aquisition_date', $request->aquisition_date)
+      ->where('type', $request->type)
+      ->where('operation_year', $request->operation_year)->get();
 
 	if(count($vehiclecheck->toArray()) <= 0) {
 	    abort(403);
