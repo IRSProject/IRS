@@ -288,20 +288,20 @@ $request->session()->flash('notif', 'Successfully Added!');
   $request->session()->flash('notifdeleted', 'Successfully Deleted!');
 	return redirect()->route('appointment.index');
     }
-    public function pass($id) {
-      $appointment = appointment::find($id)->first();
-      if($appointment->status == '1')
+    public function pass(Request $request) {
+      $appointment = appointment::find($request->id)->first();
+      if($appointment->status == '0')
       {
-          $appointment->status = 1;
+          $appointment->status = true;
       }
       $appointment->save();
       return redirect()->route('appointment.todayapp');
   }
-  public function fail($id) {
-    $appointment = appointment::find($id)->first();
-    if($appointment->status == '0')
+  public function fail(Request $request) {
+    $appointment = appointment::find($request->id)->first();
+    if($appointment->status == '1')
     {
-        $appointment->status = 0;
+        $appointment->status = false;
     }
     $appointment->save();
     return redirect()->route('appointment.todayapp');
