@@ -92,6 +92,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::group(['middleware' => ['App\Http\Middleware\Operator']], function () {
 	Route::get('/appointment/events', 'AppointmentController@events')->name('appointment.events');
 	Route::get('/appointment/todayapp', 'AppointmentController@todayapp')->name('appointment.todayapp');
+  Route::get('/appointment/pass', 'AppointmentController@pass')->name('appointment.pass');
+  Route::get('/appointment/fail', 'AppointmentController@fail')->name('appointment.fail');
+
     });
 });
 

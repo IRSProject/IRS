@@ -24,8 +24,8 @@
                           <td>{{ $appointment->start }}</td>
                           <td>{{ $appointment->status }}</td>
                           <td>
-                          <a href="#" class="btn btn-success btn-xs glyphicon glyphicon-ok"></a>
-                          <a href="#" class="btn btn-danger btn-xs glyphicon glyphicon-remove"></a>
+                          <a href="{{ route('appointment.pass') }}" class="btn btn-success btn-xs glyphicon glyphicon-ok"></a>
+                          <a href="{{ route('appointment.fail') }}" class="btn btn-danger btn-xs glyphicon glyphicon-remove"></a>
                           </td>
                         </tr>
                       @endforeach
