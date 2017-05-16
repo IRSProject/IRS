@@ -21,8 +21,8 @@ class Appointments extends Migration
 	    $table->integer('resourceId')->unsigned()->length(10);
 	    $table->integer('vehicle_id')->unsigned()->length(10);
 	    $table->integer('user_id')->unsigned()->length(10);
-      $table->boolean('status')->default(false);
-      $table->boolean('station_id')->unsigned()->length(10);
+	    $table->boolean('status')->default(false);
+	    $table->boolean('station_id')->unsigned()->length(10);
 	    $table->foreign('vehicle_id')->references('id')->on('vehicles')->onDelete('cascade');
 	    $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 	    $table->foreign('resourceId')->references('id')->on('lines')->onDelete('cascade');
