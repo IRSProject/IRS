@@ -26,6 +26,7 @@
                           <input name="lname" value="{{$user->lname}}" type="text" class="form-control" placeholder="">
                         </div>
                       </div>
+                      @if ( Auth::user() && Auth::user()->role == 'admin' )
                       <br/>
                       <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
@@ -33,6 +34,7 @@
                           <input name="role" value="{{$user->role}}" type="text" class="form-control" placeholder="">
                         </div>
                       </div>
+                      @endif
                       <br/>
                       <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
