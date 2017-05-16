@@ -35,7 +35,7 @@ class VehicleController extends Controller
       ->where('operation_year', $request->operation_year)->get();
 
 	if(count($vehiclecheck->toArray()) <= 0) {
-	    abort(403);
+	    abort(504);
 	}
 	$this->validate($request, ['plate_number' => 'required', 'plate_code' => 'required', 'brand' => 'required'
                             , 'model' => 'required', 'production_year' => 'required', 'color' => 'required'

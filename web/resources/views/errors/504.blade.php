@@ -72,7 +72,7 @@
 
             <div class="content">
   		<div class="title m-b-md">
-     		  PAGE NOT FOUND.
+     		  WRONG VEHICLE RECORDS
   		</div>
 		</div>
         </div>

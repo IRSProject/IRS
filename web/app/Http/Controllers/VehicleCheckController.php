@@ -22,7 +22,7 @@ class VehicleCheckController extends Controller
     	$c = array("*","B","G","M","N","T","O","S","Z");
     	$col = array("black","cyan","blue","red","yellow","green");
     	$tp = array("private","public","motorcycle","truck");
-    	for ($x = 0; $x < 1000; $x++) 
+    	for ($x = 0; $x < 1000; $x++)
     	{
     		$veh = new VehicleCheck;
 
@@ -39,9 +39,9 @@ class VehicleCheckController extends Controller
     		$veh->type = $tp[rand(0,3)];
     		$veh->operation_year = rand($prod_year,2017);
 
-    		$veh->save();	
+    		$veh->save();
     	}
-    	
+
     	return redirect()->route('vehicle.index');
     }
 }
