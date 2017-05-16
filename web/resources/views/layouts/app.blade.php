@@ -84,7 +84,7 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                                    <li><a href="#"><i class="fa fa-pencil fa-fw"></i>Edit Profile</a></li>
+				    <li><a href="{{ route('profile.edit', ['user' => (Auth::user()->id)]) }}"><i class="fa fa-pencil fa-fw"></i>Edit Profile</a></li>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
