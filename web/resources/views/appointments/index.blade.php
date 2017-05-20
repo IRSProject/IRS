@@ -15,7 +15,7 @@
                 All Appointments <a href="{{route('appointment.allapp')}}" class="btn btn-link"><i class="glyphicon glyphicon-menu-hamburger"></i></a>
                 @endif
                 <br>
-                @if ( Auth::user() && Auth::user()->role == 'operator'||'admin' )
+                @if ( Auth::user() && Auth::user()->role == 'operator' || Auth::user()->role == 'admin' )
                 Today Appointments <a href="{{route('appointment.todayapp')}}" class="btn btn-link"><i class="glyphicon glyphicon-flash"></i></a>
                 @endif
               </div>
