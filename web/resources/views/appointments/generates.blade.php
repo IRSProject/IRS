@@ -15,7 +15,7 @@
                         <div class="col-md-6">
                             <select id="vehicle_id" class="form-control" name="vehicle_id" required >
                                 @foreach(App\Vehicle::all() as $vehicle)
-                                <option value="{{$vehicle->id}}">{{$vehicle->plate_code . ' ' . $vehicle->plate_number}}</option>
+                                <option value="{{$vehicle->id}}">{{$vehicle->plate_number . ' ' . $vehicle->plate_code}}</option>
                                 @endforeach
                             </select>
 

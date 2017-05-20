@@ -21,7 +21,7 @@
                     <tbody>
                       @foreach($appointments as $appointment)
                         <tr>
-                          <td>{{ $appointment->title }}</td>
+      <td>{{ $appointment->vehicle->plate_number }} {{ $appointment->vehicle->plate_code }}</td>
                           <td>{{ $appointment->start }}</td>
 			  <td>{{ $appointment->station->name }}</td>
 			  <td>{{ $appointment->line->number }}</td>

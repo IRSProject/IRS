@@ -12,22 +12,26 @@
                     <thead>
                       <tr>
                         <th>Vehicle</th>
-                        <th>Appointment Date</th>
+                        <th>Appointment Start Date</th>
+                        <th>Appointment End Date</th>
                         <th>Status</th>
                         <th>Actions</th>
                       </tr>
                     </thead>
                     <tbody>
                       @foreach(App\Appointment::all() as $appointment)
+
                         <tr>
-                          <td>{{ $appointment->title }}</td>
+                          <td>{{ $appointment->vehicle->plate_number }} {{ $appointment->vehicle->plate_code }}</td>
                           <td>{{ $appointment->start }}</td>
+                          <td>{{ $appointment->end }}</td>
                           <td>{{ $appointment->status }}</td>
                           <td>
                           <a href="{{ route('appointment.pass' , ['id' => $appointment->id])}}" class="btn btn-success btn-xs glyphicon glyphicon-ok"></a>
                           <a href="{{ route('appointment.fail' , ['id' => $appointment->id])}}" class="btn btn-danger btn-xs glyphicon glyphicon-remove"></a>
                           </td>
                         </tr>
+
                       @endforeach
                     </tbody>
                   </table>

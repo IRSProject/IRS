@@ -270,6 +270,9 @@ $request->session()->flash('notif', 'Successfully Added!');
   return view('appointments.allapp', ['appointment' => $appointment]);
     }
     public function todayapp(Appointment $appointment) {
+      $today = Carbon\Carbon::today();
+      Appointment::where('start', '>=', $today)->where('end', '<=', $today)->get();
+
   return view('appointments.todayapp', ['appointment' => $appointment]);
     }
 
